@@ -13,7 +13,7 @@
 
 .background-div::before {
     content: "";
-    background-image: url('/assets/img/image-title.png');
+    background-image: url('../../../assets/img/image-title.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -102,7 +102,7 @@
     //planes
     .planes::before {
         content: "";
-        background-image: url('/assets/img/image-planes.png');
+        background-image: url('../../../assets/img/image-planes.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -222,7 +222,7 @@
     //clases grupales
     .clases::before{
         content: "";
-        background-image: url('/assets/img/image-title.png');
+        background-image: url('../../../assets/img/image-title.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -369,7 +369,7 @@
     //noticias
     .noticias::before {
         content: "";
-        background-image: url('/assets/img/image-fondo-noticias.png');
+        background-image: url('../../../assets/img/image-fondo-noticias.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -496,7 +496,7 @@
 
 .swiper::before{
     content: "";
-    background-image: url('/assets/img/image-back-slider.png'); //Aqui va la imagen de fondo
+    background-image: url('../../../assets/img/image-back-slider.png'); //Aqui va la imagen de fondo
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
