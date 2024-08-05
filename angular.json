@@ -101,12 +101,12 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "src/app/assets/img",
+                "input": "src/assets/img",
                 "output": "/assets/img"
               },
               {
                 "glob": "**/*",
-                "input": "src/app/assets/video",
+                "input": "src/assets/video",
                 "output": "/assets/video"
               }
             ]
