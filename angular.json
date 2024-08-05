@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "blk-design-system-angular": {
+    "novagym": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/blk-design-system-angular",
+            "outputPath": "dist/novagym",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -53,7 +53,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -72,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "blk-design-system-angular:build"
+            "buildTarget": "novagym:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "blk-design-system-angular:build:production"
+              "buildTarget": "novagym:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "blk-design-system-angular:build"
+            "buildTarget": "novagym:build"
           }
         },
         "test": {
@@ -99,7 +98,17 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "src/app/assets/img",
+                "output": "/assets/img"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/assets/video",
+                "output": "/assets/video"
+              }
             ]
           }
         },
@@ -117,7 +126,7 @@
         }
       }
     },
-    "blk-design-system-angular-e2e": {
+    "novagym-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -126,11 +135,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "blk-design-system-angular:serve"
+            "devServerTarget": "novagym:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "blk-design-system-angular:serve:production"
+              "devServerTarget": "novagym:serve:production"
             }
           }
         },
