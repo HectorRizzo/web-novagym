@@ -108,6 +108,11 @@
                 "glob": "**/*",
                 "input": "src/assets/video",
                 "output": "/assets/video"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/icons",
+                "output": "/assets/icons"
               }
             ]
           }

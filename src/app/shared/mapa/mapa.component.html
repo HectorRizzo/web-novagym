@@ -4,13 +4,13 @@
         <div class="div-ubicacion" *ngFor="let marker of markers" (click)="zoomToMarker(marker)">
             <h3 class="text-white">{{ marker.title }}</h3>
             <p>
-              <img src="../../../assets/icons/ubicacion.png" alt="{{ marker.title }}" class="img-fluid">
+              <img src="/assets/icons/ubicacion.png" alt="{{ marker.title }}" class="img-fluid">
               {{ marker.description }}</p>
             <p>
-              <img src="../../../assets/icons/telef.png" alt="{{ marker.title }}" class="img-fluid">
+              <img src="/assets/icons/telef.png" alt="{{ marker.title }}" class="img-fluid">
               {{marker.telefono}}</p>
             <p>
-              <img src="../../../assets/icons/correo.png" alt="{{ marker.title }}" class="img-fluid">
+              <img src="/assets/icons/correo.png" alt="{{ marker.title }}" class="img-fluid">
               {{marker.email}}</p>
         </div>
         
