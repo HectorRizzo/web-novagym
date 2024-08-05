@@ -1,0 +1,35 @@
+.navbar-nav .nav-link.active {
+    color: #be0a0a; /* Color para el enlace activo */
+    font-weight: bold; /* Opcional: hacer el enlace activo en negrita */
+  }
+  
+
+  .text-resaltado{
+    color: #E3DF00 !important;
+}
+
+.navbar-brand{
+    position: relative; 
+    /* padding-top: 0.3125rem; */
+    /* padding-bottom: 0.3125rem; */
+    color: #e50000;
+    font-size: 1rem;
+    .text-resaltado{
+        color: #E3DF00 !important;
+    }
+}
+
+h1{
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px !important;
+    }
+}
+

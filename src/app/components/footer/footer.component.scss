@@ -1,0 +1,54 @@
+.text-resaltado{
+    color: #E3DF00;
+
+}
+  
+  //footer
+
+  .footer{
+    background: #000000;
+    color: white;
+    height: 150px;
+    padding: 0%;
+    .title{
+        margin-top: 0.5rem;
+        color: white;
+    }
+
+    .footer-title{
+        text-align: left !important;
+        font-size: 5rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    .btn-icon{
+        background: white;
+    }
+    .footer-text{
+        font-weight: 100;
+        font-size: 1rem;
+    }
+    .footer-icon{
+        width: 28px;  /* Ajusta el tamaño del icono */
+        height: 30px; /* Ajusta el tamaño del icono */
+        vertical-align: middle; /* Alinea el icono con el texto */
+    }
+    .btn-top{
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .container-redes{
+    justify-content: space-between;
+    display: flex;
+    margin-right: 5rem;
+
+    }
+
+    .container-footer{
+        max-width: 90%;
+    }
+}

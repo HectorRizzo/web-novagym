@@ -1,0 +1,7 @@
+@mixin set-wizard-color($color) {
+  .progress-with-circle .progress-bar {
+    background: $color;
+  }
+
+
+}

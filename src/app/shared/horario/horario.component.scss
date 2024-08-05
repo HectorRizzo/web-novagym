@@ -1,0 +1,53 @@
+    //Horarios
+
+    .table-horarios{
+        th,
+        td{
+            padding: 0.5rem;
+            text-align: center;
+            font-size: smaller;
+            width: 100px;
+            height: 100px;
+            //bordes externos no
+            border: 0px;
+            //bordes internos si
+            border-right: 1px solid #404040;
+            border-bottom: 1px solid #404040;
+            &:last-child{
+                border-right: 0px;
+            }
+            &:hover{
+                background-color: #4a4a4a;
+                .description{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        h5{
+            font-size: smaller;
+            font-weight: bold;
+            color: #6e6e6e;
+        }
+
+        .titles{
+            color: #6e6e6e;
+        }
+
+        .description{
+            align-content: end;
+           font-weight: 900;
+           opacity: 0;
+           visibility: hidden;
+           transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */   
+           background: #E3DF00;   
+           color: black;
+           position: absolute; /* Posicionamiento absoluto dentro del td */
+           bottom: 0; /* Alinea al fondo */
+           width: inherit; /* Ajusta al ancho del td */
+         
+       }
+        
+
+    }

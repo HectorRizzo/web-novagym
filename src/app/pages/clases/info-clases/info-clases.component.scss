@@ -1,0 +1,184 @@
+.container-clases{
+    padding: 1rem;
+
+    .clases-header{
+        width: 100%;
+        height: 450px;
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+        margin-bottom: 5rem;
+
+        .container-title{
+            z-index: 2;
+            margin-bottom: 1rem;
+            margin-right: 3rem;
+        }
+        h6{
+            color: white;
+            font-size: 1.5rem;
+        }
+        h1{
+            color: white;
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        
+    }
+
+    .clases-header::before {
+        content: "";
+        background-image: url('../../../../assets/img/image-noticias-2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3; /* Ajusta este valor para cambiar la opacidad */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+}
+
+li{
+    color: black !important;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.recomendaciones{
+    width: 100%;
+}
+.clases-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+    width: 100%; /* Asegura que la lista ocupe todo el ancho del contenedor */
+    padding: 0 7rem;  
+    font-size: 1.5rem;
+  }
+
+  .clase-item {
+    font-size: 1.5rem;
+  }
+  .clase-item::before {
+    content: '•'; /* Contenido de la viñeta */
+    color: yellow; /* Cambia el color de las viñetas */
+    font-size: 1.5rem; /* Cambia el tamaño de las viñetas */
+    position: absolute; /* Posiciona la viñeta */
+    left: 0; /* Alinea la viñeta a la izquierda */
+    top: 50%; /* Centra verticalmente la viñeta */
+    transform: translateY(-50%); /* Ajusta la posición vertical */
+  }
+  
+  
+.container-recomendaciones{
+    align-self: self-start;
+    padding-left: 2rem;
+}
+
+.container-info-clases{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+    background-color: white;
+    p{
+        color: black !important;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: justify;
+        padding: 0 3rem;
+
+    }
+  }
+
+  .horario{
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+  }
+
+  .title-horario{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: black;
+  }
+
+  .title-recomendaciones{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+    text-align: start;
+    color: black;
+  }
+
+  .table-horarios{
+    th,
+    td{
+        padding: 0.5rem;
+        text-align: center;
+        font-size: smaller;
+        width: 100px;
+        height: 100px;
+        //bordes externos no
+        border: 0px;
+        //bordes internos si
+        border-right: 1px solid #404040;
+        border-bottom: 1px solid #404040;
+        &:last-child{
+            border-right: 0px;
+        }
+        &:hover{
+            background-color: #4a4a4a;
+            .description{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    h5{
+        font-size: smaller;
+        font-weight: bold;
+        color: #6e6e6e;
+    }
+
+    .titles{
+        color: #6e6e6e;
+    }
+
+    .description{
+        align-content: end;
+       font-weight: 900;
+       opacity: 0;
+       visibility: hidden;
+       transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */   
+       background: #E3DF00;   
+       color: black;
+       position: absolute; /* Posicionamiento absoluto dentro del td */
+       bottom: 0; /* Alinea al fondo */
+       width: inherit; /* Ajusta al ancho del td */
+     
+   }
+    
+
+}
+
+li::marker{
+    color: #E3DF00;
+    font-size: 2rem;
+}
+
+
+.nav-tabs-primary{
+    display: flex;
+    flex-direction: column-reverse;
+}
+

@@ -1,0 +1,33 @@
+.card-unete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    color: white;
+    flex-direction: column;
+
+    .body-unete{
+        text-align: center;
+        hr {
+            width: 100%;
+            display: block;
+            border: 1px solid #ffffff !important; /* Ajusta el color según tu diseño */
+            margin: 10px 0; /* Ajusta el margen según necesites */
+        }
+    }
+    .card-title{
+        font-weight: bold;
+        font-size: 3.5rem;
+    }
+
+    .btn-registro{
+        margin-top: 5rem;
+        font-size: 1.5rem;
+    }
+    
+  }
+
+
+
+
+ 

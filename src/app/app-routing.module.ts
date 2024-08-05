@@ -1,0 +1,22 @@
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { SedesComponent } from './pages/sedes/sedes.component';
+import { InfoSedesComponent } from './pages/sedes/info-sede/info-sedes.component';
+import { ClasesComponent } from './pages/clases/clases.component';
+import { NgModule } from '@angular/core';
+import { InfoClasesComponent } from './pages/clases/info-clases/info-clases.component';
+
+export const routes: Routes = [
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "home", component: HomeComponent },
+  { path: "sedes", component: SedesComponent},
+  {path: "sedes/info-sedes", component: InfoSedesComponent},
+  { path: "clases", component: ClasesComponent },
+  {path: "clases/info-clases", component: InfoClasesComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

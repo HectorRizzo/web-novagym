@@ -1,0 +1,133 @@
+.tab-sedes {
+    ul{
+        justify-content: space-between !important;
+    }
+
+    .nav-tabs{
+        justify-content: space-between !important;
+    }
+}
+
+ul{
+    justify-content: space-between !important;
+}
+
+
+.nav-tabs {
+  border: 0;
+  justify-content: space-between !important;
+}
+
+.tab-title{
+    padding: 0;
+    margin: 0 !important;
+}
+
+.icon-title{
+    width: 40px;
+    margin-left: 0.5rem;
+    color: white;
+}
+
+.direccion-text{
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+//Galeria
+.swiper-galeria {
+    width: 100%;
+    height: 300px !important;
+    overflow-x: hidden  !important;
+    .swiper-wrapper {
+        max-width: 100vw; 
+        width: 100%;
+        height: 100%;
+    }
+
+      .swiper-slide {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .swiper-slide img {
+        display: block;
+        width: auto;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .swiper-slide-galeria img {
+        display: block;
+        width: 100%;
+        height: 350px;
+      }
+
+  }
+
+  .swiper-button-next{
+    //ocultar flecha derecha
+    color: transparent;
+  }
+
+  .swiper-button-prev{
+    //ocultar flecha izquierda
+    color: transparent;
+  }
+
+  .btn-arrow-next{
+    max-width:max-content;
+        margin-left: 10rem;
+    width: 70px;
+    height: 60px;
+  }
+
+  .btn-arrow-prev{
+    max-width:max-content;
+        margin-right: 10rem;
+    width: 70px;
+    height: 60px;
+    transform: rotate(180deg);
+  }
+
+
+  .container-horarios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  .horario{
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+  }
+
+  .title-horario{
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+    text-align: center;
+  
+  }
+
+  .text-resaltado{
+    color: #E3DF00;
+}
+
+.separator{
+    width: 100%;
+    height: 5px;
+    background-color: #E3DF00;
+    opacity: 1;
+}
+
+#map {
+  height: 100%;
+}

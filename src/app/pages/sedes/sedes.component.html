@@ -1,0 +1,134 @@
+<div class="">
+    <div class="container w-100">
+      <div>
+        <div>
+          <div class="row">
+            <div class="col-3"></div>
+            <h1 class="col-9 title text-center">
+              DESCUBRE TU <span class="text-resaltado">SEDE</span> FAVORITA
+            </h1>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            
+            <div class="row w-100">
+              <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link" id="v-pills-todas-tab" data-toggle="pill" data-target="#v-pills-todas" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" [ngClass]="{'active': activeTab === 'todas'}" (click)="setActiveTab('todas')">TODAS</button>
+                  <button class="nav-link" id="v-pills-guayaquil-tab" data-toggle="pill" data-target="#v-pills-guayaquil" type="button" role="tab" aria-controls="v-pills-profile" [ngClass]="{'active': activeTab === 'guayaquil'}" (click)="setActiveTab('guayaquil')"  aria-selected="false">GUAYAQUIL</button>
+                  <button class="nav-link" id="v-pills-machala-tab" data-toggle="pill" data-target="#v-pills-machala" type="button" role="tab" aria-controls="v-pills-machala" [ngClass]="{'active': activeTab === 'machala'}" (click)="setActiveTab('machala')" aria-selected="false">MACHALA</button>
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade" [ngClass]="{'show active': activeTab === 'todas'}" id="v-pills-todas" role="tabpanel" aria-labelledby="v-pills-todas-tab">
+                    
+                    <div class="row row-cols-1 row-cols-md-2">
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-norte.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Norte</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-centro.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Centro</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-sur.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Sur</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-machala.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Machala</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="tab-pane fade" [ngClass]="{'show active': activeTab === 'guayaquil'}" id="v-pills-guayaquil" role="tabpanel" aria-labelledby="v-pills-guayaquil-tab">
+
+                    <div class="row row-cols-1 row-cols-md-2">
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-norte.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Norte</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-centro.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Centro</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-sur.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Sur</h5>
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+
+                  </div>
+                  <div class="tab-pane fade" [ngClass]="{'show active': activeTab === 'machala'}" id="v-pills-machala" role="tabpanel" aria-labelledby="v-pills-machala-tab">
+
+                    <div class="row row-cols-1 row-cols-md-2">
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <img src="../../../assets/img/sede-machala.png" class="card-img-top" alt="...">
+                          <div class="card-body body-sedes">
+                            <h5 class="card-title justify-content-center font-weight-bold">Sede Machala</h5>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="mapa">
+
+      <google-map class="gmap" [center]="center" [zoom]="zoom" [width]="'100%'" [height]="'100%'"
+      [mapId]="''">
+        <map-marker *ngFor="let marker of markers" [position]="marker.position"  (mapClick)="selectMarker(marker)"></map-marker>
+      </google-map>
+
+    </div>
+
+    <div>
+      <app-contactanos-footer></app-contactanos-footer>
+    </div>
+
+
+  </div>
+

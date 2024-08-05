@@ -1,0 +1,118 @@
+  //grid app
+
+.contactanos-footer{
+    .card-group{
+
+        .card{
+            background: black !important;
+
+            .contactanos{
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                flex-wrap: nowrap;
+                align-content: center;
+                padding: 3rem 6rem;
+
+                h1,
+                h5{
+                    color: white;
+                }
+            }
+
+            .li{
+                font-weight: bold;
+                list-style: disc !important;
+        
+            }
+        
+            li::marker{
+                color: #E3DF00;
+            }
+        
+            .list-planes{
+                text-align: start;
+                list-style: disc !important;
+                li{
+                    margin-top: 1rem;
+                }
+                h6{
+                    font-weight: normal;
+                }
+                *.icon {
+                    width: 16px;  /* Ajusta el tamaño del icono */
+                    height: 16px; /* Ajusta el tamaño del icono */
+                    margin-right: 8px; /* Espacio entre el icono y el texto */
+                    margin-left: -1.2rem;
+                    vertical-align: middle; /* Alinea el icono con el texto */
+                  }
+            }
+        }
+
+        .card-form{
+            justify-content: center;
+            padding: 1rem 5rem;
+            align-items: center;
+            align-self: center;
+            .form-contactanos{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                flex-wrap: nowrap;
+                align-content: center;
+                padding: 2rem 2rem;
+
+                .foto{
+                    background: url('../../../assets/icons/foto.png') no-repeat center center !important;
+                background-size: 30px !important;
+                    background-position-x: right !important ;
+                    }
+
+                .form-control{
+                    border-top: 0px;
+                    border-left: 0px;
+                    border-right: 0px;
+                    border-bottom: 3px solid #adacac;
+                }
+
+                input{
+                    margin-top: 0.5rem;
+                }
+
+                input:focus{
+                    border-bottom: 3px solid #E3DF00 !important;
+                }
+
+                input::placeholder{
+                    color: #696969;
+                    font-size: 1rem;
+                }
+
+                textarea::placeholder{
+                    color: #696969;
+                    font-size: 1rem;
+                }
+            }
+
+            h1{
+                font-size: 3rem;
+                font-weight: 600 !important;
+            }
+            
+        }
+
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+ 
