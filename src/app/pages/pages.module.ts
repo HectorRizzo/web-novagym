@@ -25,6 +25,8 @@ import { GoogleMapsModule } from "@angular/google-maps";
 import { MapaComponent } from "../shared/mapa/mapa.component";
 import { HorarioComponent } from "../shared/horario/horario.component";
 import { InfoClasesComponent } from "./clases/info-clases/info-clases.component";
+import { MembresiasComponent } from "./membresias/membresias.component";
+import { NoticiasComponent } from "./noticias/noticias.component";
 
 @NgModule({
   imports: [
@@ -54,6 +56,8 @@ import { InfoClasesComponent } from "./clases/info-clases/info-clases.component"
     ClasesComponent,
     InfoClasesComponent,
     MapaComponent,
+    MembresiasComponent,
+    NoticiasComponent
       ],
   exports: [
     HomeComponent

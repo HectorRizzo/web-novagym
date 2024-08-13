@@ -1,0 +1,287 @@
+.container-noticias{
+    color: white !important;
+    text-align: justify;
+    display: flex;
+    border-bottom: 1px solid #E3DF00;
+
+    .publicado{
+        font-size: 1rem;
+        p{
+            color: #E3DF00 !important;
+            font-weight: 700;
+        }
+    }
+    .container-info-noticias{
+        padding: 2rem;
+
+        .cita{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background: #E3DF00;
+            color: black;
+            margin: 1.5rem;
+
+            .div-img{
+                margin-bottom: auto;
+                img{
+                    width: 200px;
+                    height: 100px;
+                }
+            }
+
+        }
+    }
+
+    .noticia-2{
+        .title{
+            color: #E3DF00;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .autor{
+        width: 80%;
+        margin: 2rem;
+        background: gray;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0.5rem;
+        .img-autor{
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-right: 1rem;
+            }
+        }
+
+        .icons{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+        }
+        
+    }
+
+    .comentarios{
+        h3{
+            color: #E3DF00;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .comentario{
+            display: flex;
+            flex-direction: row;
+
+
+            .img-comentario{
+                margin-right: 2rem;
+                display: flex;
+                flex-direction: column;
+                img{
+                    width: 180px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin-right: 1rem;
+                }
+            }
+
+            .comentario-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                .comentario-text{
+                    background: #E3DF00;
+                    color: black;
+                    padding: 1rem;
+                    border-radius: 5px;
+                    margin-bottom: 1rem;
+                }
+
+                .reply{
+                    a{
+                        color: #E3DF00;
+                        text-decoration: none;
+                    }
+                }
+
+                .replies{
+                    margin-top: 2rem;
+                }
+            }
+
+
+        }
+    }
+
+
+    .sidebar{
+        h3{
+            margin-top: 2rem;
+            color: #E3DF00;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .buscador{
+            background: black;
+            margin-bottom: 3rem;
+            .input-container {
+                position: relative;
+                width: 100%;
+        
+                .icon {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none; // Para que el ícono no interfiera con la entrada de texto
+                    filter: invert(1) brightness(0.5); // Invierte el color del ícono
+                }
+        
+                input {
+                    background: black;
+                    width: 100%;
+                    padding: 0.5rem 0.5rem 0.5rem 2rem; // Ajusta el padding para dejar espacio para el ícono
+                    margin: 1rem 0;
+                    color: white;
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
+                    border-bottom: 1px solid white; // Ajusta el grosor y color del borde inferior
+        
+                    &::placeholder {
+                        color: white; // Cambia 'gray' por el color que desees
+                    }
+                }
+            }
+        }
+
+        .categorias{
+            
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li{
+                    margin: 1rem;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    a{
+                        color: white;
+                        text-decoration: none;
+                        font-size: 1.5rem;
+                    }
+
+                    &:hover{
+                        border-bottom: 1px solid #E3DF00; 
+                    }
+                }
+            }
+        }
+
+        .recent{
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li{
+                    margin: 1rem 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    img{
+                        width: 150px;
+                        height: 100px;
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        .tags{
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+
+                li{
+                    .tag{
+                        background: #E3DF00;
+                        color: black;
+                        padding: 0.5rem 1rem;
+                        margin: 0.5rem;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .siguenos{
+            ul{
+                li{
+                    font-size: 1.2rem;
+                    margin: 1rem;
+                }
+            }
+        }
+
+        .boletin {
+            .input-container {
+                position: relative;
+                width: 100%;
+        
+                .icon {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none; // Para que el ícono no interfiera con la entrada de texto
+                    filter: invert(1); // Invierte el color del ícono
+                }
+        
+                input {
+                    background: black;
+                    width: 100%;
+                    padding: 0.5rem 0.5rem 0.5rem 2rem; // Ajusta el padding para dejar espacio para el ícono
+                    margin: 1rem 0;
+                    color: white;
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
+                    border-bottom: 1px solid white; // Ajusta el grosor y color del borde inferior
+        
+                    &::placeholder {
+                        color: white; // Cambia 'gray' por el color que desees
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.container-redes{
+    justify-content: flex-end;
+    display: flex;
+    margin-right: 5rem;
+    flex: row;
+    padding: 0 1rem;
+
+    img{
+    }
+    .btn-icon{
+        background: white;
+        margin: 0 1rem;
+    }
+}

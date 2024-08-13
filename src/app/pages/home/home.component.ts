@@ -48,16 +48,43 @@ export class HomeComponent implements OnInit, OnDestroy {
           + (index + 1) + '</span>';
         },
       },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
     });
 
-    const swiper = new Swiper(".mySwiper", {
-      slidesPerView: 5,
+    const swiper:Swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
       spaceBetween: 30,
       freeMode: true,
       loop : true,
       autoplay: {
         delay: 1500,
-        disableOnInteraction: false,
+      },
+ 
+    });
+
+    const swiperSedes:Swiper = new Swiper(".mySwiperSedes", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      loop : true,
+      autoplay: {
+        delay: 2000,
+        pauseOnMouseEnter: true,
+      },
+ 
+    });
+
+    const swiperClases:Swiper = new Swiper(".mySwiperClases", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      loop : true,
+      autoplay: {
+        delay: 1500,
+        pauseOnMouseEnter: true,
       },
  
     });

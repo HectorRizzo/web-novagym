@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { MapInfoWindow, MapMarker } from "@angular/google-maps";
 import Swiper from "swiper";
 
 
@@ -29,6 +30,7 @@ let posiciones: any[] = [
   
   
   export class SedesComponent implements OnInit, OnDestroy {
+    @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
     activeTab: string = 'todas';
     position: google.maps.LatLngLiteral = { lat: -2.18, lng: -79.9 };
     selectedMarker?: any;
@@ -38,12 +40,11 @@ let posiciones: any[] = [
       { position: {lat:-2.1404472348899484, lng:-79.89800086216792 }, title: 'NOVA GYM Sede Norte', description: 'Plaza Mayor, Av. Rodolfo Baquerizo Nazur 1, Guayaquil 090501', telefono: '(04)4601585', email:'infonovagym@gmail.com'},
       { position: { lat:-2.2287332455145514, lng:-79.8974067333309 }, title: 'NOVA GYM Sede Sur', description: 'Av. 25 de Julio, Guayaquil 090102', telefono: '(04)4601585', email:'infonovagym@gmail.com'},
       { position: { lat:-3.268450943850025, lng:-79.94717633332256 }, title: 'NOVA GYM Sede Machala', description: 'Primero de Mayo y Los Rios, Machala, Ecuador', telefono: '(04)4601585', email:'infonovagym@gmail.com'},
-  
-      // Agrega más marcadores aquí
-    ];
+      ];
     center: google.maps.LatLngLiteral = { lat: -2.18, lng: -79.9 };
     zoom = 8;
     width = '100%';
+    infoContent: string = '';
     constructor() {
 
     }
@@ -69,6 +70,10 @@ let posiciones: any[] = [
                 },
               },
           });
+
+          this.markers = posiciones.find(posicion => posicion.sede === 'todas').ubicaciones;
+
+
     }
 
 
@@ -81,8 +86,22 @@ let posiciones: any[] = [
         
     }
 
-    selectMarker(marker: any) {
-      console.log('Marker selected', marker);
-      this.selectedMarker = marker;
+    selectMarker(marker: any, mapMarker: MapMarker): void {
+      this.infoContent = `
+        <div>
+          <h3 class="text-black">${marker.title}</h3>
+          <p class="text-black">${marker.description}</p>
+          <p class="text-black">Teléfono: ${marker.telefono}</p>
+          <p class="text-black">Email: ${marker.email}</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=${marker.position.lat},${marker.position.lng}" target="_blank">Ver más en Google Maps</a>
+        </div>
+      `;
+      if (this.infoWindow) {
+        this.infoWindow.open(mapMarker);
+      } else {
+        console.error('infoWindow is not defined');
+      }
     }
+    
+    
 }

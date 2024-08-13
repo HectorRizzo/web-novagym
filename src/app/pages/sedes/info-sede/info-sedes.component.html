@@ -3,7 +3,7 @@
       <div>
         <div>
           <tabset class="nav-tabs-primary w-100">
-            <tab>
+            <tab (selectTab)="onSedeSelected('Sede Centro')">
               <ng-template tabHeading>
                 <div class="d-flex p-2">
                     <h1 class="text-white tab-title d-flex">
@@ -14,29 +14,26 @@
               <div>
                 <div>
                     <h2 class="text-white mb-1">Dirección</h2>
-                    <p class="direccion-text">Primero de Mayo y Los Ríos, Guayaquil, Ecuador</p>
+                    <p class="direccion-text">Los Ríos, Guayaquil 090514</p>
                 </div>
                 <div class="section galeria">
 
                     <div class="swiper-galeria mySwiper">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                          <img src="assets/img/image-galeria.png" />
+                          <img src="assets/img/home-galeria-1.webp" />
                         </div>
                         <div class="swiper-slide">
-                          <img src="assets/img/image-galeria-1.png" />
+                          <img src="assets/img/home-galeria-2.webp" />
                         </div>
                         <div class="swiper-slide">
-                          <img src="assets/img/image-galeria-2.png" />
+                          <img src="assets/img/home-galeria-3.webp" />
                         </div>
                         <div class="swiper-slide">
-                          <img src="assets/img/image-galeria-3.png" />
+                          <img src="assets/img/home-galeria-4.webp" />
                         </div>
                         <div class="swiper-slide">
-                          <img src="assets/img/image-galeria-4.png" />
-                        </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/image-galeria-5.png" />
+                          <img src="assets/img/home-galeria-5.webp" />
                         </div>
 
                     </div>
@@ -83,7 +80,7 @@
             </div>
             </tab>
             
-            <tab>
+            <tab (selectTab)="onSedeSelected('Sede Norte')" >
                 <ng-template tabHeading>
                   <div class="d-flex p-2">
                       <h1 class="text-white tab-title d-flex">
@@ -97,38 +94,35 @@
                       <p class="direccion-text">Plaza Mayor, Av. Rodolfo Baquerizo Nazur, Guayaquil, Ecuador</p>
                   </div>
                   <div class="section galeria">
-  
-                      <div class="swiper-galeria mySwiper">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-1.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-2.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-3.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-4.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-5.png" />
-                          </div>
-  
-                      </div>
-                      <div class="swiper-pagination"></div>
-                      <div class="swiper-button-next">
-                          <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-next" />
-                      </div>
-                        <div class="swiper-button-prev">
-                          <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-prev" />
-  
+
+                    <div class="swiper-galeria mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-1.webp" />
                         </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-2.webp" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-3.webp" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-4.webp" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-5.webp" />
+                        </div>
+
                     </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next">
+                        <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-next" />
+                    </div>
+                      <div class="swiper-button-prev">
+                        <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-prev" />
+
+                      </div>
+                  </div>
                 </div>
 
                 <div class="col-md-12 container-horarios">
@@ -163,7 +157,7 @@
                 </div>
             </tab>
             
-            <tab>
+            <tab (selectTab)="onSedeSelected('Sede Sur')">
                 <ng-template tabHeading>
                   <div class="d-flex p-2">
                       <h1 class="text-white tab-title d-flex">
@@ -177,39 +171,36 @@
                       <p class="direccion-text">Av. 25 de Julio(Frente al Mall del Sur), Guayaquil, Ecuador</p>
                   </div>
                   <div class="section galeria">
-  
-                      <div class="swiper-galeria mySwiper">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-1.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-2.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-3.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-4.png" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="assets/img/image-galeria-5.png" />
-                          </div>
-  
-                      </div>
-                      <div class="swiper-pagination"></div>
-                      <div class="swiper-button-next">
-                          <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-next" />
-                      </div>
-                        <div class="swiper-button-prev">
-                          <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-prev" />
-  
+
+                    <div class="swiper-galeria mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-1.webp" />
                         </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-2.webp" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-3.webp" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-4.webp" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/home-galeria-5.webp" />
+                        </div>
+
                     </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next">
+                        <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-next" />
                     </div>
+                      <div class="swiper-button-prev">
+                        <img src="assets/icons/play2.png" alt="arrow-right" class="btn-arrow-prev" />
+
+                      </div>
+                  </div>
+                </div>
 
                     <div class="col-md-12 container-horarios">
                         <h1 class="text-resaltado title-horario">Horarios</h1>
@@ -254,7 +245,7 @@
   <app-horario></app-horario>
 
   <div>
-    <app-mapa></app-mapa>
+    <app-mapa [selectedUbicacion]="selectedSede"></app-mapa>
   </div>
   <div>
     <app-contactanos-footer></app-contactanos-footer>

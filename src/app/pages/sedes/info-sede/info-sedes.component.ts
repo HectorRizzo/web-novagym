@@ -16,6 +16,7 @@ import Swiper from "swiper";
     map: any;
   gmarkers: any[] = [];
   infowindow: any;
+  selectedSede: string = 'Sede Centro';
 
     constructor() {}
 
@@ -43,6 +44,11 @@ import Swiper from "swiper";
     }
 
     ngOnDestroy(): void {   
+    }
+
+    onSedeSelected(sede: string) {
+        this.selectedSede = sede;
+        console.log('Selected sede info', this.selectedSede);
     }
 
     

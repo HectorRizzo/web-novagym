@@ -2,6 +2,10 @@
     color: #E3DF00;
 
 }
+
+.text-white{
+    color: white !important;
+}
 .section-title-custom{
     max-width:fit-content !important;
 }
@@ -13,7 +17,7 @@
 
 .background-div::before {
     content: "";
-    background-image: url('../../../assets/img/image-title.png');
+    background-image: url('../../../assets/img/background-sedes.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +26,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 600px;
     z-index: 0;
   }
   
@@ -50,6 +54,9 @@
                 visibility: visible;
             }
         }
+    }
+    .card-img-top{
+        height: 400px !important;
     }
     
     .badge-icon{
@@ -102,7 +109,7 @@
     //planes
     .planes::before {
         content: "";
-        background-image: url('../../../assets/img/image-planes.png');
+        background-image: url('../../../assets/img/image-carousel.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -136,10 +143,19 @@
         h3{
             margin-bottom: 0px;
         }
+
+        .td-planes{
+            vertical-align: super !important;
+            color: black !important;
+            background: white !important;
+            border: 1rem solid black !important;
+    
+            h5,h6,li{
+                font-weight: 700 !important;
+            }
+        }
     }
-    td{
-        vertical-align: super !important;
-    }
+
 
     .title-plan{
         font-weight: bold;
@@ -148,6 +164,7 @@
     }
     .subtitle-plan{
         text-align: end;
+        color: #E3DF00;
     }
 
     .li{
@@ -165,6 +182,7 @@
         list-style: disc !important;
         li{
             margin-top: 1rem;
+            color: black;
         }
         h6{
             font-weight: normal;
@@ -178,11 +196,39 @@
           }
     }
 
+.td-planes{
+        position: relative;
+        height: 730px;
+
+        .div-foot-planes{
+            position: absolute;
+            bottom: 0;
+            right: 0; /* Ajusta según necesites para alinear el botón a la derecha */
+            left: 0; /* Ajusta si quieres que el botón se extienda a lo ancho */
+            text-align: center; /* Centra el botón si se extiende a lo ancho */
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+            margin-bottom: 1rem;
+        }
+/* Estilos para el contenedor del botón */
+
+
+    ul{
+        margin-bottom: 9rem !important;
+    }
+}
     //select
 
+    .custom-select{
+        color: black;
+    }
+
     .select-option-custom{
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
     }
 
     //todo lo que necesitas
@@ -222,7 +268,7 @@
     //clases grupales
     .clases::before{
         content: "";
-        background-image: url('../../../assets/img/image-title.png');
+        background-image: url('../../../assets/img/background-clases.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -231,7 +277,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 800px;
         z-index: 0;
     }
     .card-clases{
@@ -369,11 +415,11 @@
     //noticias
     .noticias::before {
         content: "";
-        background-image: url('../../../assets/img/image-fondo-noticias.png');
+        // background-image: url('../../../assets/img/background-noticias.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        opacity: 0.40; /* Ajusta este valor para cambiar la opacidad */
+        opacity: 0.6; /* Ajusta este valor para cambiar la opacidad */
         position: absolute;
         top: 0;
         left: 0;
@@ -407,7 +453,6 @@
 
     //beneficios
     .beneficios{
-        background: white;
         h1{
             font-size: 3rem;
             font-weight: 900 !important;
@@ -415,7 +460,6 @@
         h2{
             font-size: 1rem;
             font-weight: 600 !important;
-            color: #7b7b7b !important;
         
         }
     }
@@ -496,11 +540,11 @@
 
 .swiper::before{
     content: "";
-    background-image: url('../../../assets/img/image-back-slider.png'); //Aqui va la imagen de fondo
+    background-image: url('../../../assets/img/background-comentarios.webp'); //Aqui va la imagen de fondo
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.50; /* Ajusta este valor para cambiar la opacidad */
+    opacity: 0.6; /* Ajusta este valor para cambiar la opacidad */
     position: absolute;
     top: 0;
     left: 0;
@@ -552,6 +596,13 @@
 
   }
 
+  //Encuentra tu sede
+  .swiper-sedes {
+    width: 100%;
+    overflow-x: hidden  !important;
+
+  }
+
   //grid app
 
   .card-img-app{
@@ -590,27 +641,4 @@
   }
 
 
-    .td-planes{
 
-        position: relative;
-        
-/* Estilos para el contenedor del botón */
-.btn-planes {
-    position: absolute;
-    bottom: 0;
-    right: 0; /* Ajusta según necesites para alinear el botón a la derecha */
-    left: 0; /* Ajusta si quieres que el botón se extienda a lo ancho */
-    text-align: center; /* Centra el botón si se extiende a lo ancho */
-    padding: 10px; /* Ajusta el espacio interno del botón */
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    justify-self: center;
-    width: 60%;
-    margin-bottom: 1rem;
-  }
-}
-
-.debito{
-    margin-bottom: 5rem !important;
-}

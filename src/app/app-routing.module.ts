@@ -5,6 +5,8 @@ import { InfoSedesComponent } from './pages/sedes/info-sede/info-sedes.component
 import { ClasesComponent } from './pages/clases/clases.component';
 import { NgModule } from '@angular/core';
 import { InfoClasesComponent } from './pages/clases/info-clases/info-clases.component';
+import { MembresiasComponent } from './pages/membresias/membresias.component';
+import { NoticiasComponent } from './pages/noticias/noticias.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -12,7 +14,9 @@ export const routes: Routes = [
   { path: "sedes", component: SedesComponent},
   {path: "sedes/info-sedes", component: InfoSedesComponent},
   { path: "clases", component: ClasesComponent },
-  {path: "clases/info-clases", component: InfoClasesComponent}
+  {path: "clases/info-clases", component: InfoClasesComponent},
+  {path: "membresias", component: MembresiasComponent},
+  { path: "noticias", component: NoticiasComponent}
 ];
 
 @NgModule({

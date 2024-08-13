@@ -1,33 +1,10 @@
-<div class="wrapper">
   <!--Header Carousel-->
   <div class="header-filter">
     <div class="col-lg-12">
-      <carousel 
-      [showIndicators]="true"
-      [indicatorsByChunk]="true"
-      (activeSlideChange)="onSlideChange($event)"
-      >
-        <slide>
-          <video class="d-block w-100"  #video1 autoplay loop controls>
-            <source src="assets/video/PAG WEB HORIZONTAL 01_1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </slide>
-        <slide>
-          <img
-            alt="Second slide"
-            class="d-block w-100"
-            src="assets/img/image-carousel.jpg"
-          />
-        </slide>
-        <slide>
-          <img
-            alt="Third slide"
-            class="d-block w-100"
-            src="assets/img/image-carousel-1.jpg"
-          />
-        </slide>
-      </carousel>
+      <video preload="auto" class="d-block w-100"  #video1 autoplay loop controls>
+        <source src="assets/video/PAG WEB HORIZONTAL 01_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
   
@@ -35,119 +12,160 @@
   <div class="section background-div">
     <div class="container section-title-custom ">
       <div class="row justify-content-between align-items-center">
-        <div class="col-lg-1 mb-5 mb-lg-0">
-        </div>
-        <div class="col-lg-5 mb-5 mb-lg-0">
-          <h1 class="text-white font-weight-bold title-custom">ENCUENTRA
-            TU SEDE</h1>
-          <h2 class="text-white mt-4 font-weight-bold">
-            Gimnasios que ofrecen una experiencia incomparable para potenciar al máximo tu
-            rendimiento y mantenerte en tu mejor forma.
-          </h2>
-          <a
-            class="btn btn-primary t-4 font-weight-bold"
-            href="/sedes/info-sedes"
-            >
-          <span class="btn-inner-sedes">
-          <img src="assets/icons/ubicacion2.png" class="icon-btn-sedes" alt="Icono de ubicación">
-            Encuentra una Sede
-          </span>
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <div class="card-deck">
-            <div class="card card-sedes">
-              <img src="assets/img/image-sedes.png" class="card-img-top" alt="...">
-              <div class="card-img-overlay d-flex flex-column">
-                <h5 class="card-title text-end">
-                  <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
-                </h5>
-              
-                <div class="card-body">
+          <div class="col-lg-1 mb-5 mb-lg-0">
+          </div>
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h1 class="text-white font-weight-bold title-custom">ENCUENTRA
+              TU SEDE</h1>
+            <h2 class="text-white mt-4 font-weight-bold">
+              Gimnasios que ofrecen una experiencia incomparable para potenciar al máximo tu
+              rendimiento y mantenerte en tu mejor forma.
+            </h2>
+            <a
+              class="btn btn-primary t-4 font-weight-bold"
+              href="/sedes/info-sedes"
+              >
+            <span class="btn-inner-sedes">
+            <img src="assets/icons/ubicacion2.png" class="icon-btn-sedes" alt="Icono de ubicación">
+              Encuentra una Sede
+            </span>
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <div class="swiper-sedes mySwiperSedes">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card card-sedes">
+                    <img src="assets/img/home-sedes-centro.webp" class="card-img-top" alt="...">
+                    <div class="card-img-overlay d-flex flex-column">
+                      <h5 class="card-title text-end">
+                        <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
+                      </h5>
+                    
+                      <div class="card-body">
+                      </div>
+                      <h5 class="card-body text-end card-body-overlay">
+                        <a
+                        class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
+                        href="/sedes/info-sedes"
+                      >
+                      <span class="font-weight-bold">
+                        VER MÁS
+                      </span>
+                      </a>
+                      </h5>
+                      <div class="card-body">
+                      </div>
+      
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title justify-content-center">Sede Centro</h4>
+                      <h5 class="card-text">
+                        <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
+                        Primero de Mayo y los Rios.</h5>
+                    </div>
+                  </div>
                 </div>
-                <h5 class="card-body text-end card-body-overlay">
-                  <a
-                  class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                  href="/sedes/info-sedes"
-                >
-                <span class="font-weight-bold">
-                  VER MÁS
-                </span>
-                </a>
-                </h5>
-                <div class="card-body">
+                <div class="swiper-slide">
+                  <div class="card card-sedes">
+                    <img src="assets/img/home-sedes-norte.webp" class="card-img-top" alt="...">
+                    <div class="card-img-overlay d-flex flex-column">
+                      <h5 class="card-title text-end">
+                        <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
+                      </h5>
+                    
+                      <div class="card-body">
+                      </div>
+                      <h5 class="card-body text-end card-body-overlay">
+                        <a
+                        class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
+                        href="/sedes/info-sedes"
+                      >
+                      <span class="font-weight-bold">
+                        VER MÁS
+                      </span>
+                      </a>
+                      </h5>
+                      <div class="card-body">
+                      </div>
+                      
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title justify-content-center">Sede Norte</h4>
+                      <h5 class="card-text">
+                        <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
+                        Plaza Mayor, Av. Rodolfo
+                        Baquerizo Nazur.</h5>
+                    </div>
+                  </div>
                 </div>
-
-              </div>
-              <div class="card-body">
-                <h4 class="card-title justify-content-center">Sede Centro</h4>
-                <h5 class="card-text">
-                  <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                  Primero de Mayo y los Rios.</h5>
-              </div>
-            </div>
-            <div class="card card-sedes">
-              <img src="assets/img/image-sedes.png" class="card-img-top" alt="...">
-              <div class="card-img-overlay d-flex flex-column">
-                <h5 class="card-title text-end">
-                  <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
-                </h5>
-              
-                <div class="card-body">
+                <div class="swiper-slide">
+                  <div class="card card-sedes">
+                    <img src="assets/img/home-sedes-sur.webp" class="card-img-top">
+                    <div class="card-img-overlay d-flex flex-column">
+                      <h5 class="card-title text-end">
+                        <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
+                      </h5>
+                    
+                      <div class="card-body">
+                      </div>
+                      <h5 class="card-body text-end card-body-overlay">
+                        <a
+                        class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
+                        href="/sedes/info-sedes"
+                      >
+                      <span class="font-weight-bold">
+                        VER MÁS
+                      </span>
+                      </a>
+                      </h5>
+                      <div class="card-body">
+                      </div>
+                      
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title justify-content-center">Sede Sur</h4>
+                      <h5 class="card-text">
+                        <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
+                        Av. 25 de Julio(Frente
+                        al Mall del Sur).</h5>
+                    </div>
+                  </div>
                 </div>
-                <h5 class="card-body text-end card-body-overlay">
-                  <a
-                  class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                  href="/sedes/info-sedes"
-                >
-                <span class="font-weight-bold">
-                  VER MÁS
-                </span>
-                </a>
-                </h5>
-                <div class="card-body">
+                <div class="swiper-slide">
+                  <div class="card card-sedes">
+                    <img src="assets/img/home-sedes-machala.webp" class="card-img-top" alt="...">
+                    <div class="card-img-overlay d-flex flex-column">
+                      <h5 class="card-title text-end">
+                        <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
+                      </h5>
+                    
+                      <div class="card-body">
+                      </div>
+                      <h5 class="card-body text-end card-body-overlay">
+                        <a
+                        class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
+                        href="/sedes/info-sedes"
+                      >
+                      <span class="font-weight-bold">
+                        VER MÁS
+                      </span>
+                      </a>
+                      </h5>
+                      <div class="card-body">
+                      </div>
+                      
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title justify-content-center">Sede Machala</h4>
+                      <h5 class="card-text">
+                        <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
+                        Primero de Mayo y Los Rios, Machala, Ecuador
+                      </h5>
+                    </div>
+                  </div>
                 </div>
-                
-              </div>
-              <div class="card-body">
-                <h4 class="card-title justify-content-center">Sede Norte</h4>
-                <h5 class="card-text">
-                  <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                  Plaza Mayor, Av. Rodolfo
-                  Baquerizo Nazur.</h5>
-              </div>
-            </div>
-            <div class="card card-sedes">
-              <img src="assets/img/image-sedes.png" class="card-img-top" alt="...">
-              <div class="card-img-overlay d-flex flex-column">
-                <h5 class="card-title text-end">
-                  <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
-                </h5>
-              
-                <div class="card-body">
-                </div>
-                <h5 class="card-body text-end card-body-overlay">
-                  <a
-                  class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                  href="/sedes/info-sedes"
-                >
-                <span class="font-weight-bold">
-                  VER MÁS
-                </span>
-                </a>
-                </h5>
-                <div class="card-body">
-                </div>
-                
-              </div>
-              <div class="card-body">
-                <h4 class="card-title justify-content-center">Sede Sur</h4>
-                <h5 class="card-text">
-                  <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                  Av. 25 de Julio(Frente
-                  al Mall del Sur).</h5>
-                  <!--Agregar un icono-->
-              </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -161,7 +179,7 @@
       <div class="row justify-content-between align-items-center">
         <div class="col-lg-12 mb-5 mb-lg-0">
           <h1 class="text-white font-weight-light text-center font-weight-bold">
-            ELIGE TU PLAN IDEAL
+            ELIGE TU <span class="text-resaltado">PLAN</span> IDEAL
           </h1>
           <h2 class="text-white mt-4 text-center font-weight-bold">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
@@ -175,6 +193,41 @@
           </thead>
           <tbody>
               <tr>
+                <td class="text-center td-planes">
+                  <span class="title-plan">
+                    PLAN BLACK
+                  </span>
+                  <h5 class="subtitle-plan"> Débito Recurrente  </h5>
+                      <ul class="list-planes">
+                        <li>Acceso a TODOS los
+                          Nova del país</li>
+                        <li>Gratis Shaker</li>
+                        <li>Invita 4 amigos al mes
+                          (1 cada fds)</li>
+                        <li>Acceso a sillo den masajes</li>
+                        <li>Nutricionista Gratis</li>
+                        <li>Acceso a piscina CLUB
+                          NOVA</li>
+                        <li>Acceso a Sauna</li>
+                        <li>Incluye entrenadores, wifi,
+                          duchas y casilleros</li>
+                        <li>Incluye clases de Gimnasio
+                          y Crossfitness</li>
+
+                        <h6 class="mt-3">
+                          <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
+                        Horario libre de ingreso
+                        </h6>
+                  </ul>
+                  <div class="div-foot-planes">
+                  <span class="title-plan">
+                    $30,00
+                  </span>
+                  <h5 class="debito"> Débito
+                    Automático mensual  </h5>
+                  <button class="btn btn-primary font-weight-bold btn-planes">INSCRÍBETE</button>
+                  </div>
+                </td>
                   <td class="text-center td-planes">
                     <div>
                       <div>
@@ -198,53 +251,21 @@
     
                               </h6>
                         </ul>
-                        <span class="title-plan">
-                          $25,00
-                        </span>
-                        <h5 class="debito"> Débito
-                          Automático mensual  </h5>
+                       
                         </div>
-                        <div>
+                        <div class="div-foot-planes">
+                          <span class="title-plan">
+                            $25,00
+                          </span>
+                          <h5 class="debito"> Débito
+                            Automático mensual  </h5>
                           <button class="btn btn-primary font-weight-bold btn-planes">INSCRÍBETE</button>
                         </div>
                     </div>
                    
 
                   </td>
-                  <td class="text-center td-planes">
-                    <span class="title-plan">
-                      PLAN BLACK
-                    </span>
-                    <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                        <ul class="list-planes">
-                          <li>Acceso a TODOS los
-                            Nova del país</li>
-                          <li>Gratis Shaker</li>
-                          <li>Invita 4 amigos al mes
-                            (1 cada fds)</li>
-                          <li>Acceso a sillo den masajes</li>
-                          <li>Nutricionista Gratis</li>
-                          <li>Acceso a piscina CLUB
-                            NOVA</li>
-                          <li>Acceso a Sauna</li>
-                          <li>Incluye entrenadores, wifi,
-                            duchas y casilleros</li>
-                          <li>Incluye clases de Gimnasio
-                            y Crossfitness</li>
 
-                          <h6 class="mt-3">
-                            <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                          Horario libre de ingreso
-                          </h6>
-                    </ul>
-                    <span class="title-plan">
-                      $30,00
-                    </span>
-                    <h5 class="debito"> Débito
-                      Automático mensual  </h5>
-                    <button class="btn btn-primary font-weight-bold btn-planes">INSCRÍBETE</button>
-
-                  </td>
                   <td class="text-center td-planes">
                     <span class="title-plan">
                       Plan LIMITADO
@@ -266,22 +287,28 @@
                             <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
                           Fin de semana ingreso en horario libre
                           </h6>
+                          <div>
+                            <h3>
+                              <span class="font-weight-bold text-resaltado">
+                                !Escoge tu horario!
+                              </span>
+                            </h3>
+                            <select class="custom-select custom-select-lg mb-3">
+                              <option class="select-option-custom" value="1">Matutino: 5 am - 9 am</option>
+                              <option class="select-option-custom" value="2">Medio día: 9 am - 1 pm</option>
+                              <option class="select-option-custom" value="3">Vespertino: 1 pm - 5 pm</option>
+                            </select>
+                          </div>
                     </ul>
-                    <h3>
-                      !Escoge tu horario!
-                    </h3>
-                    <select class="custom-select custom-select-lg mb-3">
-                      <option class="select-option-custom" value="1">Matutino: 5 am - 9 am</option>
-                      <option class="select-option-custom" value="2">Medio día: 9 am - 1 pm</option>
-                      <option class="select-option-custom" value="3">Vespertino: 1 pm - 5 pm</option>
-                    </select>
-                    <span class="title-plan">
-                      $17,00
-                    </span>
-                    <h5 class="debito"> Débito
-                      Automático mensual  </h5>
-                    <button class="btn btn-primary font-weight-bold  btn-planes">INSCRÍBETE</button>
-
+                   
+                    <div class="div-foot-planes">
+                      <span class="title-plan">
+                        $17,00
+                      </span>
+                      <h5 class="debito"> Débito
+                        Automático mensual  </h5>
+                      <button class="btn btn-primary font-weight-bold  btn-planes">INSCRÍBETE</button>
+                    </div>
                   </td>
                   <td class="text-center td-planes">
                     <span class="title-plan">
@@ -304,13 +331,14 @@
                          
                           </h6>
                     </ul>
-                    <span class="title-plan">
-                      $17,00
-                    </span>
-                    <h5 class="debito"> Débito
-                      Automático mensual  </h5>
-                    <button class="btn btn-primary font-weight-bold btn-planes  btn-planes">INSCRÍBETE</button>
-
+                    <div class="div-foot-planes">
+                      <span class="title-plan">
+                        $17,00
+                      </span>
+                      <h5 class="debito"> Débito
+                        Automático mensual  </h5>
+                      <button class="btn btn-primary font-weight-bold btn-planes  btn-planes">INSCRÍBETE</button>
+                    </div>
                   </td>
               </tr>
           </tbody>
@@ -340,19 +368,19 @@
         <div class="col-lg-12 mt-3">
           <div class="card-deck">
             <div class="card card-nec">
-              <img src="assets/img/image-nec.png" class="card-img-top" alt="...">
+              <img src="assets/img/home-equipamiento.webp" class="card-img-top" alt="...">
               <div class="card-body body-nec">
                 <h5 class="card-title justify-content-center font-weight-bold">EQUIPAMIENTO DE PRIMER NIVEL</h5>
               </div>
             </div>
             <div class="card card-nec">
-              <img src="assets/img/image-nec-1.png" class="card-img-top" alt="...">
+              <img src="assets/img/home-clases-grupales.webp" class="card-img-top" alt="...">
               <div class="card-body body-nec">
                 <h5 class="card-title justify-content-center font-weight-bold">CLASES GRUPALES</h5>
               </div>
             </div>
             <div class="card card-nec">
-              <img src="assets/img/image-nec-2.png" class="card-img-top" alt="...">
+              <img src="assets/img/home-peso-integrado.webp" class="card-img-top" alt="...">
               <div class="card-body body-nec">
                 <h5 class="card-title justify-content-center font-weight-bold">PESO INTEGRADO</h5>
               </div>
@@ -363,64 +391,21 @@
     </div>
   </div>
 
-    <!--Clases grupales-->
-    <div class="section clases">
-      <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-lg-12 mb-5 mb-lg-0">
-            <h1 class="text-white
-            font-weight-light text-center font-weight-bold">
-            CLASES NOVA GRUPALES
-            </h1>
-          </div>
-          <div class="col-lg-12 mt-3">
-            <div class="card-deck">
+  <!--Clases grupales-->
+  <div class="section clases">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-12 mb-5 mb-lg-0">
+          <h1 class="text-white
+          font-weight-light text-center font-weight-bold">
+          CLASES <span class="text-resaltado">NOVA</span> GRUPALES
+          </h1>
+        </div>
+        <div class="swiper-sedes mySwiperClases">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
               <div class="card card-clases">
-                <img src="assets/img/image-clases.png" class="card-img-top" alt="...">
-                <div class="card-img-overlay  d-flex flex-column">
-                  <div>
-                    <h2 class="card-title text-center body-card-clases">
-                      FUNCIONAL
-                    </h2>
-                  </div>
-                
-                  <div class="body-card-clases align-items-start row">
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/reloj.png" class="badge-icon mr-3" alt="Icono de ubicación">
-                      <h5>60 min</h5>
-                    </div>
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/bateria.png" class="badge-icon" alt="Icono de ubicación">
-                      <h5 class="">Intensidad Alta</h5>
-                    </div>
-                  </div>
-                  <div class="card-body body-card-clases">
-                    <hr>
-                    <h5>
-                      Lorem ipsum dolor sit amet, consectetuer
-                      adipiscing elit, sed diam nonummy
-                      nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat. Ut
-                      wisi enim ad minim veniam, quis nostrud
-                      exerci tation ullamcorper suscipit
-                      lobortis nisl ut aliquip ex ea commodo
-                    </h5>
-                  </div>
-                  <div>
-
-                  </div>
-                  
-  
-                </div>
-                <div class="card-body">
-
-                </div>
-                <div class="card-footer">
-                </div>
-              </div>
-              
-              <div class="card card-clases">
-                <img src="assets/img/image-clases-1.png" class="card-img-top" alt="...">
+                <img src="assets/img/clases-2.webp" class="card-img-top" alt="...">
                 <div class="card-img-overlay  d-flex flex-column">
                   <div>
                     <h2 class="card-title text-center body-card-clases">
@@ -461,12 +446,15 @@
                 </div>
                 
               </div>
+            </div>
+
+            <div class="swiper-slide">
               <div class="card card-clases">
-                <img src="assets/img/image-clases-2.png" class="card-img-top" alt="...">
+                <img src="assets/img/clases-3.webp" class="card-img-top" alt="...">
                 <div class="card-img-overlay  d-flex flex-column">
                   <div>
                     <h2 class="card-title text-center body-card-clases">
-                      FUNCIONAL
+                      CARDIO
                     </h2>
                   </div>
                 
@@ -506,10 +494,107 @@
                 
               </div>
             </div>
-          </div>
+
+            <div class="swiper-slide">
+              <div class="card card-clases">
+                <img src="assets/img/clases-4.webp" class="card-img-top" alt="...">
+                <div class="card-img-overlay  d-flex flex-column">
+                  <div>
+                    <h2 class="card-title text-center body-card-clases">
+                      CROSSTRAINING
+                    </h2>
+                  </div>
+                
+                  <div class="body-card-clases align-items-start row">
+                    <div class="col-6 d-flex flex-column align-items-center">
+                      <img src="assets/icons/reloj.png" class="badge-icon mr-3" alt="Icono de ubicación">
+                      <h5>60 min</h5>
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center">
+                      <img src="assets/icons/bateria.png" class="badge-icon" alt="Icono de ubicación">
+                      <h5 class="">Intensidad Alta</h5>
+                    </div>
+                  </div>
+                  <div class="card-body body-card-clases">
+                    <hr>
+                    <h5>
+                      Lorem ipsum dolor sit amet, consectetuer
+                      adipiscing elit, sed diam nonummy
+                      nibh euismod tincidunt ut laoreet
+                      dolore magna aliquam erat volutpat. Ut
+                      wisi enim ad minim veniam, quis nostrud
+                      exerci tation ullamcorper suscipit
+                      lobortis nisl ut aliquip ex ea commodo
+                    </h5>
+                  </div>
+                  <div>
+
+                  </div>
+                  
+  
+                </div>
+                <div class="card-body">
+
+                </div>
+                <div class="card-footer">
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card card-clases">
+                <img src="assets/img/clases-5.webp" class="card-img-top" alt="...">
+                <div class="card-img-overlay  d-flex flex-column">
+                  <div>
+                    <h2 class="card-title text-center body-card-clases">
+                      MUSCULACIÓN Y PESO
+                    </h2>
+                  </div>
+                
+                  <div class="body-card-clases align-items-start row">
+                    <div class="col-6 d-flex flex-column align-items-center">
+                      <img src="assets/icons/reloj.png" class="badge-icon mr-3" alt="Icono de ubicación">
+                      <h5>60 min</h5>
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center">
+                      <img src="assets/icons/bateria.png" class="badge-icon" alt="Icono de ubicación">
+                      <h5 class="">Intensidad Alta</h5>
+                    </div>
+                  </div>
+                  <div class="card-body body-card-clases">
+                    <hr>
+                    <h5>
+                      Lorem ipsum dolor sit amet, consectetuer
+                      adipiscing elit, sed diam nonummy
+                      nibh euismod tincidunt ut laoreet
+                      dolore magna aliquam erat volutpat. Ut
+                      wisi enim ad minim veniam, quis nostrud
+                      exerci tation ullamcorper suscipit
+                      lobortis nisl ut aliquip ex ea commodo
+                    </h5>
+                  </div>
+                  <div>
+
+                  </div>
+                  
+  
+                </div>
+                <div class="card-body">
+
+                </div>
+                <div class="card-footer">
+                </div>
+                
+              </div>
+            </div>
+          <div class="swiper-pagination"></div>
         </div>
+
       </div>
     </div>
+  </div>
+  </div>
 
   <!--Horarios-->
   <div class="section horarios">
@@ -1084,202 +1169,197 @@
   </div>
 
       <!--Noticias-->
-      <div class="section noticias">
-        <div class="container">
-          <div class="row justify-content-between align-items-center">
-            <div class="col-lg-12 mb-5 mb-lg-0">
-              <h1 class="text-white
-              font-weight-light text-center font-weight-bold">
-              NOTICIAS <span class="text-resaltado" >NOVA</span>
-              </h1>
+  <div class="section noticias">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-12 mb-5 mb-lg-0">
+          <h1 class="text-white
+          font-weight-light text-center font-weight-bold">
+          NOTICIAS <span class="text-resaltado" >NOVA</span>
+          </h1>
+        </div>
+        <div class="col-lg-12 mt-3 col-12 container-noticia">
+          <div class="row">
+            <div class="col-lg-4 col-12">
+              <img src="assets/img/home-noticias-1.webp" class="card-img-top" alt="...">
             </div>
-            <div class="col-lg-12 mt-3 col-12 container-noticia">
-              <div class="row">
-                <div class="col-lg-4 col-12">
-                  <img src="assets/img/image-noticias.png" class="card-img-top" alt="...">
+            <div class="col-lg-6 col-10">
+              <div class="card card-noticias">
+                <div class="card-body body-card-noticias">
+                  <h5 class="card-title justify-content-center font-weight-bold">
+                    PUBLICADO <span class="text-resaltado" >11/7/2024</span>
+                  </h5>
+                  <h5>ENTRENAMIENTO CON PESO:</h5>
+                  <br>
+                  <h5>
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy
+                    nibh euismod tincidunt ut laoreet
+                    dolore magna aliquam erat volutpat. Ut
+                    wisi enim ad minim veniam, quis nostrud
+                    exerci tation ullamcorper suscipit
+                    lobortis nisl ut aliquip ex ea commodo
+                  </h5>
                 </div>
-                <div class="col-lg-6 col-10">
-                  <div class="card card-noticias">
-                    <div class="card-body body-card-noticias">
-                      <h5 class="card-title justify-content-center font-weight-bold">
-                        PUBLICADO <span class="text-resaltado" >11/7/2024</span>
-                      </h5>
-                      <h5>ENTRENAMIENTO CON PESO:</h5>
-                      <br>
-                      <h5>
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit, sed diam nonummy
-                        nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut
-                        wisi enim ad minim veniam, quis nostrud
-                        exerci tation ullamcorper suscipit
-                        lobortis nisl ut aliquip ex ea commodo
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-2 align-content-center">
-                  <img src="assets/icons/siguiente2.png" class="" alt="...">
-                </div>
+              </div>
             </div>
-            </div>
-            <div class="col-lg-12 mt-3 col-12">
-              <div class="row">
-                <div class="col-lg-4 col-12">
-                  <img src="assets/img/image-noticias-1.png" class="card-img-top" alt="...">
-                </div>
-                <div class="col-lg-6 col-10">
-                  <div class="card card-noticias"  style="background: transparent;">
-                    <div class="card-body body-card-noticias">
-                      <h5 class="card-title justify-content-center font-weight-bold">
-                        PUBLICADO <span class="text-resaltado" >11/7/2024</span>
-                      </h5>
-                      <h5>ENTRENAMIENTO CON PESO:</h5>
-                      <br>
-                      <h5>
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit, sed diam nonummy
-                        nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut
-                        wisi enim ad minim veniam, quis nostrud
-                        exerci tation ullamcorper suscipit
-                        lobortis nisl ut aliquip ex ea commodo
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-2 align-content-center">
-                  <img src="assets/icons/siguiente2.png" class="" alt="...">
-                </div>
-            </div>
-            </div>
-            <div class="col-lg-12 mt-3 col-12 container-noticia">
-              <div class="row">
-                <div class="col-lg-4 col-12">
-                  <img src="assets/img/image-noticias-2.png" class="card-img-top" alt="...">
-                </div>
-                <div class="col-lg-6 col-10">
-                  <div class="card card-noticias">
-                    <div class="card-body body-card-noticias">
-                      <h5 class="card-title justify-content-center font-weight-bold">
-                        PUBLICADO <span class="text-resaltado" >11/7/2024</span>
-                      </h5>
-                      <h5>ENTRENAMIENTO CON PESO:</h5>
-                      <br>
-                      <h5>
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit, sed diam nonummy
-                        nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut
-                        wisi enim ad minim veniam, quis nostrud
-                        exerci tation ullamcorper suscipit
-                        lobortis nisl ut aliquip ex ea commodo
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-2 align-content-center">
-                  <img src="assets/icons/siguiente2.png" class="" alt="...">
-                </div>
-            </div>
+            <div class="col-lg-2 col-2 align-content-center">
+              <img src="assets/icons/siguiente2.png" class="" alt="...">
             </div>
         </div>
-      </div>
-      </div>
-
-          <!-- Comentarios -->
-<div class="swiper-container-parent">
-  <div class="swiper-container swiper">
-    <!-- Wrapper for slides -->
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="d-flex justify-content-center flex-column align-items-center div-comment">
-            <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-            <h1 class="align-self-start ml-4 mt-3">Este gimnasio ha cambiado mi vida. <br> Los resultados son increíbles y la comunidad <br> es muy motivadora</h1>
-            <h4 class="align-self-start mt-8">
-              <span class="text-resaltado">Karla Vera</span>
-            </h4>
-          </div>
         </div>
-        <div class="swiper-slide">
-          <div class="d-flex justify-content-center flex-column align-items-center div-comment">
-            <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-            <h1 class="align-self-start ml-4 mt-3">
-              Los entrenadores son muy profesionales y siempre <br> están dispuestos a ayudarte a alcanzar tus metas.
-            </h1>
-            <h4 class="align-self-start mt-8">
-              <span class="text-resaltado">Héctor Rizzo</span>
-            </h4>
-          </div>
+        <div class="col-lg-12 mt-3 col-12">
+          <div class="row">
+            <div class="col-lg-4 col-12">
+              <img src="assets/img/home-noticias-2.webp" class="card-img-top" alt="...">
+            </div>
+            <div class="col-lg-6 col-10">
+              <div class="card card-noticias"  style="background: transparent;">
+                <div class="card-body body-card-noticias">
+                  <h5 class="card-title justify-content-center font-weight-bold">
+                    PUBLICADO <span class="text-resaltado" >11/7/2024</span>
+                  </h5>
+                  <h5>ENTRENAMIENTO CON PESO:</h5>
+                  <br>
+                  <h5>
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy
+                    nibh euismod tincidunt ut laoreet
+                    dolore magna aliquam erat volutpat. Ut
+                    wisi enim ad minim veniam, quis nostrud
+                    exerci tation ullamcorper suscipit
+                    lobortis nisl ut aliquip ex ea commodo
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-2 align-content-center">
+              <img src="assets/icons/siguiente2.png" class="" alt="...">
+            </div>
         </div>
-        <div class="swiper-slide">
-          <div class="d-flex justify-content-center flex-column align-items-center div-comment">
-            <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-            <h1 class="align-self-start ml-4 mt-3">
-              Las instalaciones son increíbles y siempre están <br> muy limpias. Me encanta venir a entrenar aquí.
-            </h1>
-            <h4 class="align-self-start mt-8">
-              <span class="text-resaltado">Juan Ruiz</span>
-            </h4>
-          </div>  
         </div>
-        
-        <div class="swiper-slide">
-          <div class="d-flex justify-content-center flex-column align-items-center div-comment">
-            <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-            <h1 class="align-self-start ml-4 mt-3">
-              El mejor gimnasio de la ciudad. Las clases son <br> increíbles y las instalaciones son de primera.
-            </h1>
-            <h4 class="align-self-start mt-8">
-              <span class="text-resaltado">Juan Ruiz</span>
-            </h4>
-          </div>  
+        <div class="col-lg-12 mt-3 col-12 container-noticia">
+          <div class="row">
+            <div class="col-lg-4 col-12">
+              <img src="assets/img/home-noticias-3.webp" class="card-img-top" alt="...">
+            </div>
+            <div class="col-lg-6 col-10">
+              <div class="card card-noticias">
+                <div class="card-body body-card-noticias">
+                  <h5 class="card-title justify-content-center font-weight-bold">
+                    PUBLICADO <span class="text-resaltado" >11/7/2024</span>
+                  </h5>
+                  <h5>ENTRENAMIENTO CON PESO:</h5>
+                  <br>
+                  <h5>
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy
+                    nibh euismod tincidunt ut laoreet
+                    dolore magna aliquam erat volutpat. Ut
+                    wisi enim ad minim veniam, quis nostrud
+                    exerci tation ullamcorper suscipit
+                    lobortis nisl ut aliquip ex ea commodo
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-2 align-content-center">
+              <img src="assets/icons/siguiente2.png" class="" alt="...">
+            </div>
+        </div>
         </div>
     </div>
-    <!-- Paginación -->
-    <div class="swiper-pagination"></div>
   </div>
-</div>
-
-<!-- Galeria de imagenes -->
-<div class="section galeria">
-
-  <div class="swiper-galeria mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="assets/img/image-galeria.png" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/image-galeria-1.png" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/image-galeria-2.png" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/image-galeria-3.png" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/image-galeria-4.png" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/image-galeria-5.png" />
-      </div>
-    <div class="swiper-pagination"></div>
   </div>
 
-</div>
-</div>
+            <!-- Comentarios -->
+  <div class="swiper-container-parent">
+    <div class="swiper-container swiper">
+      <!-- Wrapper for slides -->
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="d-flex justify-content-center flex-column align-items-center div-comment">
+              <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
+              <h1 class="align-self-start ml-4 mt-3">Este gimnasio ha cambiado mi vida. <br> Los resultados son increíbles y la comunidad <br> es muy motivadora</h1>
+              <h4 class="align-self-start mt-8">
+                <span class="text-resaltado">Karla Vera</span>
+              </h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="d-flex justify-content-center flex-column align-items-center div-comment">
+              <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
+              <h1 class="align-self-start ml-4 mt-3">
+                Los entrenadores son muy profesionales y siempre <br> están dispuestos a ayudarte a alcanzar tus metas.
+              </h1>
+              <h4 class="align-self-start mt-8">
+                <span class="text-resaltado">Héctor Rizzo</span>
+              </h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="d-flex justify-content-center flex-column align-items-center div-comment">
+              <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
+              <h1 class="align-self-start ml-4 mt-3">
+                Las instalaciones son increíbles y siempre están <br> muy limpias. Me encanta venir a entrenar aquí.
+              </h1>
+              <h4 class="align-self-start mt-8">
+                <span class="text-resaltado">Juan Ruiz</span>
+              </h4>
+            </div>  
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="d-flex justify-content-center flex-column align-items-center div-comment">
+              <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
+              <h1 class="align-self-start ml-4 mt-3">
+                El mejor gimnasio de la ciudad. Las clases son <br> increíbles y las instalaciones son de primera.
+              </h1>
+              <h4 class="align-self-start mt-8">
+                <span class="text-resaltado">Juan Ruiz</span>
+              </h4>
+            </div>  
+          </div>
+      </div>
+      <!-- Paginación -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <!-- Galeria de imagenes -->
+    <div class="section galeria">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+      <div class="swiper-galeria mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assets/img/home-galeria-1.webp" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/home-galeria-2.webp" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/home-galeria-3.webp" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/home-galeria-4.webp" alt="" />
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
 
         <!--Beneficios-->
   <div class="section beneficios">
     <div class="container">
       <div class="row justify-content-between align-items-center">
         <div class="col-lg-12 mb-5 mb-lg-0">
-          <h1 class="text-black
-          font-weight-light text-center font-weight-bold">
+          <h1 class="font-weight-light text-center text-resaltado font-weight-bold">
           NUESTROS BENEFICIOS
           </h1>
-          <h2 class="text-black mt-4 text-center font-weight-bold">
+          <h2 class="text-white mt-4 text-center font-weight-bold">
             Con NOVA puedes Obtener descuentos <br>
             en Grandes Empresas
           </h2>
@@ -1332,78 +1412,34 @@
   </div>
 
 
-  <!-- enable navigation, pagination, scrollbar 
-<div class="swiper-container-parent">
-  <swiper-container class="swiper">
-  <swiper-slide>
-    <div class="d-flex justify-content-center flex-column align-items-center div-comment">
-      <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-      <h1 class="align-self-start ml-4 mt-3">Este gimnasio ha cambiado mi vida. <br> Los resultados son increíbles y la comunidad <br> es muy motivadora</h1>
-      <h4 class="align-self-start mt-8">
-        <span class="text-resaltado">Karla Vera</span>
-      </h4>
+  <div class="card-group">
+    <div class="card card-img-app">
+      <img src="assets/img/nuestro-team-0.webp" class="card-img-top" alt="...">
     </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="d-flex justify-content-center flex-column align-items-center div-comment">
-      <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-      <h1 class="align-self-start ml-4 mt-3">
-        Los entrenadores son muy profesionales y siempre <br> están dispuestos a ayudarte a alcanzar tus metas.
-      </h1>
-      <h4 class="align-self-start mt-8">
-        <span class="text-resaltado">Héctor Rizzo</span>
-      </h4>
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div class="d-flex justify-content-center flex-column align-items-center div-comment">
-      <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-      <h1 class="align-self-start ml-4 mt-3">
-        Las instalaciones son increíbles y siempre están <br> muy limpias. Me encanta venir a entrenar aquí.
-      </h1>
-      <h4 class="align-self-start mt-8">
-        <span class="text-resaltado">Juan Ruiz</span>
-      </h4>
-    </div>
-  </swiper-slide>
-  <div class="swiper-pagination mr-4"></div>
-</swiper-container>
-</div>
--->
+    <div class="card card-img-app">
+      <img src="assets/img/image-app.png" class="card-img-top" alt="...">
 
-<!--Grid Descarga-->
-
-
-<div class="card-group">
-  <div class="card card-img-app">
-    <img src="assets/img/image-grid.png" class="card-img-top" alt="...">
-  </div>
-  <div class="card card-img-app">
-    <img src="assets/img/image-app.png" class="card-img-top" alt="...">
-
-  </div>
-</div>
-<div class="card-group">
-  <div class="card card-unete">
-    <div class="card-body body-unete">
-      <h5 class="card-title">SE PARTE DE <br>
-        NUESTRO <span class="text-resaltado">TEAM</span></h5>
-        <hr>
-        <a
-        class="btn btn-primary t-4 font-weight-bold btn-registro"
-        href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/alerts"
-      >
-      <span>
-        REGISTRATE
-      </span>
-      </a>
     </div>
   </div>
-  <div class="card card-img-app">
-    <img src="assets/img/image-grid-1.png" class="card-img-top" alt="...">
+  <div class="card-group">
+    <div class="card card-unete">
+      <div class="card-body body-unete">
+        <h5 class="card-title">SE PARTE DE <br>
+          NUESTRO <span class="text-resaltado">TEAM</span></h5>
+          <hr>
+          <a
+          class="btn btn-primary t-4 font-weight-bold btn-registro"
+          href=""
+        >
+        <span>
+          REGISTRATE
+        </span>
+        </a>
+      </div>
+    </div>
+    <div class="card card-img-app">
+      <img src="assets/img/nuestro-team.webp" class="card-img-top" alt="...">
+    </div>
   </div>
-</div>
-
-</div>
 
 
