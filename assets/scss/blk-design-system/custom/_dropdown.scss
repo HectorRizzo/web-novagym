@@ -13,7 +13,6 @@
   }
 
   &.dropdown-black {
-    background: linear-gradient(to bottom, $black 0%, $black-states 100%);
     border: 1px solid $default;
     .dropdown-item {
       color: rgba(255, 255, 255, 0.7);

@@ -1,0 +1,121 @@
+[
+
+    {
+        "id": "1",
+        "name":"Proteína en polvo",
+        "price":105,
+        "description":"Proteína en polvo con 30 gramos de proteína por ración y 0 azúcares añadidos.",
+        "image":"assets/img/product-1.png",
+        "category":"Suplementos",
+        "stock":10,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "peso": "1.6", 
+            "sabor": "Chocolate" 
+        }
+    },
+    {
+        "id": "2",
+        "name":"Camiseta Novagym",
+        "price":25,
+        "description":"Camiseta de algodón 100% con el logo de Novagym en el pecho.",
+        "image":"assets/img/product-2.png",
+        "category":"Ropa",
+        "stock":5,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "color": "blanco", 
+            "talla": "L" 
+        }
+    },
+    {
+        "id": "3",
+        "name":"Mochila de deporte",
+        "price":15,
+        "description":"Mochila de deporte con compartimento para zapatillas y bolsillo para botella de agua.",
+        "image":"assets/img/product-3.png",
+        "category":"Accesorios",
+        "stock":3,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "color": "gris", 
+            "tamaño": "M" 
+        }
+    },
+    {
+        "id": "4",
+        "name":"Barra de proteínas",
+        "price":105,
+        "description":"Barra de proteínas con 20 gramos de proteína y 0 azúcares añadidos.",        
+        "image":"assets/img/product-4.png",
+        "category":"Snacks",
+        "stock":20,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "sabor": "Chocolate" 
+        }
+    },
+    {
+        "id": "5",
+        "name":"Cuerda de saltar",
+        "price":5,
+        "description":"Cuerda de saltar de PVC con asas de espuma.",
+        "image":"assets/img/product-5.png",
+        "category":"Accesorios",
+        "stock":10,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "color": "negro" 
+        }
+    },
+    {
+        "id": "6",
+        "name":"Zapatillas de running",
+        "price":80,
+        "description":"Zapatillas de running con tecnología Air Max para una mayor amortiguación.",
+        "image":"assets/img/product-6.png",
+        "category":"Calzado",
+        "stock":2,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "color": "gris", 
+            "talla": "42" 
+        }
+    },
+    {
+        "id": "7",
+        "name":"Zapatillas de crossfit",
+        "price":100,
+        "description":"Zapatillas de crossfit con suela Vibram para una mayor tracción.",
+        "image":"assets/img/product-8.png",
+        "category":"Calzado",
+        "stock":1,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "color": "negro", 
+            "talla": "41" 
+        }
+    },
+    {
+        "id": "8",
+        "name":"Buzo",
+        "price":40,
+        "description":"Buzo para entrenar",
+        "image":"assets/img/product-9.png",
+        "category":"Ropa",
+        "stock":10,
+        "created_at":"2021-06-01T00:00:00.000Z",
+        "updated_at":"2021-06-01T00:00:00.000Z",
+        "aditionalInfo":{ 
+            "color": "amarillo", 
+            "talla": "L" 
+        }
+    }
+]
