@@ -1,0 +1,128 @@
+<div class="container-shop">
+    <div class="shop col-9">
+        <div class="resultados">
+          <span>Mostrando 1-8 de 12 resultados </span>
+          <span>Resultados <i class="bi bi-arrow-down"></i>
+
+          </span>
+        </div>
+        <div class="ls-productos">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div *ngFor="let prod of products" class="col-6 col-md-12 col-lg-6">
+                    <app-card-product [product]="prod"></app-card-product> 
+                </div>
+            </div>
+            <div class="container-pagination">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <span class="page-link">Previous</span>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item " aria-current="page">
+                        <span class="page-link">2</span>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar col-3">
+      <div class="buscador">
+        <div class="input-container">
+            <input type="text" placeholder="Buscar">
+            <span class="icon">
+                <img src="assets/icons/buscar.png" alt="buscar">
+            </span> 
+        </div>
+        <div class="sliders">
+            <h3>Filtrar por precio</h3>
+            <div class="range-slider">
+              <input type="range" min="0" max="100" [(ngModel)]="sliderValue" (input)="onSliderChange($event)" class="slider" id="myRange">
+              <p>Valor: <span>{{ sliderValue }}</span></p>
+            </div>
+            
+        </div>
+      </div>
+      <div class="categorias">
+          <h3>Categorias</h3>
+          <ul>
+              <li>Ropa</li>
+              <li>Accesorios</li>
+              <li>Suplementos</li>
+              <li>Calzado</li>
+          </ul>
+      </div>
+
+      <div class="recent">
+          <h3>Productos</h3>
+          <ul>
+              <li>
+                  <img src="assets/img/product-9.png" alt="...">
+                  BUZO</li>
+              <li>
+                <img src="assets/img/product-10.png" alt="...">
+                CAMISETA</li>
+              <li>
+                <img src="assets/img/product-8.png" alt="...">
+                ZAPATOS</li>
+              <li>
+                <img src="assets/img/product-7.png" alt="...">
+                PROTEÍNA </li>
+          </ul>
+      </div>
+
+      <div class="tags">
+          <h3>Tags</h3>
+          <ul>
+              <li>
+                  <div class="tag">
+                      Ropa
+                  </div>
+                  </li>
+              <li>
+                  <div class="tag">
+                  Suplementos
+              </div></li>
+              <li>
+                  <div class="tag">
+                  Consejos
+              </div></li>
+              <li>
+                  <div class="tag">
+                  Accesorios
+              </div></li>
+          </ul>
+      </div>
+
+      <div class="siguenos">
+          <h3>Síguenos</h3>
+          <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+              <li>Youtube</li>
+          </ul>
+      </div>
+
+      <div class="boletin">
+          <h3>Boletín Informativo</h3>
+          <div class="input-container">
+              <input type="text" placeholder="Escribe tu email">
+              <span class="icon">
+                  <img src="assets/icons/siguiente.png" alt="mail">
+              </span> 
+          </div>
+          <p>Recibe las últimas noticias y ofertas especiales</p>
+
+      </div>
+    </div>
+</div>
+

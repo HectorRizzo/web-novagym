@@ -3,7 +3,7 @@
     bottom: 70px; /* Ajusta la distancia desde la parte inferior */
     right: 20px;  /* Ajusta la distancia desde la parte derecha */
     background-color: #E3DF00;
-    color: black; /* Color del texto */
+    color: black !important; /* Color del texto */
     padding: 10px 20px; /* Espaciado interno del botón */
     border-radius: 10px; /* Bordes redondeados */
     text-align: center; /* Centrar el texto */
@@ -16,6 +16,7 @@
 }
 
 .btn-float:hover {
-    background-color: black; /* Color de fondo al pasar el ratón */
-    color: white; /* Color del texto al pasar el ratón */
+    background-color: white; /* Color de fondo al pasar el ratón */
+    color: black; /* Color del texto al pasar el ratón */
+    cursor: pointer;
 }

@@ -1,0 +1,43 @@
+.container-registro{
+    display: flex;
+    justify-content: center;
+
+    .form-registro{
+        justify-content: center;
+        color: white;
+        padding: 0 2rem;
+
+        .title{
+            margin-top: 0 !important;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .form{
+            padding: 0 2rem;
+            .input-container{
+                
+            }
+            input{
+                border-bottom: 1px solid white;
+    
+                &::placeholder {
+                    color: white; // Cambia 'gray' por el color que desees
+                }
+            }
+        }
+
+        .btn-registro{
+            text-align: end;
+            font-weight: 700;
+            margin-right: 2rem;
+
+            button{
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+}

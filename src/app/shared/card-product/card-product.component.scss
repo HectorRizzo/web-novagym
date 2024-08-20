@@ -1,0 +1,38 @@
+.card-products{
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    height: 750px;
+
+    .card-body-products{
+        .card-text{
+            color: white;
+            text-overflow: ellipsis; // Añadir puntos suspensivos al final del texto si es demasiado largo
+        }
+        .card-title{
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .price{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            *{
+                width: auto;
+            }
+            i{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+i{
+    color: #E3DF00;
+
+    &:hover{
+        color: white;
+    }
+}

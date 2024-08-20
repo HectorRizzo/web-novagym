@@ -1,0 +1,137 @@
+<div class="container-product">
+    <div class="producto">
+        <div class="img-producto col-6">
+            <div class="card card-products">
+                <div class="card-body">
+                    <div class="card-img">
+                        <img src="{{product?.image}}" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info-product col-6">
+            <div class="title">
+                {{product?.name}}
+            </div>
+            <div class="price">
+                <span class="card-text text-resaltado">$ {{product?.price}}</span>
+            </div>
+            <div class="description">
+                <p class="card-text">{{product?.description}}</p>
+            </div>
+            <div class="add">
+                <!--Button para agregar cantidad-->
+                <div class="cantidad">
+                    <button id="minus" class="btn btn-add-cant" (click)="addCantidad(-1)">-</button>
+                    <input  class="btn btn-add-cant cant" type="number" ngModel="{{cantidad}}">
+                    <button class="btn btn-add-cant" (click)="addCantidad(1)">+</button>
+                </div>
+                <button class="btn btn-add-cart">Agregar al carrito
+                    <i class="bi bi-bag"></i>
+                </button>
+            
+            </div>
+
+            <div class="info-adic">
+                <div class="details">
+                    <span class="font-weight-bold">SKU:</span>
+                    <span class="ml-2">{{product?.id}}</span>
+                </div>
+                <div class="details">
+                    <span class="font-weight-bold">Categoria:</span>
+                    <span class="ml-2">{{product?.category}}</span>
+                </div>
+                <div class="details">
+                    <span class="font-weight-bold">Stock:</span>
+                    <span class="ml-2">{{product?.stock}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="descripcion">
+    <div>
+        <tabset class="nav-tabs-primary w-100">
+          <tab class="tab">
+            <ng-template tabHeading>
+              <div class="d-flex p-2">
+                  <h1 class="text-white tab-title d-flex">
+                      DESCRIPCIÓN</h1>
+              </div>
+            </ng-template>
+            <div>
+              <div>
+                  <span class="text-white">{{product?.description}}</span>
+              </div>
+
+          </div>
+          </tab>
+          
+          <tab >
+              <ng-template tabHeading>
+                <div class="d-flex p-2">
+                    <h1 class="text-white tab-title d-flex">
+                        INFORMACIÓN ADICIONAL</h1>
+                </div>
+              </ng-template>
+              <div>
+                <div class="aditional" *ngFor="let entry of aditionalInfo | keyvalue">
+                    <h2 class="text-white mb-1">{{ entry.key }}:</h2>
+                    <p class="direccion-text">{{ entry.value }}</p>
+                  </div>         
+              </div>
+          </tab>
+          
+          <tab>
+              <ng-template tabHeading>
+                <div class="d-flex p-2">
+                    <h1 class="text-white tab-title d-flex">
+                        REVIEW</h1>
+                </div>
+              </ng-template>
+              <div class="comentarios">
+                <div class="comentario">
+                    <div class="img-comentario">
+                        <img src="assets/img/background-comentarios.webp" alt="...">
+                    </div>
+                    <div class="comentario-info">
+                        <h3>Monica Cevallos</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis dignissimos voluptatibus unde quo odio 
+                            aperiam dolores est earum cupiditate, tenetur laudantium, odit numquam iusto officiis pariatur nisi atque 
+                            sint optio!</p>
+                    
+                            <div class="reply">
+                                <a href="">Responder</a>
+                            </div>
+        
+                            <div class="replies">
+                                <div class="comentario">
+                                    <div class="img-comentario">
+                                        <img src="assets/img/background-comentarios.webp" alt="...">
+                                    </div>
+                                    <div class="comentario-info">
+                                        <h3>María Tola</h3>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis dignissimos voluptatibus unde quo odio 
+                                            aperiam dolores est earum cupiditate, tenetur laudantium, odit numquam iusto officiis pariatur nisi atque 
+                                            sint optio!</p>
+                                        <div class="reply">
+                                            <a href="">Responder</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+              </div>
+          </tab>
+        </tabset>
+      </div>
+</div>
+<div class="relacionado">
+    <h2>Productos relacionados</h2>
+    <div class="productos">
+        <app-card-product *ngFor="let prod of productosRelacionados" [product]="prod"></app-card-product>
+    </div>
+</div>

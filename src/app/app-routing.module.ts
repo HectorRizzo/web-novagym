@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 import { InfoClasesComponent } from './pages/clases/info-clases/info-clases.component';
 import { MembresiasComponent } from './pages/membresias/membresias.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -16,7 +18,11 @@ export const routes: Routes = [
   { path: "clases", component: ClasesComponent },
   {path: "clases/info-clases", component: InfoClasesComponent},
   {path: "membresias", component: MembresiasComponent},
-  { path: "noticias", component: NoticiasComponent}
+  { path: "noticias", component: NoticiasComponent},
+  {path: "registro", component: RegistroComponent},
+  {path: "inicio-sesion", component: InicioSesionComponent},
+  //tienda
+  { path: "shop", loadChildren: () => import("./pages/shop/shop.module").then((m) => m.ShopModule) }
 ];
 
 @NgModule({

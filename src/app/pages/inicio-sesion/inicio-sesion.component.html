@@ -1,0 +1,43 @@
+<div class="container-inicio">
+    <div class="img-inicio col-8">
+        <img src="assets/img/registro-3.webp" alt="">
+    </div>
+    <div class="inicio col-4">
+        <div class="title">
+            <span class="text-resaltado">nova</span>gym
+        </div>
+        <div class="nuestro-team">
+           SE PARTE DE <br> NUESTRO <span class="text-resaltado">TEAM</span>
+        </div>
+        <div class="">
+            Conoce los beneficios que brindamos a todos nuestros clientes.
+         </div>
+         <div *ngIf="iniciarSesion" class="btn-inicio">
+            <button type="button" class="btn btn-primary" (click)="clickRegistro()">INICIAR</button>
+        </div>
+        <div *ngIf="!iniciarSesion" class="form-inicio">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">EMAIL:</label>
+                <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">CONTRASEÑA:</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            </div>
+            <div class="btn-continuar">
+                <button type="button" class="btn btn-primary" (click)="clickIniciarSesion()">CONTINUAR</button>
+            </div>
+        </div>
+
+        <div class="posee-cuenta">
+            <div *ngIf="!iniciarSesion">
+                <span class="text-resaltado">NO</span> posees una cuenta? <br>
+                <a (click)="iniciarSesion = !iniciarSesion">Regístrate</a>
+            </div>
+            <div *ngIf="iniciarSesion">
+            Ya tienes una cuenta? <br>
+             <a (click)="iniciarSesion = !iniciarSesion">Inicia sesión</a>
+            </div>
+        </div>
+    </div>
+</div>

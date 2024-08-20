@@ -35,9 +35,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/montserrat.css",
               "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "src/assets/scss/blk-design-system.scss",
-              "src/assets/demo/demo.css"
-            ],
+              "src/assets/scss/blk-design-system.scss"
+              ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
                         ]

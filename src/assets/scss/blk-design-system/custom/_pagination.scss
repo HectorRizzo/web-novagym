@@ -14,7 +14,8 @@
 
     &:hover,
     &:focus {
-      background-color: rgba($white, 0.1);
+      border:1px solid rgba($white, 0.1);
+      border-radius: 3px;
       color: $white;
       border: none;
       box-shadow: none;
@@ -41,8 +42,6 @@
     &,
     &:focus,
     &:hover {
-      @include diagonal-gradient($primary, $primary-states);
-
       color: $white;
     }
   }
@@ -52,77 +51,6 @@
   }
 
   // Colors
-  &.pagination-info {
-    .page-item.active > .page-link {
-      &,
-      &:focus,
-      &:hover {
-        @include diagonal-gradient($info, $info-states);
-      }
-    }
-  }
-
-  &.pagination-success {
-    .page-item.active > .page-link {
-      &,
-      &:focus,
-      &:hover {
-        @include diagonal-gradient($success, $success-states);
-      }
-    }
-  }
-
-  &.pagination-primary {
-    .page-item.active > .page-link {
-      &,
-      &:focus,
-      &:hover {
-        @include diagonal-gradient($primary, $primary-states);
-      }
-    }
-  }
-
-  &.pagination-warning {
-    .page-item.active > .page-link {
-      &,
-      &:focus,
-      &:hover {
-        @include diagonal-gradient($warning, $warning-states);
-      }
-    }
-  }
-
-  &.pagination-danger {
-    .page-item.active > .page-link {
-      &,
-      &:focus,
-      &:hover {
-        @include diagonal-gradient($danger, $danger-states);
-      }
-    }
-  }
-
-  &.pagination-neutral {
-    .page-item > .page-link {
-      color: $white;
-
-      &:focus,
-      &:hover {
-        background-color: $opacity-2;
-        color: $white;
-      }
-    }
-
-    .page-item.active > .page-link {
-      &,
-      &:focus,
-      &:hover {
-        background-color: $white;
-        border-color: $white;
-        color: $brand-primary;
-      }
-    }
-  }
 }
 
 @include media-breakpoint-down(sm) {

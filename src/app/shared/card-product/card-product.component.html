@@ -1,0 +1,17 @@
+<div class="card card-products">
+    <div class="card-body">
+        <div class="card-img">
+            <img src="{{product?.image}}" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body-products">
+            <h5 class="card-title justify-content-center font-weight-bold">{{product?.name}}</h5>
+            <p class="card-text">{{product?.description}}</p>
+            <div class="price">
+                <span class="card-text">Precio: ${{product?.price}}</span>
+                <i class="bi bi-bag" (click)="viewProduct()">
+
+                </i>
+            </div>
+        </div>
+    </div>
+</div>

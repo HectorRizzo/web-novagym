@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <router-outlet>
-    <a href="/home" class="btn-float" target="_blank">
+    <a class="btn-float" *ngIf="router.url !== '/registro' && router.url !== '/inicio-sesion'" (click)="clickRegistro()">
         REGISTRATE
     </a>
 </router-outlet>

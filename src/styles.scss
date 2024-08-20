@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap-icons/font/bootstrap-icons.css';
 .text-resaltado{
     color: #E3DF00;
 }
@@ -6,3 +7,10 @@
 li::marker{
     color: #E3DF00;
 }
+
+.btn:hover{
+        background-color: white !important;
+        background-image: none !important;
+        color: black !important;
+}
+

@@ -1,0 +1,64 @@
+.container-inicio{
+    display: flex;
+    flex-direction: row;
+    .inicio{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        padding: 1rem 4rem;
+        text-align: center;
+
+        .title{
+            margin-top: 0 !important;
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+        }
+
+        .nuestro-team{
+            border-bottom: 1px solid #E3DF00;
+            width: 60%;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .btn-inicio{
+            margin: 3rem 0;
+            button{
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+        }
+
+        .form-inicio{
+            text-align: start;
+
+            input{
+                border-bottom: 1px solid white;
+            }
+
+            .btn-continuar{
+                button{
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .posee-cuenta{
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: absolute;
+            bottom: 1rem;
+            a{
+                color: #E3DF00;
+                text-decoration: underline;
+            }
+        }
+    }
+}

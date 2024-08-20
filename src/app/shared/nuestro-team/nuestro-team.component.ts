@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-nuestro-team",
@@ -6,9 +7,14 @@ import { Component, OnInit } from "@angular/core";
     styleUrls: ["./nuestro-team.component.scss"]
     })
 export class NuestroTeamComponent implements OnInit {
-    constructor() {}
+    constructor(private router: Router) {}
 
 
     ngOnInit(): void {
+    }
+
+    clickRegistro(){
+        //navegar a registro
+        this.router.navigate(["/registro"]);
     }
 }

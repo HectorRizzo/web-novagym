@@ -1,0 +1,205 @@
+.container-shop{
+    display: flex;
+    justify-content: center;
+
+    .resultados{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+    }
+    .container-pagination{
+        .pagination{
+            .active{
+
+            }
+        }
+    }
+    .sidebar{
+        h3{
+            margin-top: 2rem;
+            color: #E3DF00;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .buscador{
+            background: black;
+            margin-bottom: 3rem;
+            .input-container {
+                position: relative;
+                width: 100%;
+        
+                .icon {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none; // Para que el ícono no interfiera con la entrada de texto
+                    filter: invert(1) brightness(0.5); // Invierte el color del ícono
+                }
+        
+                input {
+                    background: black;
+                    width: 100%;
+                    padding: 0.5rem 0.5rem 0.5rem 2rem; // Ajusta el padding para dejar espacio para el ícono
+                    margin: 1rem 0;
+                    color: white;
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
+                    border-bottom: 1px solid white; // Ajusta el grosor y color del borde inferior
+        
+                    &::placeholder {
+                        color: white; // Cambia 'gray' por el color que desees
+                    }
+                }
+            }
+        }
+
+         /* Estilos para el control deslizante */
+        input[type="range"].slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: white;
+            outline: none;
+        }
+        
+        /* Pseudo-elemento para la pista coloreada */
+        input[type="range"].slider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 8px;
+            background: #E3DF00; /* Color de la pista hasta el pulgar */
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        input[type="range"].slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #E3DF00; /* Color del pulgar */
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        //pulgar
+        input[type="range"].slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #E3DF00; /* Color del pulgar */
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .categorias{
+            
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li{
+                    margin: 1rem;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    a{
+                        color: white;
+                        text-decoration: none;
+                        font-size: 1.5rem;
+                    }
+
+                    &:hover{
+                        border-bottom: 1px solid #E3DF00; 
+                    }
+                }
+            }
+        }
+
+        .recent{
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li{
+                    margin: 1rem 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        .tags{
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+
+                li{
+                    .tag{
+                        background: #E3DF00;
+                        color: black;
+                        padding: 0.5rem 1rem;
+                        margin: 0.5rem;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .siguenos{
+            ul{
+                li{
+                    font-size: 1.2rem;
+                    margin: 1rem;
+                }
+            }
+        }
+
+        .boletin {
+            .input-container {
+                position: relative;
+                width: 100%;
+        
+                .icon {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none; // Para que el ícono no interfiera con la entrada de texto
+                    filter: invert(1); // Invierte el color del ícono
+                }
+        
+                input {
+                    background: black;
+                    width: 100%;
+                    padding: 0.5rem 0.5rem 0.5rem 2rem; // Ajusta el padding para dejar espacio para el ícono
+                    margin: 1rem 0;
+                    color: white;
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
+                    border-bottom: 1px solid white; // Ajusta el grosor y color del borde inferior
+        
+                    &::placeholder {
+                        color: white; // Cambia 'gray' por el color que desees
+                    }
+                }
+            }
+        }
+    }
+}
+

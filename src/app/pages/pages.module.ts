@@ -27,6 +27,10 @@ import { HorarioComponent } from "../shared/horario/horario.component";
 import { InfoClasesComponent } from "./clases/info-clases/info-clases.component";
 import { MembresiasComponent } from "./membresias/membresias.component";
 import { NoticiasComponent } from "./noticias/noticias.component";
+import { RegistroComponent } from "./registro/registro.component";
+import { InicioSesionComponent } from "./inicio-sesion/inicio-sesion.component";
+import { ShopModule } from "./shop/shop.module";
+import { ProductService } from "../services/product.services";
 
 @NgModule({
   imports: [
@@ -45,6 +49,7 @@ import { NoticiasComponent } from "./noticias/noticias.component";
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
+    ShopModule
     ],
   declarations: [
     HorarioComponent,
@@ -57,12 +62,15 @@ import { NoticiasComponent } from "./noticias/noticias.component";
     InfoClasesComponent,
     MapaComponent,
     MembresiasComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    RegistroComponent,
+    InicioSesionComponent
       ],
   exports: [
     HomeComponent
     ],
-  providers: [],
+    providers: [
+    ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PagesModule {}
