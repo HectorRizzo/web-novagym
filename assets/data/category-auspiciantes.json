@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Belleza"
+    },
+    {
+        "id": 2,
+        "name": "Vehiculos"
+    },
+    {
+        "id": 3,
+        "name": "Comida"
+    },
+    {
+        "id": 4,
+        "name": "Educación"
+    },
+    {
+        "id": 5,
+        "name": "Salud"
+    },
+    {
+        "id": 6,
+        "name": "Hogar"
+    },
+    {
+        "id": 7,
+        "name": "Ropa"
+    }
+]
