@@ -1,0 +1,31 @@
+<div class="container-auspiciantes">
+    <div class="title ausp-title">
+        <h1>NOVA <span class="text-resaltado">GYM</span> AUSPICIANTES</h1>
+    </div>
+
+    <div class="tab-categorias">
+        <tabset class="nav-tabs-primary w-100">
+            <tab class="tab" *ngFor="let cat of categorias" (selectTab)="onCategoryChange(cat)">
+                <ng-template tabHeading>
+                    <div class="d-flex p-2">
+                        <h1 class="text-white tab-title d-flex cat-title">
+                            {{cat.name}}</h1>
+                    </div>
+              </ng-template>
+                <div>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let ausp of auspiciantes">
+                            <div class="card card-auspiciantes">
+                                <img src={{ausp.logo}} class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{ausp.name}}</h5>
+                                  <p class="card-text">{{ausp.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>

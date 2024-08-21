@@ -30,7 +30,10 @@ import { NoticiasComponent } from "./noticias/noticias.component";
 import { RegistroComponent } from "./registro/registro.component";
 import { InicioSesionComponent } from "./inicio-sesion/inicio-sesion.component";
 import { ShopModule } from "./shop/shop.module";
-import { ProductService } from "../services/product.services";
+import { AuspiciantesComponent } from "./auspiciantes/auspiciantes.component";
+import { AuspiciantesService } from "../services/auspiciantes.services";
+import { CartComponent } from "./cart/cart.component";
+import { CartService } from "../services/cart.services";
 
 @NgModule({
   imports: [
@@ -64,12 +67,16 @@ import { ProductService } from "../services/product.services";
     MembresiasComponent,
     NoticiasComponent,
     RegistroComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    AuspiciantesComponent,
+    CartComponent
       ],
   exports: [
     HomeComponent
     ],
     providers: [
+      AuspiciantesService,
+      CartService
     ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

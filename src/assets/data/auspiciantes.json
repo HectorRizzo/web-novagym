@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "name": "DOMREMI",
+        "logo": "assets/img/auspiciantes/doremi-fondo-blanco.png",
+        "description": "15% DE DESCUENTO EN TORTAS. 20% DE DESCUENTO EN TORTAS EL DÍA DE CUMPLEAÑOS",
+        "categoryId": 3
+    },
+    {
+        "id": 2,
+        "name": "EL DOBLEZ",
+        "logo": "assets/img/auspiciantes/el-doblez.png",
+        "description": "20% DE DESCUENTO EN ARREGLOS DE ROPA. PAGOS AL MOMENTO DE DEJAR LA PRENDA.",
+        "categoryId": 7
+    },
+    {
+        "id": 3,
+        "name": "FERNANDEZ",
+        "logo": "assets/img/auspiciantes/fernandez.jpeg",
+        "description": "5% DESCUENTO EN TODAS LAS CARNES",
+        "categoryId": 3
+    },
+    {
+        "id": 4,
+        "name": "LA PESTAÑERIA",
+        "logo": "assets/img/auspiciantes/la-pestaneria.jpg",
+        "description": "HASTA 20% DE DESCUENTO EN PRODUCTOS DE BELLEZA",
+        "categoryId": 1
+    },
+    {
+        "id": 5,
+        "name": "ANETA",
+        "logo": "assets/img/auspiciantes/LOGO_ANETA.jpg",
+        "description": "5% DESCUENTO EN CURSO",
+        "categoryId": 2
+    },
+    {
+        "id": 6,
+        "name": "JOHNNIE PINE'S",
+        "logo": "assets/img/auspiciantes/LOGO_JHONNIE.jpg",
+        "description": "10% DE DESCUENTO",
+        "categoryId": 3
+    },
+    {
+        "id": 7,
+        "name": "ARGOS",
+        "logo": "assets/img/auspiciantes/LOGO-ARGOS_WEB.jpg",
+        "description": "20% de descuento para alumnos nuevos",
+        "categoryId": 4
+    },
+    {
+        "id": 8,
+        "name": "CAFE BOMBONS",
+        "logo": "assets/img/auspiciantes/LOGO-CAFE-BOMBONS.png",
+        "description": "5% DE DESCUENTO EN EL TOTAL DE LA FACTURA",
+        "categoryId": 3
+    },
+    {
+        "id": 9,
+        "name": "D'BEBES",
+        "logo": "assets/img/auspiciantes/logo-dbebes1.jpg",
+        "description": "10% DESCUENTO COMPRAS SUPERIOR A $50",
+        "categoryId": 5
+    },
+    {
+        "id": 10,
+        "name": "D'PISAR",
+        "logo": "assets/img/auspiciantes/LOGO-DPISAR_WEB.jpg",
+        "description": "10% DESCUENTO",
+        "categoryId": 6
+    },
+    {
+        "id": 11,
+        "name": "GO GIRL",
+        "logo": "assets/img/auspiciantes/LOGO-GO-GIRL-1.png",
+        "description": "10% DESCUENTO EN FACTURA",
+        "categoryId": 2
+    },
+    {
+        "id": 12,
+        "name": "GOLDEN PRAGUE",
+        "logo": "assets/img/auspiciantes/LOGO-GOLDEN-PRAGUE_WEB.jpg",
+        "description": "10% DE DESCUENTO DE DOMINGOS A MIERCOLES",
+        "categoryId": 3
+    }
+
+]

@@ -9,6 +9,8 @@ import { MembresiasComponent } from './pages/membresias/membresias.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
+import { AuspiciantesComponent } from './pages/auspiciantes/auspiciantes.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -21,8 +23,12 @@ export const routes: Routes = [
   { path: "noticias", component: NoticiasComponent},
   {path: "registro", component: RegistroComponent},
   {path: "inicio-sesion", component: InicioSesionComponent},
+  { path: "auspiciantes", component: AuspiciantesComponent},
   //tienda
-  { path: "shop", loadChildren: () => import("./pages/shop/shop.module").then((m) => m.ShopModule) }
+  { path: "shop", loadChildren: () => import("./pages/shop/shop.module").then((m) => m.ShopModule) },
+
+  //cart
+  {path: "cart", component: CartComponent}
 ];
 
 @NgModule({

@@ -11,7 +11,11 @@
     }
     .container-pagination{
         .pagination{
+            justify-content: flex-end;
             .active{
+                a{
+                    color: black !important;
+                }
 
             }
         }

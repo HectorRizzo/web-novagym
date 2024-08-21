@@ -9,6 +9,7 @@ export class ProductDto {
     created_at: Date;
     updated_at: Date;
     aditionalInfo: Object;
+    cantidad?: number;
 
     constructor(id: string, name: string, price: number, description: string, image: string, category: string, stock: number, created_at: Date, updated_at: Date, aditonalInfo: Object) {
         this.id = id;

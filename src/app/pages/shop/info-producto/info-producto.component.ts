@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { ProductDto } from "../../../dto/product.dto";
 import { ActivatedRoute } from "@angular/router";
 import { ProductService } from "../../../services/product.services";
+import { CartService } from "../../../services/cart.services";
 
 @Component({
     selector: "app-info-producto",
@@ -16,7 +17,8 @@ export class InfoProductoComponent implements OnInit{
     cantidad: number = 1;
     constructor(
         private route: ActivatedRoute,
-        private productService: ProductService // Asegúrate de tener un servicio para obtener el producto
+        private productService: ProductService, // Asegúrate de tener un servicio para obtener el producto
+        private cartService: CartService
     ) {}
 
     ngOnInit() {
@@ -73,6 +75,13 @@ export class InfoProductoComponent implements OnInit{
         }
         console.log("Cantidad: ", cantidad);
         this.cantidad += cantidad;
+    }
+
+    addToCart() {
+        if (this.product) {
+            this.product.cantidad = this.cantidad;
+          this.cartService.addToCart({ ...this.product});
+        }
     }
 
 
