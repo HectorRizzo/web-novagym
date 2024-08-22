@@ -34,6 +34,7 @@ import { AuspiciantesComponent } from "./auspiciantes/auspiciantes.component";
 import { AuspiciantesService } from "../services/auspiciantes.services";
 import { CartComponent } from "./cart/cart.component";
 import { CartService } from "../services/cart.services";
+import { OpcionesEntregaComponent } from "./cart/opciones-entrega/opciones-entrega.component";
 
 @NgModule({
   imports: [
@@ -69,7 +70,8 @@ import { CartService } from "../services/cart.services";
     RegistroComponent,
     InicioSesionComponent,
     AuspiciantesComponent,
-    CartComponent
+    CartComponent,
+    OpcionesEntregaComponent
       ],
   exports: [
     HomeComponent

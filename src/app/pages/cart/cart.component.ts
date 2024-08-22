@@ -9,6 +9,8 @@ import { ProductDto } from "../../dto/product.dto";
 })
 
 export class CartComponent implements OnInit {
+    showCart: boolean = true;
+    showOpcionesEntrega: boolean = false;
     productos: ProductDto[] = [];
     total: number = 0;
     constructor(
@@ -41,5 +43,11 @@ export class CartComponent implements OnInit {
     getTotal() {
         // Calcular el total del carrito
         this.total = this.productos.reduce((acc, product) => acc + (product.price) *(product.cantidad?? 0), 0);
+    }
+
+    finalizarCompra() {
+        // Finalizar compra
+        this.showCart = false;
+        this.showOpcionesEntrega = true;
     }
 }

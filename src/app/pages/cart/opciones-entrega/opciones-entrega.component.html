@@ -1,0 +1,48 @@
+<div class="container-entrega">
+    <div class="tab-opciones">
+        <tabset class="nav-tabs-entrega w-100">
+            <tab class="tab">
+                <ng-template tabHeading>
+                    <div class="d-flex p-2">
+                        <h1 class="tab-title d-flex cat-title">
+                            A DOMICILIO
+                        </h1>
+                    </div>
+              </ng-template>
+                <div>
+                    <div class="container-gmap">
+                        <google-map class="gmap" [center]="center" [zoom]="zoom" [width]="'100%'" [height]="'100%'">
+                            <map-marker 
+                            *ngFor="let position of markerPositions" 
+                            [position]="position">
+                          </map-marker>
+                        </google-map>
+                    </div>
+                </div>
+            </tab>
+
+            <tab class="tab">
+                <ng-template tabHeading>
+                    <div class="d-flex p-2">
+                        <h1 class="tab-title d-flex cat-title">
+                            ESTABLECIMIENTOS
+                        </h1>
+                    </div>
+              </ng-template>
+                <div class="container-sedes">
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col-6 mb-4" *ngFor="let sede of sedes">
+                          <div class="card">
+                            <img src={{sede.image}} class="card-img-top" alt="...">
+                            <div class="card-body body-sedes">
+                              <h5 class="card-title justify-content-center font-weight-bold">{{sede.nombre}}</h5>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+
+        </tabset>
+    </div>
+</div>

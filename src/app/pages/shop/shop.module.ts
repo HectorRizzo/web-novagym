@@ -9,6 +9,9 @@ import { ProductService } from "../../services/product.services";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { TabsModule } from "ngx-bootstrap/tabs";
+import { SedesService } from "../../services/sedes.service";
+import { GoogleMapsModule } from "@angular/google-maps";
+import { PlacesService } from "../../services/places.services";
 
 @NgModule({
     declarations: [CardProductComponent,
@@ -20,12 +23,15 @@ import { TabsModule } from "ngx-bootstrap/tabs";
         FormsModule,
         HttpClientModule, // Asegúrate de importar HttpClientModule
         RouterModule,
+        GoogleMapsModule,
         TabsModule.forRoot(),
 
     ],
     exports: [],
     providers: [
-        ProductService // Provisión del servicio
+        ProductService ,// Provisión del servicio
+        SedesService,
+        PlacesService
       ],
 })
 

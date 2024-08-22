@@ -1,0 +1,57 @@
+.container-entrega{
+    padding: 0 6rem;
+
+    .container-sedes{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.card-title{
+    font-weight: 900 !important;
+  }
+.cat-title{
+    color: black !important;
+    font-weight: 700 !important;
+  }
+  .card-img-top{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  
+  }
+  .body-sedes{
+    background: #E3DF00;
+    height: 50px;
+    h5{
+        font-weight: 700 !important;
+        color: black !important;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    h6{
+        font-weight: 900 !important;
+        color: black !important;
+    }
+  }
+
+  .nav-tabs-primary{
+    justify-content: space-around !important;
+    ul{
+        justify-content: space-around !important;
+    }
+    *{
+        justify-content: space-around !important;
+
+    }
+  }
+
+.container-gmap{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    .gmap {
+        height: 500px;
+        width: 100%;
+      }
+  }
