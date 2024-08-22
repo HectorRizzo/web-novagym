@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Sede Norte",
+        "image": "assets/img/home-sedes-norte.webp",
+        "ciudad": "Guayaquil"
+    },
+    {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "image": "assets/img/home-sedes-sur.webp",
+        "ciudad": "Guayaquil"
+    },
+    {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "image": "assets/img/home-sedes-centro.webp",
+        "ciudad": "Guayaquil"
+    },
+    {
+        "id": 4,
+        "nombre": "Sede Machala",
+        "image": "assets/img/home-sedes-machala.webp",
+        "ciudad": "Machala"
+    }
+]

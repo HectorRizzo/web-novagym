@@ -26,6 +26,17 @@
   border-color: $success;
   color: $success;
 }
+.nav-tabs-entrega .nav-tabs > .nav-item > .nav-link.active {
+  color: $primary;
+  background: $primary; // Reemplaza #color con el color de borde deseado
+  border-radius: 10px;
+}
+
+.nav-tabs-entrega .nav-tabs > .nav-item > .nav-link {
+  color: $primary;
+  background: white; // Reemplaza #color con el color de borde deseado
+  border-radius: 10px;
+}
 
 
 tabset .tab-content {
