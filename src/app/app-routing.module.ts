@@ -13,22 +13,10 @@ import { AuspiciantesComponent } from './pages/auspiciantes/auspiciantes.compone
 import { CartComponent } from './pages/cart/cart.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "home", component: HomeComponent },
-  { path: "sedes", component: SedesComponent},
-  {path: "sedes/info-sedes", component: InfoSedesComponent},
-  { path: "clases", component: ClasesComponent },
-  {path: "clases/info-clases", component: InfoClasesComponent},
-  {path: "membresias", component: MembresiasComponent},
-  { path: "noticias", component: NoticiasComponent},
-  {path: "registro", component: RegistroComponent},
-  {path: "inicio-sesion", component: InicioSesionComponent},
-  { path: "auspiciantes", component: AuspiciantesComponent},
+  { path: "", loadChildren: () => import("./pages/pages.module").then((m) => m.PagesModule) },
   //tienda
   { path: "shop", loadChildren: () => import("./pages/shop/shop.module").then((m) => m.ShopModule) },
 
-  //cart
-  {path: "cart", component: CartComponent}
 ];
 
 @NgModule({

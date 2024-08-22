@@ -5,6 +5,49 @@
         display: flex;
         justify-content: center;
     }
+
+    .container-direccion{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+        align-content: center;
+        .direccion,
+        .descripcion{
+          width: 50%;
+          margin: 2rem 0;
+
+          input{
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 16px; /* Cambia el tamaño de la fuente */
+            height: 70px; /* Cambia la altura del input */
+            border: 1px solid white;
+            border-radius: 10px;
+          }
+          textarea{
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 16px; /* Cambia el tamaño de la fuente */
+            height: 120px; /* Cambia la altura del input */
+            border: 1px solid white;
+            border-radius: 10px;
+          }
+        }
+
+        .boton-confirmar{
+          align-self: center;
+          .btn-confirmar{
+            font-size: 1.5rem;
+          }
+        }
+
+
+        
+    }
 }
 
 .card-title{
@@ -55,3 +98,14 @@
         width: 100%;
       }
   }
+
+  .search-input{
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 16px; /* Cambia el tamaño de la fuente */
+    height: 40px; /* Cambia la altura del input */
+    width: 300px; /* Cambia el ancho del input */
+}

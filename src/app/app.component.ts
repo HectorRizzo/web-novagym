@@ -16,12 +16,12 @@ import { GoogleMapsModule } from "@angular/google-maps";
     RouterOutlet, 
     NavbarComponent, 
     FooterComponent, 
-    PagesModule, 
     RouterModule,
     RouterLink, 
     RouterLinkActive,
   GoogleMapsModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [],
+  schemas: [],
   encapsulation: ViewEncapsulation.None // Agrega esta línea si necesitas que los estilos sean globales
 
    // Agrega esta línea

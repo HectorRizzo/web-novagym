@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ProductDto } from '../dto/product.dto';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class CartService {
   private cartItems: ProductDto[] = [];
   private cartItemsSubject = new BehaviorSubject<ProductDto[]>(this.cartItems);
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.loadCartItems();
   }
 

@@ -1,0 +1,81 @@
+
+.container-pago{
+    padding: 0 6rem;
+    margin-bottom: 5rem;
+    .title{
+        hr{
+            width: 30%;
+            border: 1px solid white;
+            opacity: 1;
+        }
+    }
+    .tarj-title{
+        h3{
+            color: white;
+        }
+    }
+    .tarj-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0.5rem 0;
+    
+        .tarj{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin: 0.5rem 0;
+            width: 400px;
+            height: 200px;
+            background: white;
+            align-content: flex-start;
+            border-radius: 15px;
+    
+            .tarj-img{
+                width: 150px;
+            }
+    
+            .tarj-info{
+                h5{
+                    font-weight: 700 !important;
+                    color: rgb(75, 86, 239) !important;
+                    font-size: 2rem;
+                    text-align: center;
+                }
+                p{
+                    font-weight: 500 !important;
+                    color: rgb(75, 86, 239) !important;
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+                h6{
+                    display: flex;
+                    justify-content: flex-end;
+                    font-size: 1rem;
+                }
+            }
+    
+            .tarj-select{
+                font-size: 2rem;
+                width: 20px;
+                align-self: flex-start;
+
+                input{
+                    width: 20px;
+                    height: 20px;
+                    border: #E3DF00;
+                }
+            }
+    
+        }
+
+        i{
+            font-size: 5rem;
+            color: #E3DF00;
+        }
+    }
+}

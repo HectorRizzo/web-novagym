@@ -1,7 +1,6 @@
-import { HttpClient } from "@angular/common/http";
-import { ProductDto } from "../dto/product.dto";
 import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import { AuspiciantesCategory } from "../dto/category-auspiciantes.dto";
 import { AuspiciantesDTO } from "../dto/auspiciantes.dto";
 
@@ -9,7 +8,8 @@ import { AuspiciantesDTO } from "../dto/auspiciantes.dto";
     providedIn: 'root' // Esto hace que el servicio esté disponible en toda la aplicación
   })
 export class AuspiciantesService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
     getAuspiciantes(): Observable<AuspiciantesDTO[]> {
         return this.http.get<AuspiciantesDTO[]>("https://fakestoreapi.com/products");

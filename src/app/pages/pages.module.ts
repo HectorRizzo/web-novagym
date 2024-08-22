@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
@@ -29,33 +29,17 @@ import { MembresiasComponent } from "./membresias/membresias.component";
 import { NoticiasComponent } from "./noticias/noticias.component";
 import { RegistroComponent } from "./registro/registro.component";
 import { InicioSesionComponent } from "./inicio-sesion/inicio-sesion.component";
-import { ShopModule } from "./shop/shop.module";
 import { AuspiciantesComponent } from "./auspiciantes/auspiciantes.component";
-import { AuspiciantesService } from "../services/auspiciantes.services";
 import { CartComponent } from "./cart/cart.component";
-import { CartService } from "../services/cart.services";
 import { OpcionesEntregaComponent } from "./cart/opciones-entrega/opciones-entrega.component";
+import { HttpClientModule } from "@angular/common/http";
+import { AuspiciantesService } from "../services/auspiciantes.services";
+import { PageRoutingModule } from "./pages-routing.module";
+import { PagoComponent } from "./cart/pago/pago.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    GoogleMapsModule,
-    BsDropdownModule.forRoot(),
-    ProgressbarModule.forRoot(),
-    TooltipModule.forRoot(),
-    PopoverModule.forRoot(),
-    CollapseModule.forRoot(),
-    TabsModule.forRoot(),
-    PaginationModule.forRoot(),
-    AlertModule.forRoot(),
-    BsDatepickerModule.forRoot(),
-    CarouselModule.forRoot(),
-    ModalModule.forRoot(),
-    ShopModule
-    ],
   declarations: [
+    AuspiciantesComponent,
     HorarioComponent,
     HomeComponent,
     SedesComponent,
@@ -69,17 +53,34 @@ import { OpcionesEntregaComponent } from "./cart/opciones-entrega/opciones-entre
     NoticiasComponent,
     RegistroComponent,
     InicioSesionComponent,
-    AuspiciantesComponent,
     CartComponent,
-    OpcionesEntregaComponent
-      ],
+    OpcionesEntregaComponent,
+    PagoComponent
+  ],
   exports: [
     HomeComponent
-    ],
-    providers: [
-      AuspiciantesService,
-      CartService
-    ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  ],
+  imports: [
+    CommonModule,
+    PageRoutingModule,
+    FormsModule,
+    HttpClientModule, // Asegúrate de que HttpClientModule esté importado aquí
+    RouterModule,
+    GoogleMapsModule,
+    BsDropdownModule.forRoot(),
+    ProgressbarModule.forRoot(),
+    TooltipModule.forRoot(),
+    PopoverModule.forRoot(),
+    CollapseModule.forRoot(),
+    TabsModule.forRoot(),
+    PaginationModule.forRoot(),
+    AlertModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    CarouselModule.forRoot(),
+    ModalModule.forRoot()
+  ],
+  providers: [
+    AuspiciantesService
+  ]
 })
 export class PagesModule {}

@@ -16,6 +16,7 @@ export class AuspiciantesComponent  implements OnInit {
     constructor(private auspiciantesService: AuspiciantesService) { }
 
     ngOnInit() {
+        console.log('AuspiciantesComponent initialized');
         this.getCategorias();
         this.getAuspiciantesByCategory(0);
     }

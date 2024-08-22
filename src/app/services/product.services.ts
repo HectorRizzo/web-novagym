@@ -1,13 +1,15 @@
-import { HttpClient } from "@angular/common/http";
 import { ProductDto } from "../dto/product.dto";
 import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root' // Esto hace que el servicio esté disponible en toda la aplicación
   })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log('ProductService');
+  }
 
   getProducts(): Observable<ProductDto[]> {
     return this.http.get<ProductDto[]>("https://fakestoreapi.com/products");
@@ -18,6 +20,7 @@ export class ProductService {
   }
 
   getProductByIdFileLocal(id: string): Observable<ProductDto> {
+    console.log('getProductByIdFileLocal');
     let productos = this.http.get<ProductDto[]>(`assets/data/products.json`);
     return new Observable<ProductDto>(observer => {
       productos.subscribe((data: ProductDto[]) => {

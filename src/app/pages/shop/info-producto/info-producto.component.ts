@@ -3,6 +3,7 @@ import { ProductDto } from "../../../dto/product.dto";
 import { ActivatedRoute } from "@angular/router";
 import { ProductService } from "../../../services/product.services";
 import { CartService } from "../../../services/cart.services";
+import { AuspiciantesService } from "../../../services/auspiciantes.services";
 
 @Component({
     selector: "app-info-producto",
@@ -17,11 +18,16 @@ export class InfoProductoComponent implements OnInit{
     cantidad: number = 1;
     constructor(
         private route: ActivatedRoute,
-        private productService: ProductService, // Asegúrate de tener un servicio para obtener el producto
-        private cartService: CartService
+        private productService: ProductService,
+        private cartService: CartService,
+        private auspiciantesService: AuspiciantesService
     ) {}
 
     ngOnInit() {
+        this.auspiciantesService.getCategoryAuspiciantesLocal().subscribe((data) => {
+            console.log("Categorias de auspiciantes: ", data);
+        });
+        console.log("InfoProductoComponent initialized");
         this.route.paramMap.subscribe(params => {
             const productId = params.get("id");
             if (productId) {
@@ -32,6 +38,7 @@ export class InfoProductoComponent implements OnInit{
     }
 
     loadProduct(id: string) {
+        console.log("Cargando producto con id: ", id);
         this.productService.getProductByIdFileLocal(id).subscribe(product => {
             this.product = product;
             this.aditionalInfo= product.aditionalInfo;

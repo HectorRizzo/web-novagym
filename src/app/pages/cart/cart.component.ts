@@ -6,6 +6,7 @@ import { ProductDto } from "../../dto/product.dto";
     selector: "app-cart",
     templateUrl: "./cart.component.html",
     styleUrls: ["./cart.component.scss"],
+    providers: [CartService]
 })
 
 export class CartComponent implements OnInit {
