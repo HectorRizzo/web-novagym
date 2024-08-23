@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { CartService } from "../../services/cart.services";
 import { ProductDto } from "../../dto/product.dto";
+import { UsuariosService } from "../../services/usuarios.services";
 
 @Component({
     selector: "app-cart",
     templateUrl: "./cart.component.html",
     styleUrls: ["./cart.component.scss"],
-    providers: [CartService]
+    providers: [CartService, UsuariosService]
 })
 
 export class CartComponent implements OnInit {
@@ -15,7 +16,8 @@ export class CartComponent implements OnInit {
     productos: ProductDto[] = [];
     total: number = 0;
     constructor(
-        private cartService: CartService
+        private cartService: CartService,
+        private usuariosService: UsuariosService
     ) { }
 
     ngOnInit() {

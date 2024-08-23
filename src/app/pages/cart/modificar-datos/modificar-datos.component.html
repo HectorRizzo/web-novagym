@@ -1,0 +1,44 @@
+<div class="container-modificar-datos" *ngIf="!continuar">
+    <div class="title">
+        <h1><span class="text-resaltado">DATOS DE TARJETA Y ENTREGA</span></h1>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="container-datos">
+            <h3 class="title-datos">CONFIRMAR DATOS</h3>
+            <div class="datos">
+                <div class="resumen-info">
+                    <h5>Cédula:</h5>
+                    <input type="text" class="form-control" [(ngModel)]="usuario.numIdentificacion" placeholder="Cédula">
+                </div>
+                <div class="resumen-info">
+                    <h5>Nombres:</h5>
+                    <input type="text" class="form-control" [(ngModel)]="usuario.nombres" placeholder="Nombres">
+                </div>
+                <div class="resumen-info">
+                    <h5>Apellidos:</h5>
+                    <input type="text" class="form-control" [(ngModel)]="usuario.apellidos" placeholder="Apellidos">
+                </div>
+                <div class="resumen-info">
+                    <h5>Dirección:</h5>
+                    <textarea class="form-control" [(ngModel)]="usuario.direccion" placeholder="Dirección"></textarea>
+                </div>
+                <div class="resumen-info">
+                    <h5>Teléfono:</h5>
+                    <input type="text" class="form-control" [(ngModel)]="usuario.telefono" placeholder="Teléfono">
+                </div>
+                <div class="resumen-info">
+                    <h5>Correo:</h5>
+                    <input type="text" class="form-control" [(ngModel)]="usuario.email" placeholder="Correo electronico">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-botones">
+        <div class="botones">
+            <button class="btn btn-primary btn-modificar" (click)="modificarDatos()">Modificar Datos</button>
+        <button class="btn btn-primary btn-continuar" (click)="continuarPago()">Continuar</button>
+        </div>
+    </div>
+</div>
+<app-pago *ngIf="continuar"></app-pago>

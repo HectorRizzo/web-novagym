@@ -36,6 +36,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { AuspiciantesService } from "../services/auspiciantes.services";
 import { PageRoutingModule } from "./pages-routing.module";
 import { PagoComponent } from "./cart/pago/pago.component";
+import { ResumenPagoComponent } from "./cart/resumen-pago/resumen-pago.component";
+import { ModificarDatosComponent } from "./cart/modificar-datos/modificar-datos.component";
 
 @NgModule({
   declarations: [
@@ -55,8 +57,10 @@ import { PagoComponent } from "./cart/pago/pago.component";
     InicioSesionComponent,
     CartComponent,
     OpcionesEntregaComponent,
-    PagoComponent
-  ],
+    PagoComponent,
+    ResumenPagoComponent,
+    ModificarDatosComponent
+    ],
   exports: [
     HomeComponent
   ],
@@ -81,6 +85,6 @@ import { PagoComponent } from "./cart/pago/pago.component";
   ],
   providers: [
     AuspiciantesService
-  ]
+    ]
 })
 export class PagesModule {}

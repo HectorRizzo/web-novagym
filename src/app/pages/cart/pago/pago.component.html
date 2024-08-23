@@ -1,4 +1,4 @@
-<div class="container-pago">
+<div class="container-pago" *ngIf="isPago">
     <div class="title">
         <h1><span class="text-resaltado">OPCIÓN DE PAGO</span></h1>
         <hr>
@@ -49,5 +49,10 @@
             </div>
             <i class="bi bi-plus-circle"></i>
         </div>
+        <div class="btn-continuar">
+            <button class="btn btn-primary" (click)="continuarPago()">Continuar</button>
+        </div>
     </div>
 </div>
+
+<app-resumen-pago *ngIf="!isPago"></app-resumen-pago>

@@ -42,4 +42,10 @@ export class CartService {
     this.cartItemsSubject.next(this.cartItems);
     this.saveCartItems();
   }
+
+  clearCart() {
+    this.cartItems = [];
+    this.cartItemsSubject.next(this.cartItems);
+    this.saveCartItems();
+  }
 }

@@ -14,6 +14,7 @@ import { PlacesService } from "../../services/places.services";
 import { InfoProductoComponent } from "./info-producto/info-producto.component";
 import { CartService } from "../../services/cart.services";
 import { AuspiciantesService } from "../../services/auspiciantes.services";
+import { UsuariosService } from "../../services/usuarios.services";
 
 @NgModule(
     { 
@@ -34,7 +35,8 @@ import { AuspiciantesService } from "../../services/auspiciantes.services";
         ProductService, // Provisión del servicio
         CartService,
         SedesService,
-        AuspiciantesService
+        AuspiciantesService,
+        UsuariosService
         ] 
 })
 

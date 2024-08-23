@@ -7,9 +7,15 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class PagoComponent implements OnInit{
+    isPago = true;
+
     constructor() { }
 
     ngOnInit() {
         console.log('PagoComponent initialized');
+    }
+
+    continuarPago() {
+        this.isPago = false;
     }
 }

@@ -1,0 +1,71 @@
+<div class="container-resumen">
+    <div class="title">
+        <h1><span class="text-resaltado">RESUMEN DE PAGO</span></h1>
+        <hr>
+    </div>
+    <div class="resumen">
+        <div class="resumen-content">
+            <div class="resumen-tarjeta">
+                <h3>RESUMEN</h3>
+                <div>
+                    <div class="resumen-info">
+                        <h5>Opción de Pago:</h5>
+                        <span class="text-resaltado">Tarjeta</span>
+                    </div>
+                    <div class="resumen-info">
+                        <h5>Tarjeta:</h5>
+                        <span class="text-resaltado">Visa</span>
+                    </div>
+                    <div class="resumen-info">
+                        <h5>Número de Tarjeta:</h5>
+
+                        <span class="text-resaltado">**** **** **** 1234</span>
+                    </div>
+                    <div class="resumen-info">
+                        <h5>Contacto:</h5>
+                        <span class="text-resaltado">{{usuario?.telefono}}</span>
+                    </div>
+                    <div class="resumen-info">
+                        <h5>Correo Electrónico:</h5>
+                        <span class="text-resaltado"> {{usuario?.email}} </span>
+                    </div>
+                    <div class="resumen-info">
+                        <h5>Tipo Entrega:</h5>
+                        <span class="text-resaltado"> {{usuario?.tipoEntrega}} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resumen-producto">
+            <h3>PRODUCTOS</h3>
+            <div class="resumen-info" *ngFor="let prod of productos">
+                <h5>{{prod.cantidad}}</h5>
+                <h5>{{prod.name}}</h5>
+                <h6 class="precio">Total: ${{(prod.price) * (prod.cantidad ?? 0) }}</h6>
+            </div>
+        </div>
+        <div class="resumen-total">
+            <div class="resumen-content">
+                <div class="resumen-info">
+                    <span class="text-resaltado">Subtotal:</span>
+                    <h5>${{subtotal}}</h5>
+                </div>
+                <div class="resumen-info">
+                    <span class="text-resaltado">Impuestos:</span>
+                    <h5>${{impuestos}}</h5>
+                </div>
+                <div class="resumen-info">
+                    <span class="text-resaltado">Delivery:</span>
+                    <h5>${{delivery}}</h5>
+                </div>
+                <div class="resumen-info">
+                    <span class="text-resaltado">Total:</span>
+                    <h5>${{total}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-continuar">
+        <button class="btn btn-primary" (click)="continuarPago()">Pagar</button>
+    </div>
+</div>

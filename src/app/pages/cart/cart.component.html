@@ -1,8 +1,9 @@
 <div class="container-cart" *ngIf="showCart">
     <div class="title">
-        <h1>MI <span class="text-resaltado">CARRITO</span></h1>
+        <h1><span class="text-resaltado">CARRITO DE COMPRAS</span></h1>
+        <hr>
     </div>
-    <div class="cart">
+    <div class="cart" *ngIf="productos.length > 0">
         <div class="table-responsive">
             <table class="table align-middle table-dark">
               <thead>
@@ -39,9 +40,6 @@
               </tbody>
             </table>
         </div>
-        <div class="actualizar-cart">
-            <button class="btn btn-actualizar" (click)="updateCart()">Actualizar carrito</button>
-        </div>
 
         <div class="total">
             <div class="total-cart">
@@ -51,6 +49,12 @@
                 <button class="btn btn-finalizar" (click)="finalizarCompra()">Finalizar compra</button>
             </div>
         </div>
+    </div>
+
+    <div class="carrito-vacio" *ngIf="productos.length === 0">
+        <img src="assets/icons/carrito2.png" alt="carrito">
+        <h1>¡Tu carrito está vacío!</h1>
+        <a routerLink="/shop" class="btn btn-primary">Ir a productos</a>
     </div>
 </div>
 <app-opciones-entrega *ngIf="showOpcionesEntrega"></app-opciones-entrega>

@@ -2,6 +2,8 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Render
 import { SedesService } from "../../../services/sedes.service";
 import { SedesDTO } from "../../../dto/sdedes.dto";
 import { GoogleMap } from "@angular/google-maps";
+import { UsuariosService } from "../../../services/usuarios.services";
+import { DatosDTO } from "../../../dto/datos.dto";
 
 @Component({
     selector: "app-opciones-entrega",
@@ -23,9 +25,13 @@ export class OpcionesEntregaComponent implements AfterViewInit, OnInit{
     currentMarker: google.maps.Marker | null = null;  // Variable para almacenar el marcador actual
     direccion: string = "";
     descripcion: string = "";
+
+    datosUsuario: DatosDTO | undefined;
+
     constructor(private el: ElementRef,
         private renderer: Renderer2,
         private sedesService: SedesService,
+        private usuariosService: UsuariosService,
         private cdr: ChangeDetectorRef) { }
     ngAfterViewInit() {
         this.initMap();
@@ -36,6 +42,7 @@ export class OpcionesEntregaComponent implements AfterViewInit, OnInit{
         }
       }
     ngOnInit() {
+      this.obtenerDatosUsuario();
         this.obtenerSedes();
         setTimeout(() => this.initMap(), 1000);
         this.initAutocomplete();
@@ -132,6 +139,24 @@ export class OpcionesEntregaComponent implements AfterViewInit, OnInit{
 
     confirmarEntrega(sede?: SedesDTO){
         this.showPago = true;
+        if( this.datosUsuario){
+          if(sede){
+            this.datosUsuario.direccion = sede.nombre;
+            this.datosUsuario.tipoEntrega = "Entrega en sede";
+          }else{
+            console.log('Dirección: ', this.direccion);
+              this.datosUsuario.direccion = this.direccion;
+              this.datosUsuario.tipoEntrega = "Entrega a domicilio";
+          }
+          this.usuariosService.setDatosUsuario(this.datosUsuario);
+        }
+
     }
-    
+
+    obtenerDatosUsuario(){
+        this.usuariosService.getDatosUsuario().subscribe((data) => {
+            this.datosUsuario = data;
+        });
+    }
+
 }
