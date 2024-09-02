@@ -41,4 +41,8 @@ export class UsuariosService{
         this.saveDatosUsuario();
     }
 
+    getMembresias(): Observable<any> {
+        return this.http.get(`http://localhost:3000/membresias`);
+    }
+
 }

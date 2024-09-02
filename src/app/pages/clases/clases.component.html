@@ -13,12 +13,12 @@
 
     <div class="tipo-clases">
         <div class="row row-cols-1 row-cols-md-2">
-            <div class="col-4 mb-4" (click)="navigateToInfoClases()">
+            <div *ngFor="let clase of clases" class="col-4 mb-4" (click)="navigateToInfoClases(clase.id)">
                 <div class="card card-clases">
                     <img src="./assets/img/clases-1.webp" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="text-white text-start font-weight-bold">
-                            Entrenamiento
+                            {{clase.nombre}}
                         </h3>
                         <h1 class="text-start"> <span class="text-resaltado font-weight-bold">
                             Funcional
@@ -28,99 +28,7 @@
                     <div class="card-footer">
                     </div>
                   </div>
-
             </div>
-
-            <div class="col-4 mb-4" (click)="navigateToInfoClases()">
-                <div class="card card-clases">
-                    <img src="./assets/img/clases-2.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h3 class="text-white text-start font-weight-bold">
-                            Entrenamiento
-                        </h3>
-                        <h1 class="text-start"> <span class="text-resaltado font-weight-bold">
-                            Cardio
-                        </span>
-                        </h1>
-                    </div>
-                    <div class="card-footer">
-                    </div>
-                  </div>
-
-            </div>
-
-            <div class="col-4 mb-4" (click)="navigateToInfoClases()">
-                <div class="card card-clases">
-                    <img src="./assets/img/clases-3.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h3 class="text-white text-start font-weight-bold">
-                            Entrenamiento
-                        </h3>
-                        <h1 class="text-start"> <span class="text-resaltado font-weight-bold">
-                            Crosstraining
-                        </span>
-                        </h1>
-                    </div>
-                    <div class="card-footer">
-                    </div>
-                  </div>
-
-            </div>
-
-            <div class="col-4 mb-4" (click)="navigateToInfoClases()">
-                <div class="card card-clases">
-                    <img src="./assets/img/clases-4.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h3 class="text-white text-start font-weight-bold">
-                            Entrenamiento
-                        </h3>
-                        <h1 class="text-start"> <span class="text-resaltado font-weight-bold">
-                            Musculación y Peso
-                        </span>
-                        </h1>
-                    </div>
-                    <div class="card-footer">
-                    </div>
-                  </div>
-
-            </div>
-
-            <div class="col-4 mb-4" (click)="navigateToInfoClases()">
-                <div class="card card-clases">
-                    <img src="./assets/img/clases-5.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h3 class="text-white text-start font-weight-bold">
-                            Entrenamiento
-                        </h3>
-                        <h1 class="text-start"> <span class="text-resaltado font-weight-bold">
-                            Aeróbicos
-                        </span>
-                        </h1>
-                    </div>
-                    <div class="card-footer">
-                    </div>
-                  </div>
-
-            </div>
-
-            <div class="col-4 mb-4" (click)="navigateToInfoClases()">
-                <div class="card card-clases">
-                    <img src="./assets/img/clases-1.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h3 class="text-white text-start font-weight-bold">
-                            Entrenamiento
-                        </h3>
-                        <h1 class="text-start"> <span class="text-resaltado font-weight-bold">
-                            Baile
-                        </span>
-                        </h1>
-                    </div>
-                    <div class="card-footer">
-                    </div>
-                  </div>
-
-            </div>
-
           </div>
     </div>
 

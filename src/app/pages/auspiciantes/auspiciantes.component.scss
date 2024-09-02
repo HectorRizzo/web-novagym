@@ -15,27 +15,54 @@
             margin-bottom: 0;
         }
 
-
-        .card-auspiciantes{
-            background: transparent;
-            width: 300px;
-            height: 450px;
-            border: 1px solid white;
-            img{
-                width: 300px;
-                height: 300px;
+    }
+    .card-deck {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    
+    .card-deck .card {
+        flex: 1 0 21%; /* Aproximadamente un cuarto del contenedor, ajustado para márgenes */
+        margin: 15px;
+        max-width: 300px; /* Asegura que las cartas no se expandan más allá de este ancho */
+        height: 450px; /* Asegura que todas las cartas tengan la misma altura */
+    }
+    
+    .card-auspiciantes {
+        background: transparent;
+        width: 100%; /* Ajusta el ancho al 100% del contenedor flexible */
+        height: 100%; /* Ajusta la altura al 100% del contenedor flexible */
+        border: 1px solid white;
+    
+        img {
+            width: 100%; /* Ajusta el ancho al 100% del contenedor flexible */
+            height: 300px;
+        }
+    
+        .card-body {
+            .card-title {
+                font-size: 20px;
+                font-weight: bold;
+                color: #E3DF00;
+                text-align: center;
             }
-            .card-body{
-                .card-title{
-                    font-size: 20px;
-                    font-weight: bold;
-                    color: #E3DF00;
-                }
-
-                .card-text{
-                    color: white;
-                }
+    
+            .card-text {
+                color: white;
+                overflow: hidden; /* Oculta el texto que excede el tamaño del contenedor */
+                text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto que se corta */
+                display: -webkit-box; /* Utiliza el modelo de caja flexible de WebKit */
+                -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+                -webkit-box-orient: vertical; /* Establece la orientación de la caja flexible en vertical */
+                height: 5.5rem; /* Ajusta la altura del contenedor para 3 líneas de texto */
+            }
+    
+            .card-text.auto-resize-text {
+                font-size: 1vw; /* Ajusta el tamaño del texto según el ancho de la ventana */
             }
         }
     }
 }
+

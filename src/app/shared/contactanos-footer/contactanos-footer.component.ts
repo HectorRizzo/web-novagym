@@ -10,6 +10,6 @@ export class ContactanosFooterComponent implements OnInit {
 
 
     ngOnInit(): void {
-        throw new Error("Method not implemented.");
+        
     }
 }

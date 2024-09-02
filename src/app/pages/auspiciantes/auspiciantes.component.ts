@@ -30,8 +30,8 @@ export class AuspiciantesComponent  implements OnInit {
 
     getAuspiciantesByCategory(category: number){
         if(category === 0){
-            this.auspiciantesService.getAuspiciantesLocal().subscribe((data: AuspiciantesDTO[]) => {
-                this.auspiciantes = data;
+            this.auspiciantesService.getAuspiciantes().subscribe((data: AuspiciantesDTO[]) => {
+                this.auspiciantes = data.splice(0, 5);
             });
         }else{
             this.auspiciantesService.getAuspiciantesByCategory(category).subscribe((data: AuspiciantesDTO[]) => {

@@ -1,7 +1,13 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { MapInfoWindow, MapMarker } from "@angular/google-maps";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import Swiper from "swiper";
-
+import { SedesService } from "../../services/sedes.service";
+import { SedesDTO } from "../../dto/sedes.dto";
+interface ciudadSedes {
+  nombre: string;
+  sedes: SedesDTO[];
+}
 
 let posiciones: any[] = [
   { sede:'todas', ubicaciones:[
@@ -25,7 +31,11 @@ let posiciones: any[] = [
 @Component({
     selector: "app-sedes",
     templateUrl: "sedes.component.html",
-    styleUrls: ["sedes.component.scss"]
+    styleUrls: ["sedes.component.scss"],
+    providers: [
+      RouterModule,
+      SedesService
+    ]
   })
   
   
@@ -34,7 +44,8 @@ let posiciones: any[] = [
     activeTab: string = 'todas';
     position: google.maps.LatLngLiteral = { lat: -2.18, lng: -79.9 };
     selectedMarker?: any;
-
+    sedes: SedesDTO[] = [];
+    ciudades: ciudadSedes[] = [];
     markers: any[] = [
       { position: { lat:-2.1867352190473524, lng:-79.89419700000002}, title: 'NOVA GYM Sede Centro', description: 'Los Ríos, Guayaquil 090514', telefono: '(04)2282004', email:'infonovagym@gmail.com'},
       { position: {lat:-2.1404472348899484, lng:-79.89800086216792 }, title: 'NOVA GYM Sede Norte', description: 'Plaza Mayor, Av. Rodolfo Baquerizo Nazur 1, Guayaquil 090501', telefono: '(04)4601585', email:'infonovagym@gmail.com'},
@@ -45,11 +56,16 @@ let posiciones: any[] = [
     zoom = 8;
     width = '100%';
     infoContent: string = '';
-    constructor() {
+    constructor(
+      private activeRoute: ActivatedRoute,
+      private route: Router,
+      private sedesService: SedesService
+    ) {
 
     }
 
     ngOnInit() {
+      this.getSedes();
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -78,7 +94,6 @@ let posiciones: any[] = [
 
 
   setActiveTab(tab: string) {
-    console.log(tab);
     this.activeTab = tab;
     this.markers = posiciones.find(posicion => posicion.sede === tab).ubicaciones;
   }
@@ -102,6 +117,39 @@ let posiciones: any[] = [
         console.error('infoWindow is not defined');
       }
     }
-    
-    
+
+    goToSede(idSede: number) {
+      console.log(idSede);
+      console.log(this.activeTab);
+      console.log(this.route);
+      console.log(this.activeRoute);
+      this.route.navigate(["/sedes/info-sedes"] , { queryParams: {sede: idSede}});
+
+    }
+
+    getSedes(){
+      this.sedesService.getSedes().subscribe({
+        next: (sedes) => {
+          console.log('Sedes', sedes);
+          this.sedes = sedes;
+          this.ciudades = [];
+          let ciudadTodas = {nombre: 'Todas', sedes: sedes};
+          this.ciudades.push(ciudadTodas);
+          this.sedes.forEach(sede => {
+            let ciudad = this.ciudades.find(ciudad => ciudad.nombre === sede.ciudad);
+            if(ciudad){
+              ciudad.sedes.push(sede);
+            }else{
+              this.ciudades.push({nombre: sede.ciudad, sedes: [sede]});
+            }
+          });
+          console.log('Ciudades', this.ciudades);
+          this.setActiveTab(this.ciudades[0].nombre);
+        },
+        error: (error) => {
+          console.error('Error fetching sedes', error);
+        }
+      });
+    }
+          
 }

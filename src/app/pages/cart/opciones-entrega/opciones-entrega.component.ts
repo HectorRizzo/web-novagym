@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from "@angular/core";
 import { SedesService } from "../../../services/sedes.service";
-import { SedesDTO } from "../../../dto/sdedes.dto";
+import { SedesDTO } from "../../../dto/sedes.dto";
 import { GoogleMap } from "@angular/google-maps";
 import { UsuariosService } from "../../../services/usuarios.services";
 import { DatosDTO } from "../../../dto/datos.dto";

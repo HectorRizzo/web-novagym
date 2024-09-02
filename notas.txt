@@ -1,0 +1,31 @@
+home = 0%
+sede = 100%                 X
+    info-sedes = 0%
+clases = 100%               X
+    info-clases = 100%      X
+membresias = 0%
+noticias = 0%
+auspiciantes = 100%         X
+tienda = 0%
+
+
+4/9
+
+registro
+iniciar-sesion
+2/11
+
+
+APIS
+
+calendario/ horarios/<str:horario_nombre>/<int:id_gimnasio>/
+calendario/ verClases/ [name='verClases']
+
+
+NOTAS
+Diseno movil
+clases: agregar tipos de clases y recomendaciones.
+
+
+texto en contactanos
+

@@ -1,5 +1,8 @@
+.navbar{
+    border-bottom: 1px solid #E3DF00;
+}
+
 .navbar-nav .nav-link.active {
-    color: #be0a0a; /* Color para el enlace activo */
     font-weight: bold; /* Opcional: hacer el enlace activo en negrita */
   }
   
@@ -8,13 +11,16 @@
     color: #E3DF00 !important;
 }
 
+.container-navbar{
+    margin-left: 1rem;
+    display: flex;
+}
 
 
 .navbar-brand{
     position: relative; 
     /* padding-top: 0.3125rem; */
     /* padding-bottom: 0.3125rem; */
-    color: #e50000;
     font-size: 1rem;
     .text-resaltado{
         color: #E3DF00 !important;
@@ -29,13 +35,18 @@ h1{
 }
 
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1200px !important;
-    }
-}
 
 .registrate{
     color: black !important;
 }
 
+.logo{
+    width: 310px !important;
+    height: 60px !important;
+}
+
+@media (min-width: 1200px) {
+    .container-navbar {
+        max-width: 1200px !important;
+    }
+}

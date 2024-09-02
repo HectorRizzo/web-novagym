@@ -113,7 +113,7 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        opacity: 0.3; /* Ajusta este valor para cambiar la opacidad */
+        opacity: 0.2; /* Ajusta este valor para cambiar la opacidad */
         position: absolute;
         top: 0;
         left: 0;
@@ -146,9 +146,9 @@
 
         .td-planes{
             vertical-align: super !important;
-            color: black !important;
-            background: white !important;
-            border: 1rem solid black !important;
+            color: white !important;
+            background: transparent !important;
+            border: 0.2rem solid white !important;
     
             h5,h6,li{
                 font-weight: 700 !important;
@@ -160,11 +160,11 @@
     .title-plan{
         font-weight: bold;
         font-size: 2rem;
-        color: black;
+        color: #E3DF00;
     }
     .subtitle-plan{
         text-align: end;
-        color: black;
+        color: white;
     }
 
     .li{
@@ -182,7 +182,7 @@
         list-style: disc !important;
         li{
             margin-top: 1rem;
-            color: black;
+            color: white;
         }
         h6{
             font-weight: normal;
@@ -223,7 +223,7 @@
     //select
 
     .custom-select{
-        color: black;
+        color: white;
     }
 
     .select-option-custom{
@@ -436,6 +436,11 @@
         padding-top: 1rem;
         margin-bottom: 1rem;
 
+        .card-img-top{
+            width: 225px !important;
+            height: 250px !important;
+        }
+
         
         .card-noticias{
             background: transparent !important;
@@ -486,6 +491,7 @@
         }    
         .body-beneficios{
             background: #E3DF00;
+            width: 100%;
             h5{
                 font-weight: 100 !important;
                 color: black !important;

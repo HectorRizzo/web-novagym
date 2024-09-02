@@ -38,6 +38,7 @@ import { PageRoutingModule } from "./pages-routing.module";
 import { PagoComponent } from "./cart/pago/pago.component";
 import { ResumenPagoComponent } from "./cart/resumen-pago/resumen-pago.component";
 import { ModificarDatosComponent } from "./cart/modificar-datos/modificar-datos.component";
+import { SedesService } from "../services/sedes.service";
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { ModificarDatosComponent } from "./cart/modificar-datos/modificar-datos.
     ModalModule.forRoot()
   ],
   providers: [
-    AuspiciantesService
+    AuspiciantesService,
+    SedesService
     ]
 })
 export class PagesModule {}

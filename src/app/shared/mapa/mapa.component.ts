@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter, OnInit, Input, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, Input, SimpleChanges, ViewChild, AfterViewInit, OnChanges } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { SedesService } from '../../services/sedes.service';
 
 interface Marker {
   position: google.maps.LatLngLiteral;
@@ -16,16 +17,16 @@ interface Marker {
   templateUrl: './mapa.component.html',
   styleUrls: ['./mapa.component.scss']
 })
-export class MapaComponent implements OnInit {
+export class MapaComponent implements OnInit , AfterViewInit, OnChanges {
   
-  @Input() selectedUbicacion: string = '';
+  @Input() selectedUbicacion: number = 0;
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
 
   selectedMarker?: Marker;
 
   marcadores: Marker[] = [];
 
- constructor() { }
+ constructor(private sedesService: SedesService) { }
 
 
   center: google.maps.LatLngLiteral = { lat: -2.18, lng: -79.9 };
@@ -35,19 +36,16 @@ export class MapaComponent implements OnInit {
   map: google.maps.Map | undefined;
     service: google.maps.places.PlacesService | undefined;
     infoContent: string = '';
-  markers: Marker[] = [
-    { nombre: 'Sede Centro', position: { lat:-2.1867352190473524, lng:-79.89419700000002}, title: 'NOVA GYM Sede Centro', description: 'Los Ríos, Guayaquil 090514', telefono: '(04)2282004', email:'infonovagym@gmail.com'},
-    { nombre: 'Sede Norte', position: {lat:-2.1404472348899484, lng:-79.89800086216792 }, title: 'NOVA GYM Sede Norte', description: 'Plaza Mayor, Av. Rodolfo Baquerizo Nazur 1, Guayaquil 090501', telefono: '(04)4601585', email:'infonovagym@gmail.com'},
-    { nombre: 'Sede Sur', position: { lat:-2.2287332455145514, lng:-79.8974067333309 }, title: 'NOVA GYM Sede Sur', description: 'Av. 25 de Julio, Guayaquil 090102', telefono: '(04)4601585', email:'infonovagym@gmail.com'},
-    { nombre: 'Sede Machala', position: { lat:-3.268450943850025, lng:-79.94717633332256 }, title: 'NOVA GYM Sede Machala', description: 'Primero de Mayo y Los Rios, Machala, Ecuador', telefono: '(04)4601585', email:'infonovagym@gmail.com'},
-
-    // Agrega más marcadores aquí
-  ];
+  markers: Marker[] = [];
   ngOnInit(): void {
      console.log('Selected ubicacion', this.selectedUbicacion);
     console.log('MapaComponent initialized');
+  }
+  ngAfterViewInit() {
+    // Aquí puedes inicializar el mapa o cualquier otro componente que dependa del DOM
     setTimeout(() => this.initMap(), 1000);
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
     console.log('changes', changes['selectedUbicacion']);
@@ -55,6 +53,9 @@ export class MapaComponent implements OnInit {
       this.initMap();
     }
   }
+
+
+  
 
   zoomToMarker(marker: any) {
     this.center = marker.position;
@@ -65,25 +66,15 @@ export class MapaComponent implements OnInit {
   }
 
   initMap(): void {
-    this.marcadores = this.markers.filter(marker => marker.nombre === this.selectedUbicacion);
+    this.getInfoSede(this.selectedUbicacion);
     console.log('Initializing map');
     const mapOptions: google.maps.MapOptions = {
-      center: { lat: -2.1, lng: -79.8 }, // Ajusta la posición inicial del mapa
-      zoom: 12
+      center: this.center,
+      zoom: 9
     };
 
     this.map = new google.maps.Map(document.getElementById('map') as HTMLElement, mapOptions);
     this.infowindow = new google.maps.InfoWindow();
-    // Ejemplo de lugares para crear marcadores
-    const places = [
-      { name: 'Sede Centro', geometry: { location: new google.maps.LatLng(-2.1867352190473524,-79.89419700000002) } },
-      { name: 'Sede Norte', geometry: { location: new google.maps.LatLng(-2.1404472348899484, -79.89800086216792) } },
-      { name: 'Sede Sur', geometry: { location: new google.maps.LatLng(-2.2287332455145514, -79.8974067333309) } }
-
-    ];
-    console.log('Creating markers for places', places);
-    places.filter(place => place.name === this.selectedUbicacion).
-    forEach(place => this.createMarker(place));
   }
 
   createMarker(place: { name?: string; geometry: { location: google.maps.LatLng } }): void {
@@ -117,6 +108,23 @@ export class MapaComponent implements OnInit {
     } else {
       console.error('infoWindow is not defined');
     }
+  }
+
+  getInfoSede(idSede: number) {
+    console.log('Getting info for sede', idSede);
+    // Aquí puedes navegar a la página de información de la sede
+    this.sedesService.getSedeById(idSede).subscribe(sede => {
+      console.log('Sede info', sede);
+      this.marcadores = [];
+      this.marcadores.push({
+        position: { lat: Number(sede.latitud), lng: Number(sede.longitud) },
+        title: sede.nombre,
+        description: sede.ubicacion,
+        telefono: sede.telefono,
+        email: "novagym@gmail.com"
+      });
+      this.center = this.marcadores[0].position;
+    });
   }
   
   
