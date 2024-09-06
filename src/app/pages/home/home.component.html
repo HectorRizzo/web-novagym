@@ -14,7 +14,7 @@
       <div class="row justify-content-between align-items-center">
           <div class="col-lg-1 mb-5 mb-lg-0">
           </div>
-          <div class="col-lg-5 mb-5 mb-lg-0">
+          <div class="col-lg-5 col-md-4 mb-5 mb-lg-0">
             <h1 class="text-white font-weight-bold title-custom">ENCUENTRA
               TU SEDE</h1>
             <h2 class="text-white mt-4 font-weight-bold">
@@ -31,7 +31,7 @@
             </span>
             </a>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-7">
             <div class="swiper-sedes mySwiperSedes">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -192,154 +192,40 @@
           <thead>
           </thead>
           <tbody>
-              <tr>
-                <td class="text-center td-planes">
+              <tr class="container-td-planes">
+                <td class="text-center td-planes col col-sm-5 col-md-4 col-lg-3" *ngFor="let plan of membresiasArray[0]?.value">
                   <span class="title-plan">
-                    PLAN BLACK
+                    {{plan.nombre}}
                   </span>
-                  <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                      <ul class="list-planes">
-                        <li>Acceso a TODOS los
-                          Nova del país</li>
-                        <li>Gratis Shaker</li>
-                        <li>Invita 4 amigos al mes
-                          (1 cada fds)</li>
-                        <li>Acceso a sillo den masajes</li>
-                        <li>Nutricionista Gratis</li>
-                        <li>Acceso a piscina CLUB
-                          NOVA</li>
-                        <li>Acceso a Sauna</li>
-                        <li>Incluye entrenadores, wifi,
-                          duchas y casilleros</li>
-                        <li>Incluye clases de Gimnasio
-                          y Crossfitness</li>
-
-                        <h6 class="mt-3">
-                          <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                        Horario libre de ingreso
-                        </h6>
+                  <h5 class="subtitle-plan"> {{ plan.precios[0].esRecurrente ? 'Débito Recurrente' : 'Débito Único' }}</h5>
+                    <ul class="list-planes">
+                      <li *ngFor="let beneficio of plan.beneficios">
+                        {{ beneficio.nombre }}</li>
+                      <h6 class="mt-3" *ngFor="let info of plan.informacion">
+                        <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
+                        {{info.replace('•','')}}
+                      </h6>
+                      <div *ngIf="plan.nombre == 'Limitado'">
+                        <h3>
+                          <span class="font-weight-bold text-resaltado">
+                            !Escoge tu horario!
+                          </span>
+                        </h3>
+                        <select class="custom-select custom-select-lg mb-3">
+                          <option class="select-option-custom" value="1">Matutino: 5 am - 9 am</option>
+                          <option class="select-option-custom" value="2">Medio día: 9 am - 1 pm</option>
+                          <option class="select-option-custom" value="3">Vespertino: 1 pm - 5 pm</option>
+                        </select>
+                      </div>
                   </ul>
                   <div class="div-foot-planes">
                   <span class="title-plan">
-                    $30,00
+                    ${{ plan.precios[0].precio }}
                   </span>
-                  <h5 class="debito"> Débito
-                    Automático mensual  </h5>
+                  <h5 class="debito"> {{ plan.precios[0].esRecurrente ? 'Débito Automático mensual' : 'Débito Único' }} </h5>
                   <button class="btn btn-primary font-weight-bold btn-planes">INSCRÍBETE</button>
                   </div>
                 </td>
-                  <td class="text-center td-planes">
-                    <div>
-                      <div>
-                        <span class="title-plan">
-                          PLAN NOVA
-                        </span>
-                        <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                      </div>
-                        <div>
-                            <ul class="list-planes">
-                              <li>Acceso a 1 gimnasio</li>
-                              <li>Incluye entrenadores,
-                                wifi, duchas y casilleros</li>
-                              <li>Acceso al Sauna</li>
-                              <li>Incluye clases de Gimnasio,
-                                Crossfitness</li>
-    
-                              <h6 class="mt-3">
-                                <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                                Horario libre de ingreso
-    
-                              </h6>
-                        </ul>
-                       
-                        </div>
-                        <div class="div-foot-planes">
-                          <span class="title-plan">
-                            $25,00
-                          </span>
-                          <h5 class="debito"> Débito
-                            Automático mensual  </h5>
-                          <button class="btn btn-primary font-weight-bold btn-planes">INSCRÍBETE</button>
-                        </div>
-                    </div>
-                   
-
-                  </td>
-
-                  <td class="text-center td-planes">
-                    <span class="title-plan">
-                      Plan LIMITADO
-                    </span>
-                    <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                    <h6 class="mt-3">
-                      <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                    Horario libre de ingreso
-                    </h6>
-                        <ul class="list-planes">
-                          <li>Acceso a 1 gimnasio</li>
-                          <li>Acceso al Sauna</li>
-                          <li>Incluye entrenadores,
-                            wifi, duchas y casilleros</li>
-                          <li>Incluye clases de Gimnasio,
-                            Crossfitness</li>
-
-                          <h6 class="mt-3">
-                            <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                          Fin de semana ingreso en horario libre
-                          </h6>
-                          <div>
-                            <h3>
-                              <span class="font-weight-bold text-resaltado">
-                                !Escoge tu horario!
-                              </span>
-                            </h3>
-                            <select class="custom-select custom-select-lg mb-3">
-                              <option class="select-option-custom" value="1">Matutino: 5 am - 9 am</option>
-                              <option class="select-option-custom" value="2">Medio día: 9 am - 1 pm</option>
-                              <option class="select-option-custom" value="3">Vespertino: 1 pm - 5 pm</option>
-                            </select>
-                          </div>
-                    </ul>
-                   
-                    <div class="div-foot-planes">
-                      <span class="title-plan">
-                        $17,00
-                      </span>
-                      <h5 class="debito"> Débito
-                        Automático mensual  </h5>
-                      <button class="btn btn-primary font-weight-bold  btn-planes">INSCRÍBETE</button>
-                    </div>
-                  </td>
-                  <td class="text-center td-planes">
-                    <span class="title-plan">
-                      Plan ESTUDIANTIL
-                    </span>
-                    <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                        <ul class="list-planes">
-                          <li>Horario de Ingreso
-                            9am a 3pm</li>
-                          <li>Acceso a 1 gimnasio</li>
-                          <li>Acceso al Sauna</li>
-                          <li>Gratis entrenadores,
-                            wifi, duchas y casilleros</li>
-                          <li>Incluye clases de Gimnasio,
-                            Crossfitness</li>
-
-                          <h6 class="mt-3">
-                            <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                          Fin de semana ingreso en horario libre
-                         
-                          </h6>
-                    </ul>
-                    <div class="div-foot-planes">
-                      <span class="title-plan">
-                        $17,00
-                      </span>
-                      <h5 class="debito"> Débito
-                        Automático mensual  </h5>
-                      <button class="btn btn-primary font-weight-bold btn-planes  btn-planes">INSCRÍBETE</button>
-                    </div>
-                  </td>
               </tr>
           </tbody>
       </table>
@@ -403,13 +289,13 @@
         </div>
         <div class="swiper-sedes mySwiperClases">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" *ngFor="let clase of clases">
               <div class="card card-clases">
                 <img src="assets/img/clases-2.webp" class="card-img-top" alt="...">
                 <div class="card-img-overlay  d-flex flex-column">
                   <div>
                     <h2 class="card-title text-center body-card-clases">
-                      FUNCIONAL
+                      {{clase?.nombre}}
                     </h2>
                   </div>
                 
@@ -426,159 +312,12 @@
                   <div class="card-body body-card-clases">
                     <hr>
                     <h5>
-                      Lorem ipsum dolor sit amet, consectetuer
-                      adipiscing elit, sed diam nonummy
-                      nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat. Ut
-                      wisi enim ad minim veniam, quis nostrud
-                      exerci tation ullamcorper suscipit
-                      lobortis nisl ut aliquip ex ea commodo
+                      {{clase?.descripcion}}
                     </h5>
                   </div>
                   <div>
 
                   </div>
-                </div>
-                <div class="card-body">
-
-                </div>
-                <div class="card-footer">
-                </div>
-                
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="card card-clases">
-                <img src="assets/img/clases-3.webp" class="card-img-top" alt="...">
-                <div class="card-img-overlay  d-flex flex-column">
-                  <div>
-                    <h2 class="card-title text-center body-card-clases">
-                      CARDIO
-                    </h2>
-                  </div>
-                
-                  <div class="body-card-clases align-items-start row">
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/reloj.png" class="badge-icon mr-3" alt="Icono de ubicación">
-                      <h5>60 min</h5>
-                    </div>
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/bateria.png" class="badge-icon" alt="Icono de ubicación">
-                      <h5 class="">Intensidad Alta</h5>
-                    </div>
-                  </div>
-                  <div class="card-body body-card-clases">
-                    <hr>
-                    <h5>
-                      Lorem ipsum dolor sit amet, consectetuer
-                      adipiscing elit, sed diam nonummy
-                      nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat. Ut
-                      wisi enim ad minim veniam, quis nostrud
-                      exerci tation ullamcorper suscipit
-                      lobortis nisl ut aliquip ex ea commodo
-                    </h5>
-                  </div>
-                  <div>
-
-                  </div>
-                  
-  
-                </div>
-                <div class="card-body">
-
-                </div>
-                <div class="card-footer">
-                </div>
-                
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="card card-clases">
-                <img src="assets/img/clases-4.webp" class="card-img-top" alt="...">
-                <div class="card-img-overlay  d-flex flex-column">
-                  <div>
-                    <h2 class="card-title text-center body-card-clases">
-                      CROSSTRAINING
-                    </h2>
-                  </div>
-                
-                  <div class="body-card-clases align-items-start row">
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/reloj.png" class="badge-icon mr-3" alt="Icono de ubicación">
-                      <h5>60 min</h5>
-                    </div>
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/bateria.png" class="badge-icon" alt="Icono de ubicación">
-                      <h5 class="">Intensidad Alta</h5>
-                    </div>
-                  </div>
-                  <div class="card-body body-card-clases">
-                    <hr>
-                    <h5>
-                      Lorem ipsum dolor sit amet, consectetuer
-                      adipiscing elit, sed diam nonummy
-                      nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat. Ut
-                      wisi enim ad minim veniam, quis nostrud
-                      exerci tation ullamcorper suscipit
-                      lobortis nisl ut aliquip ex ea commodo
-                    </h5>
-                  </div>
-                  <div>
-
-                  </div>
-                  
-  
-                </div>
-                <div class="card-body">
-
-                </div>
-                <div class="card-footer">
-                </div>
-                
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="card card-clases">
-                <img src="assets/img/clases-5.webp" class="card-img-top" alt="...">
-                <div class="card-img-overlay  d-flex flex-column">
-                  <div>
-                    <h2 class="card-title text-center body-card-clases">
-                      MUSCULACIÓN Y PESO
-                    </h2>
-                  </div>
-                
-                  <div class="body-card-clases align-items-start row">
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/reloj.png" class="badge-icon mr-3" alt="Icono de ubicación">
-                      <h5>60 min</h5>
-                    </div>
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <img src="assets/icons/bateria.png" class="badge-icon" alt="Icono de ubicación">
-                      <h5 class="">Intensidad Alta</h5>
-                    </div>
-                  </div>
-                  <div class="card-body body-card-clases">
-                    <hr>
-                    <h5>
-                      Lorem ipsum dolor sit amet, consectetuer
-                      adipiscing elit, sed diam nonummy
-                      nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat. Ut
-                      wisi enim ad minim veniam, quis nostrud
-                      exerci tation ullamcorper suscipit
-                      lobortis nisl ut aliquip ex ea commodo
-                    </h5>
-                  </div>
-                  <div>
-
-                  </div>
-                  
-  
                 </div>
                 <div class="card-body">
 
@@ -599,596 +338,10 @@
   <!--Horarios-->
   <div class="section horarios">
     <div class="container">
-      <div class="row justify-content-between align-items-center">
-        <div class="col-lg-12 mb-5 mb-lg-0">
-          <h1 class="text-white font-weight-light text-center font-weight-bold">
-            CLASES NOVA HORARIOS
-          </h1>
-        </div>
-      </div>
       <div>
         <div>
-          <tabset class="nav-tabs-primary justify-content-center">
-            <tab>
-              <ng-template tabHeading>
-                <i class="tim-icons icon-spaceship"> </i> ALL TRAININGS
-              </ng-template>
-              <table class="table table-bordered table-dark table-horarios">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th scope="col" class="text-center titles">LUNES</th>
-                    <th scope="col" class="text-center titles">MARTES</th>
-                    <th scope="col" class="text-center titles">MIÉRCOLES</th>
-                    <th scope="col" class="text-center titles">JUEVES</th>
-                    <th scope="col" class="text-center titles">VIERNES</th>
-                    <th scope="col" class="text-center titles">SÁBADO</th>
-                    <th scope="col" class="text-center titles">DOMINGO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row titles">07:00 - 08:00</th>
-                    <td
-                    class="text-center">
-                      
-                      FITNESS CLASS
-                      <h5>Gloria Parker</h5>
-                      <div class="description">
-                        REGULAR
-                      </div>
-                    </td>
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">CARDIO BOX <h5>Lisa Stewrart</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center">INTENSE BODYBUILDING  <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">08:00 - 09:00</th>
-                    <td class="text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">BODY BALANCE <h5>William Dixon</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">BODY PUMP <h5>Melanie Payne</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center">CROSSFIT <h5>William Dixon</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">09:00 - 10:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                    <td class = "text-center">CROSSFIT <h5>William Dixon</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                    <td class = "text-center">BODY BALANCE <h5>William Dixon</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">10:00 - 11:00</th>
-                    <td class="text-center">CARDIO BOX  <h5>Lisa Stewrart</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                    <td class = "text-center">FITNESS CLASS <h5>Gloria Parker</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">CARDIO BOX  <h5>Lisa Stewrart</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">11:00 - 12:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center">BODY PUMP <h5>Melanie Payne</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">CARDIO BOX  <h5>Lisa Stewrart</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                    <td class = "text-center">FITNESS CLASS <h5>Gloria Parker</h5>
-                      <div class="description">
-                        Regular
-                      </div></td>
-                  </tr>
-                    
-                </tbody>
-            </table>
-            </tab>
-            <tab>
-              <ng-template tabHeading>
-                <i class="tim-icons icon-settings-gear-63"> </i> BODYBUILDING
-              </ng-template>
-              <!--La misma tabla pero filtrado por BODYBUILDING-->
-              <table class="table table-bordered table-dark table-horarios">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th scope="col" class="text-center titles">LUNES</th>
-                    <th scope="col" class="text-center titles">MARTES</th>
-                    <th scope="col" class="text-center titles">MIÉRCOLES</th>
-                    <th scope="col" class="text-center titles">JUEVES</th>
-                    <th scope="col" class="text-center titles">VIERNES</th>
-                    <th scope="col" class="text-center titles">SÁBADO</th>
-                    <th scope="col" class="text-center titles">DOMINGO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row titles">07:00 - 08:00</th>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center">INTENSE BODYBUILDING  <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">08:00 - 09:00</th>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center">BODY BALANCE <h5>William Dixon</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center">BODY PUMP <h5>Melanie Payne</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row titles">09:00 - 10:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                      <td class = "text-center"></td>
-
-                    <td class = "text-center">BODY BALANCE <h5>William Dixon</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">10:00 - 11:00</th>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center">INTENSE BODYBUILDING <h5>Jacob McDonald</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">11:00 - 12:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center">BODY PUMP <h5>Melanie Payne</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                  </tr>
-                    
-                </tbody>
-            </table>
-
-            </tab>
-            <tab>
-              <ng-template tabHeading>
-                <i class="tim-icons icon-bag-16"> </i> CARDIO
-              </ng-template>
-              <!--La misma tabla pero filtrado por CARDIO-->
-              <table class="table table-bordered table-dark table-horarios">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th scope="col" class="text-center titles">LUNES</th>
-                    <th scope="col" class="text-center titles">MARTES</th>
-                    <th scope="col" class="text-center titles">MIÉRCOLES</th>
-                    <th scope="col" class="text-center titles">JUEVES</th>
-                    <th scope="col" class="text-center titles">VIERNES</th>
-                    <th scope="col" class="text-center titles">SÁBADO</th>
-                    <th scope="col" class="text-center titles">DOMINGO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row titles">07:00 - 08:00</th>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">CARDIO BOX <h5>Lisa Stewrart</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">08:00 - 09:00</th>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row titles">09:00 - 10:00</th>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">10:00 - 11:00</th>
-                    <td class = "text-center">CARDIO BOX <h5>Lisa Stewrart</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">11:00 - 12:00</th>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center">CARDIO BOX <h5>Lisa Stewrart</h5>
-                      <div class="description">
-                        REGULAR
-                      </div></td>
-                      <td class = "text-center">CARDIO BOX <h5>Lisa Stewrart</h5>
-                        <div class="description">
-                          REGULAR
-                        </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-
-                </tbody>
-            </table>
-            </tab>
-            <tab>
-              <ng-template tabHeading>
-                <i class="tim-icons icon-spaceship"> </i> GYM
-              </ng-template>
-              <table class="table table-bordered table-dark table-horarios">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th scope="col" class="text-center titles">LUNES</th>
-                    <th scope="col" class="text-center titles">MARTES</th>
-                    <th scope="col" class="text-center titles">MIÉRCOLES</th>
-                    <th scope="col" class="text-center titles">JUEVES</th>
-                    <th scope="col" class="text-center titles">VIERNES</th>
-                    <th scope="col" class="text-center titles">SÁBADO</th>
-                    <th scope="col" class="text-center titles">DOMINGO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row titles">07:00 - 08:00</th>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">08:00 - 09:00</th>
-                    <td class="text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        LITE
-                      </div></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row titles">09:00 - 10:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row titles">10:00 - 11:00</th>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row titles">11:00 - 12:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center">OPEN GYM <h5>Madison Fran</h5>
-                      <div class="description">
-                        FREE
-                      </div></td>
-                      <td class = "text-center"></td>
-
-                  </tr>
-                    
-                </tbody>
-            </table>
-            </tab>
-            <tab>
-              <ng-template tabHeading>
-                <i class="tim-icons icon-spaceship"> </i> POWERLIFTING
-              </ng-template>
-              <table class="table table-bordered table-dark table-horarios">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th scope="col" class="text-center titles">LUNES</th>
-                    <th scope="col" class="text-center titles">MARTES</th>
-                    <th scope="col" class="text-center titles">MIÉRCOLES</th>
-                    <th scope="col" class="text-center titles">JUEVES</th>
-                    <th scope="col" class="text-center titles">VIERNES</th>
-                    <th scope="col" class="text-center titles">SÁBADO</th>
-                    <th scope="col" class="text-center titles">DOMINGO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row titles">07:00 - 08:00</th>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">08:00 - 09:00</th>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center">CROSSFIT <h5>William Dixon</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row titles">09:00 - 10:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center">CROSSFIT <h5>William Dixon</h5>
-                      <div class="description">
-                        Strength
-                      </div></td>
-                      <td class = "text-center"></td>
-                      <td class = "text-center"></td>
-
-                      <td class = "text-center"></td>
-                      <td class = "text-center"></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row titles">10:00 - 11:00</th>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row titles">11:00 - 12:00</th>
-                    <td class="text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-                    <td class = "text-center"></td>
-
-                    <td class = "text-center"></td>
-
-                  </tr>
-                    
-                </tbody>
-            </table>
-            </tab>
-            <tab>
-              <ng-template tabHeading>
-                <i class="tim-icons icon-spaceship"> </i> API
-              </ng-template>
-              <table class="table table-bordered table-dark table-horarios">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th *ngFor="let dia of diasSemana" scope="col" class="text-center titles">{{ dia }}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let hora of horas">
-                    <th scope="row titles">{{ hora }} - {{ horasNext[horas.indexOf(hora)] }}</th>
-                    <td *ngFor="let dia of diasSemana" class="text-center">
-                      <ng-container *ngIf="horarioMap.get(diasSemana.indexOf(dia) + '-' + hora) as horario">
-                        {{ horario.horario.nombre }}
-                        <h5>{{ horario.usuario.nombres }} {{ horario.usuario.apellidos }}</h5>
-                        <div class="description">{{ horario.horario.descripcion }}</div>
-                      </ng-container>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </tab>
-          </tabset>
+          <app-horario></app-horario>
         </div>
-
       </div>
     </div>
   </div>
@@ -1205,10 +358,10 @@
         </div>
         <div class="col-lg-12 mt-3 col-12 container-noticia">
           <div class="row">
-            <div class="col-lg-4 col-12">
+            <div class="col-lg-4 col-md-4 col-12 justify-content-center">
               <img src="assets/img/home-noticias-1.png" class="card-img-top" alt="...">
             </div>
-            <div class="col-lg-6 col-10">
+            <div class="col-lg-6 col-md-6 col-10 justify-content-center">
               <div class="card card-noticias">
                 <div class="card-body body-card-noticias">
                   <h5 class="card-title justify-content-center font-weight-bold">
@@ -1223,17 +376,17 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-2 align-content-center">
+            <div class="col-2 align-content-center">
               <img src="assets/icons/siguiente2.png" class="" alt="..." href="https://www.facebook.com/"> 
             </div>
         </div>
         </div>
         <div class="col-lg-12 mt-3 col-12 container-noticia">
           <div class="row">
-            <div class="col-lg-4 col-12">
+            <div class="col-lg-4 col-md-4 col-12 justify-content-center">
               <img src="assets/img/home-noticias-2.png" class="card-img-top" alt="...">
             </div>
-            <div class="col-lg-6 col-10">
+            <div class="col-lg-6 col-md-6 col-10 justify-content-center">
               <div class="card card-noticias"  style="background: transparent;">
                 <div class="card-body body-card-noticias">
                   <h5 class="card-title justify-content-center font-weight-bold">
@@ -1251,17 +404,17 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-2 align-content-center">
+            <div class="col-2 align-content-center">
               <img src="assets/icons/siguiente2.png" class="" alt="...">
             </div>
         </div>
         </div>
         <div class="col-lg-12 mt-3 col-12 container-noticia">
           <div class="row">
-            <div class="col-lg-4 col-12">
+            <div class="col-lg-4 col-md-4 col-12 justify-content-center">
               <img src="assets/img/home-noticias-3.png" class="card-img-top" alt="...">
             </div>
-            <div class="col-lg-6 col-10">
+            <div class="col-lg-6 col-md-6 col-10 justify-content-center">
               <div class="card card-noticias">
                 <div class="card-body body-card-noticias">
                   <h5 class="card-title justify-content-center font-weight-bold">
@@ -1277,7 +430,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-2 align-content-center">
+            <div class="col-2 align-content-center">
               <img src="assets/icons/siguiente2.png" class="" alt="...">
             </div>
         </div>
@@ -1287,7 +440,7 @@
   </div>
 
             <!-- Comentarios -->
-  <div class="swiper-container-parent">
+  <div class="swiper-container-parent comentarios">
     <div class="swiper-container swiper">
       <!-- Wrapper for slides -->
       <div class="swiper-wrapper">

@@ -2,6 +2,10 @@
     border-bottom: 1px solid #E3DF00;
 }
 
+.navbar-collapse{
+    justify-content: flex-end;
+}
+
 .navbar-nav .nav-link.active {
     font-weight: bold; /* Opcional: hacer el enlace activo en negrita */
   }
@@ -45,8 +49,77 @@ h1{
     height: 60px !important;
 }
 
-@media (min-width: 1200px) {
-    .container-navbar {
-        max-width: 1200px !important;
-    }
+.reg-compras{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
+
+
+@media (max-width: 1200px) {
+
+    .navbar-translate{
+        padding: 0;
+    }
+    #example-navbar-primary{
+        padding: 0;
+    }
+    .logo{
+        width: 235px !important;
+        height: 45px !important;
+    }
+
+    .container-navbar{
+        margin-left: 0;
+        display: flex;
+    }
+
+    .nav-item{
+        padding: 0 1px;
+        .nav-link{
+            font-size: 0.7rem;
+        }
+    }
+
+    .btn-registro{
+        padding: 10px 20px;
+        .registrate{
+            color: black !important;
+            font-size: 0.6rem;
+        }
+    
+    }
+
+    h1{
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+  }
+
+  
+  @media (max-width: 992px) {
+    .navbar-collapse{
+        top: 50px !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+  }
+  
+  @media (max-width: 576px) {
+    .navbar-brand{
+        margin: 0px !important;
+    }
+    .logo{
+        width: 200px !important;
+        height: 38px !important;
+    }
+    .btn-registro{
+        margin: 0px !important;
+    }
+  }
+
+

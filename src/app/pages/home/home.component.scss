@@ -85,6 +85,7 @@
         transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */      
     }
     .card-body-overlay{
+        align-self: center;
         align-content: end;
     }
 
@@ -143,17 +144,21 @@
         h3{
             margin-bottom: 0px;
         }
-
-        .td-planes{
-            vertical-align: super !important;
-            color: white !important;
-            background: transparent !important;
-            border: 0.2rem solid white !important;
-    
-            h5,h6,li{
-                font-weight: 700 !important;
+        .container-td-planes{
+            display: flex;
+            flex-wrap: wrap;
+            .td-planes{
+                vertical-align: super !important;
+                color: white !important;
+                background: transparent !important;
+                border: 0.2rem solid white !important;
+        
+                h5,h6,li{
+                    font-weight: 700 !important;
+                }
             }
         }
+
     }
 
 
@@ -646,5 +651,104 @@
     
   }
 
+
+  //Responsive 
+
+  @media (max-width: 1200px) {
+    .title-custom {
+      font-size: 4rem;
+    }
+
+    .div-comment{
+        margin-left: 10px !important;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .title-custom {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+
+    .comentarios{
+        .swiper-container-parent{
+            height: 700px !important;
+        
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+                // Variables para personalizar los bullets
+            // Variables para personalizar los bullets
+                --swiper-pagination-color: #E3DF00; // Color de los bullets
+               --swiper-pagination-bullet-inactive-color: rgba(0, 0, 0, 0.642) !important; // Color de los bullets inactivos
+               --swiper-pagination-bullet-size: 64px; // Tamaño de los bullets
+          //  --swiper-pagination-bullet-horizontal-gap: 6px; // Espacio horizontal entre bullets
+            }
+    
+            .div-comment{
+                margin-top: 8rem;    
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+                h1{
+                    font-size: 15rem;
+                    line-height: 1.2;
+                    font-weight: 900;
+                }
+                h4{
+                    font-size: 0.5rem;
+                    font-weight: 900;
+                }
+            }
+        
+        }
+        .swiper::before{
+            content: "";
+            background-image: url('../../../assets/img/background-comentarios.webp'); //Aqui va la imagen de fondo
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.6; /* Ajusta este valor para cambiar la opacidad */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        
+        .swiper-pagination{
+            bottom: 0;
+        }
+    }
+
+
+    .title-custom {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .title-custom {
+      font-size: 2rem;
+    }
+    .beneficios{
+        h1{
+            font-size: 2.5rem;
+        }
+    }
+
+    .div-comment{
+        margin-left: 0px;
+
+        h1{
+            font-size: 1.8rem !important;
+        }
+    }
+  }
 
 

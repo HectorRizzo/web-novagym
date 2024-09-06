@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component, HostListener, OnInit } from "@angular/core";
 import { Router, RouterLink, RouterLinkActive } from "@angular/router";
-
 
 @Component({
     selector: "app-navbar",
@@ -10,18 +10,20 @@ import { Router, RouterLink, RouterLinkActive } from "@angular/router";
     standalone: true,
     imports: [
         RouterLink,
-        RouterLinkActive
+        RouterLinkActive,
+        CommonModule
     ]
 
 })
 
 export class NavbarComponent implements OnInit {
-    isCollapsed = true;
+  showMenu = false;
 
     constructor(private router: Router) {}
 
     ngOnInit() {
-    }
+      }
+    
 
     clickRegistro() {
         this.router.navigate(['/registro']);
@@ -29,6 +31,18 @@ export class NavbarComponent implements OnInit {
 
     clickInicioSesion() {
         this.router.navigate(['/inicio-sesion']);
+    }
+
+
+    toggleNavbar(event: MouseEvent) {
+        event.stopPropagation();
+        this.showMenu = !this.showMenu;
+    }
+
+
+    closeMenu() {
+      console.log('closeMenu');
+      this.showMenu = false;
     }
 
 }

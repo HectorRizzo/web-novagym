@@ -51,3 +51,9 @@
         
 
     }
+
+    @media (max-width: 768px) {
+        .tab-horario{
+            overflow: scroll;
+        }
+    }

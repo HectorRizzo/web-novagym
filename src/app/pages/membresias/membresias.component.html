@@ -6,266 +6,86 @@
         <div>
             <div class="row row-cols-1 row-cols-md-2">
   
-                <div class="col-3 mb-4">
-                    <div class="card card-sedes">
-                      <img src="assets/img/home-sedes-norte.webp" class="card-img-top" alt="...">
-                      <div class="card-body body-sedes">
-                        <h5 class="card-title justify-content-center font-weight-bold">Centro</h5>
-                        <h6>Plaza Mayor, Av. Rodolfo Baquerizo Nazur, Guayaquil, Ecuador</h6>
-                        <p>
-                          <img src="assets/icons/telef.png" class="img-fluid">
-                          (04)4601585</p>
-                        <p>
-                          <img src="assets/icons/correo.png" class="img-fluid">
-                          info&commat;novagym.com</p>
-                      </div>
-                      <div class="card-footer" (click)="toggleActive($event)">
-                          <div class="text-center">
-                              <h1>Seleccionar</h1> 
-                          </div>
-                          <img src="assets/icons/siguiente.png" class="img-fluid">
-                      </div>
-                    </div>
-                  </div>
-                
-                <div class="col-3 mb-4">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" *ngFor="let sede of sedes">
                   <div class="card card-sedes">
-                    <img src="assets/img/home-sedes-centro.webp" class="card-img-top" alt="...">
+                    <img src={{sede.imagen}} class="card-img-top" alt="...">
                     <div class="card-body body-sedes">
-                      <h5 class="card-title justify-content-center font-weight-bold">NORTE</h5>
-                      <h6>Primero de Mayo y los Rios.</h6>
+                      <h5 class="card-title justify-content-center font-weight-bold">{{sede.nombre}}</h5>
+                      <h6>{{sede.ubicacion}}</h6>
                       <p>
                         <img src="assets/icons/telef.png" class="img-fluid">
-                        (04)4601585</p>
+                        {{sede.telefono}}</p>
                       <p>
                         <img src="assets/icons/correo.png" class="img-fluid">
-                        info&commat;novagym.com</p>
+                        {{sede.celular}}</p>
                     </div>
-                    <div class="card-footer"  (click)="toggleActive($event)">
+                    <div class="card-footer" (click)="toggleActive($event)">
                         <div class="text-center">
                             <h1>Seleccionar</h1> 
                         </div>
                         <img src="assets/icons/siguiente.png" class="img-fluid">
-                      </div>
+                    </div>
                   </div>
                 </div>
-
-                <div class="col-3 mb-4">
-                    <div class="card card-sedes">
-                      <img src="assets/img/home-sedes-sur.webp" class="card-img-top" alt="...">
-                      <div class="card-body body-sedes">
-                        <h5 class="card-title justify-content-center font-weight-bold">SUR</h5>
-                        <h6>Av. 25 de Julio(Frente al Mall del Sur), Guayaquil, Ecuador</h6>
-                        <p>
-                          <img src="assets/icons/telef.png" class="img-fluid">
-                          (04)4601585</p>
-                        <p>
-                          <img src="assets/icons/correo.png" class="img-fluid">
-                          info&commat;novagym.com</p>
-                      </div>
-                      <div class="card-footer" (click)="toggleActive($event)">
-                          <div class="text-center">
-                              <h1>Seleccionar</h1> 
-                          </div>
-                          <img src="assets/icons/siguiente.png" class="img-fluid">
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="col-3 mb-4">
-                    <div class="card card-sedes">
-                      <img src="assets/img/home-sedes-machala.webp" class="card-img-top" alt="...">
-                      <div class="card-body body-sedes">
-                        <h5 class="card-title justify-content-center font-weight-bold">MACHALA</h5>
-                        <h6>Primero de Mayo y los Rios.</h6>
-                        <p>
-                          <img src="assets/icons/telef.png" class="img-fluid">
-                          (04)4601585</p>
-                        <p>
-                          <img src="assets/icons/correo.png" class="img-fluid">
-                          info&commat;novagym.com</p>
-                      </div>
-                      <div class="card-footer"  (click)="toggleActive($event)">
-                          <div class="text-center">
-                              <h1>Seleccionar</h1> 
-                          </div>
-                          <img src="assets/icons/siguiente.png" class="img-fluid">
-                        </div>
-                    </div>
-                  </div>
-
+        
         </div>
-    </div>
-
-    <div class="container-planes text-center">
-        <h1> SELECCIONA TU <span class="text-resaltado">PLAN </span> IDEAL </h1>
-    </div>
-    <div>
-        <table class="table table-bordered table-dark">
-          <thead>
-          </thead>
-          <tbody>
-              <tr>
-
-                  <td class="text-center td-planes">
-                    <span class="title-plan">
-                      PLAN BLACK
-                    </span>
-                    <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                        <ul class="list-planes">
-                          <li>Acceso a TODOS los
-                            Nova del país</li>
-                          <li>Gratis Shaker</li>
-                          <li>Invita 4 amigos al mes
-                            (1 cada fds)</li>
-                          <li>Acceso a sillo den masajes</li>
-                          <li>Nutricionista Gratis</li>
-                          <li>Acceso a piscina CLUB
-                            NOVA</li>
-                          <li>Acceso a Sauna</li>
-                          <li>Incluye entrenadores, wifi,
-                            duchas y casilleros</li>
-                          <li>Incluye clases de Gimnasio
-                            y Crossfitness</li>
-
-                          <h6 class="mt-3">
-                            <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                          Horario libre de ingreso
-                          </h6>
-                    </ul>
-                    <div class="costo-plan">
-                      <span class="title-plan">
-                        $30,00
-                      </span>
-                      <h5 class="debito"> Débito
-                        Automático mensual  </h5>
-                      <button class="btn btn-primary font-weight-bold  btn-planes"  (click)="selectPlan($event)">SELECCIONAR 
-                        <img src="assets/icons/siguiente.png" class="img-fluid">
-                      </button>
-                    </div>
-                    
-
-                  </td>
-
-                  <td class="text-center td-planes">
-                    <div>
-                      <div>
-                        <span class="title-plan">
-                          PLAN NOVA
-                        </span>
-                        <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                      </div>
-                        <div>
-                            <ul class="list-planes">
-                              <li>Acceso a 1 gimnasio</li>
-                              <li>Incluye entrenadores,
-                                wifi, duchas y casilleros</li>
-                              <li>Acceso al Sauna</li>
-                              <li>Incluye clases de Gimnasio,
-                                Crossfitness</li>
-    
-                              <h6 class="mt-3">
-                                <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                                Horario libre de ingreso
-    
-                              </h6>
-                        </ul>
-                        
-                        </div>
-                        <div class="costo-plan">
+        </div>
+        <div  *ngFor="let membresia of membresiasArray">
+          <div class="container-planes text-center">
+            <h1> SELECCIONA TU <span class="text-resaltado">{{membresia.key}} </span> IDEAL </h1>
+          </div>
+          <div>
+              <table class="table table-bordered table-dark">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr class="container-td-planes">
+                        <td class="text-center td-planes  col col-sm-5 col-md-4 col-lg-3" *ngFor="let plan of membresia.value">
                           <span class="title-plan">
-                            $25,00
+                            {{ plan.nombre }}
                           </span>
-                          <h5 class="debito"> Débito
-                            Automático mensual  </h5>
-                            <button class="btn btn-primary font-weight-bold  btn-planes" (click)="selectPlan($event)">
-                              SELECCIONAR 
+                          <h5 class="subtitle-plan">{{ plan.precios[0].esRecurrente ? 'Débito Recurrente' : 'Débito Único' }}
+                            </h5>
+                              <ul class="list-planes">
+                                <li *ngFor="let beneficio of plan.beneficios">
+                                  {{ beneficio.nombre }}</li>
+                                <h6 class="mt-3" *ngFor="let info of plan.informacion">
+                                  <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
+                                {{info.replace('•','')}}
+                                </h6>
+                          </ul>
+                          <div *ngIf="plan.nombre == 'Limitado'">
+                            <h3>
+                              !Escoge tu horario!
+                            </h3>
+                            <select class="custom-select custom-select-lg mb-3">
+                              <option class="select-option-custom" value="1">Matutino: 5 am - 9 am</option>
+                              <option class="select-option-custom" value="2">Medio día: 9 am - 1 pm</option>
+                              <option class="select-option-custom" value="3">Vespertino: 1 pm - 5 pm</option>
+                            </select>
+                          </div>
+                          <div class="costo-plan">
+                            <span class="title-plan">
+                              ${{ plan.precios[0].precio }}
+                            </span>
+                            <h5 class="debito"> 
+                              {{ plan.precios[0].esRecurrente ? 'Débito Automático mensual' : 'Débito Único' }}
+                              </h5>
+                            <button class="btn btn-primary font-weight-bold  btn-planes"  (click)="selectPlan($event)">SELECCIONAR 
                               <img src="assets/icons/siguiente.png" class="img-fluid">
                             </button>
-                        </div>
-                    </div>
-                   
+                          </div>
+                          <div class="card-footer" (click)="toggleActive($event)">
+                            <div class="text-center">
+                            </div>
+                          </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
 
-                  </td>
-
-                  <td class="text-center td-planes">
-                    <span class="title-plan">
-                      Plan LIMITADO
-                    </span>
-                    <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                    <h6 class="mt-3">
-                      <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                    Horario libre de ingreso
-                    </h6>
-                        <ul class="list-planes">
-                          <li>Acceso a 1 gimnasio</li>
-                          <li>Acceso al Sauna</li>
-                          <li>Incluye entrenadores,
-                            wifi, duchas y casilleros</li>
-                          <li>Incluye clases de Gimnasio,
-                            Crossfitness</li>
-
-                          <h6 class="mt-3">
-                            <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                          Fin de semana ingreso en horario libre
-                          </h6>
-                    </ul>
-                    <h3>
-                      !Escoge tu horario!
-                    </h3>
-                    <select class="custom-select custom-select-lg mb-3">
-                      <option class="select-option-custom" value="1">Matutino: 5 am - 9 am</option>
-                      <option class="select-option-custom" value="2">Medio día: 9 am - 1 pm</option>
-                      <option class="select-option-custom" value="3">Vespertino: 1 pm - 5 pm</option>
-                    </select>
-                    <div class="costo-plan">
-                      <span class="title-plan">
-                        $17,00
-                      </span>
-                      <h5 class="debito"> Débito
-                        Automático mensual  </h5>
-                        <button class="btn btn-primary font-weight-bold  btn-planes"  (click)="selectPlan($event)">SELECCIONAR 
-                          <img src="assets/icons/siguiente.png" class="img-fluid">
-                        </button>
-                    </div>
-
-                  </td>
-                  <td class="text-center td-planes">
-                    <span class="title-plan">
-                      Plan ESTUDIANTIL
-                    </span>
-                    <h5 class="subtitle-plan"> Débito Recurrente  </h5>
-                        <ul class="list-planes">
-                          <li>Horario de Ingreso
-                            9am a 3pm</li>
-                          <li>Acceso a 1 gimnasio</li>
-                          <li>Acceso al Sauna</li>
-                          <li>Gratis entrenadores,
-                            wifi, duchas y casilleros</li>
-                          <li>Incluye clases de Gimnasio,
-                            Crossfitness</li>
-
-                          <h6 class="mt-3">
-                            <img src="assets/icons/horario.png" class="icon" alt="Icono de ubicación">
-                          Fin de semana ingreso en horario libre
-                         
-                          </h6>
-                    </ul>
-                    <div class="costo-plan">
-                      <span class="title-plan">
-                        $17,00
-                      </span>
-                      <h5 class="debito"> Débito
-                        Automático mensual  </h5>
-                        <button class="btn btn-primary font-weight-bold  btn-planes"  (click)="selectPlan($event)">SELECCIONAR 
-                          <img src="assets/icons/siguiente.png" class="img-fluid">
-                        </button>
-                    </div>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-    </div>
 
     <div class="mb-4">
         <a

@@ -9,6 +9,10 @@ import { AuspiciantesService } from "../../services/auspiciantes.services";
 import { AuspiciantesDTO } from "../../dto/auspiciantes.dto";
 import { HorarioDTO } from "../../dto/horario.dto";
 import { SedesService } from "../../services/sedes.service";
+import { clasesDTO } from "../../dto/clases.dto";
+import { SedesDTO } from "../../dto/sedes.dto";
+import { PlanesDto } from "../../dto/planes.dto";
+import { MembresiasService } from "../../services/membresias.service";
 
 register();
 // Instala css do swiper
@@ -21,11 +25,10 @@ register();
 
 export class HomeComponent implements OnInit, OnDestroy {
   cont = 0;
-  horarios: HorarioDTO[] = [];
-  diasSemana = ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO'];
-  horas = ['07:00:00', '08:00:00', '09:00:00', '10:00:00', '11:00:00', '12:00:00', '13:00:00', '14:00:00', '15:00:00', '16:00:00', '17:00:00', '18:00:00', '19:00:00', '20:00:00', '21:00:00', '22:00:00', '23:00:00'];
-  horasNext = ['08:00:00', '09:00:00', '10:00:00', '11:00:00', '12:00:00', '13:00:00', '14:00:00', '15:00:00', '16:00:00', '17:00:00', '18:00:00', '19:00:00', '20:00:00', '21:00:00', '22:00:00', '23:00:00', '00:00:00'];
-  horarioMap = new Map<string, HorarioDTO>();
+  clases: clasesDTO[] = [];
+  sedes: SedesDTO[] = [];
+  mapMembresias: Map<string, PlanesDto[]> = new Map<string, PlanesDto[]>();
+  membresiasArray: { key: string, value: any }[] = [];
   isCollapsed = true;
   focus: any;
   focus1: any;
@@ -38,7 +41,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
 private auspiciantesService: AuspiciantesService,
-private sedesService: SedesService) {}
+private sedesService: SedesService,
+private membresiaService: MembresiasService) {}
   scrollToDownload(element: any,) {
     element.scrollIntoView({ behavior: "smooth" });
   }
@@ -50,7 +54,7 @@ private sedesService: SedesService) {}
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
-      direction: 'vertical',
+      direction: 'horizontal',
       pagination: {
         clickable: true,
         type: 'bullets',
@@ -66,21 +70,37 @@ private sedesService: SedesService) {}
         delay: 5000,
         disableOnInteraction: false,
       },
+      breakpoints: {
+        768: {
+          direction: 'vertical',
+        }
+      }
     });
 
     const swiper:Swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 30,
       freeMode: true,
       loop : true,
       autoplay: {
         delay: 1500,
       },
+      breakpoints: {
+        // when window width is >= 320px
+        340: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1023: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+      }
  
     });
 
     const swiperSedes:Swiper = new Swiper(".mySwiperSedes", {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 30,
       freeMode: true,
       loop : true,
@@ -88,11 +108,22 @@ private sedesService: SedesService) {}
         delay: 2000,
         pauseOnMouseEnter: true,
       },
+      breakpoints: {
+        // when window width is >= 320px
+        340: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1023: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+      }
  
     });
 
     const swiperClases:Swiper = new Swiper(".mySwiperClases", {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 30,
       freeMode: true,
       loop : true,
@@ -100,14 +131,27 @@ private sedesService: SedesService) {}
         delay: 1500,
         pauseOnMouseEnter: true,
       },
+      breakpoints: {
+        // when window width is >= 320px
+        340: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1023: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+      }
  
     });
   }
   
 
   ngOnInit() {
-    this.getDataHorarios();
+    this.getSedes();
+    this.getClases();
     this.getAuspicantes();
+    this.getMembresias();
     let body = document.getElementsByTagName("body")[0];
     body.classList.add("index-page");
 
@@ -166,42 +210,62 @@ private sedesService: SedesService) {}
     });
   }
 
-  getHorario() {
-    const horasSet = new Set<string>();
-    this.horarios.forEach(horario => {
-        horasSet.add(horario.horario_inicio);
-        horasSet.add(horario.horario_fin);  
-    });
-    this.horas = Array.from(horasSet).sort();
-    this.horasNext = this.horas.map((hora, index) => this.horas[index + 1] || '00:00:00');
 
-    this.horarios.forEach(horario => {
-      //validar si esta entre dos filas de horas
-      if (this.horas.includes(horario.horario_inicio) && this.horas.includes(horario.horario_fin)) {
-        const indexInicio = this.horas.indexOf(horario.horario_inicio);
-        const indexFin = this.horas.indexOf(horario.horario_fin);
-        for (let i = indexInicio; i < indexFin; i++) {
-          this.horarioMap.set(horario.dia + "-" + this.horas[i], horario);
-        }
+  getClases() {
+    this.sedesService.getClases().subscribe({
+      next: (clases) => {
+        console.log('clases', clases);
+        let crossfit = new clasesDTO( 2, 'Crossfit', 'Clase de crossfit',clases[0].sede);
+        this.clases = clases;
+        let todos = new clasesDTO( 999, 'Todas', 'TODAS',clases[0].sede);
+        this.clases.unshift(todos);
+        this.clases.push(crossfit);
+      },
+      error: (error) => {
+        console.error('Error fetching clases', error);
       }
     });
-    console.log(this.horarioMap);
   }
 
-  getDataHorarios() {
-    this.sedesService.getHorarios().subscribe(data => {
-      console.log(data);
-      this.horarios = data;
-      this.getHorario();
+  getSedes(){
+    this.sedesService.getSedes().subscribe({
+      next: (sedes) => {
+        this.sedes = sedes;
+        console.log('sedes', sedes);
+      },
+      error: (error) => {
+        console.error('Error fetching sedes', error);
+      }
     });
   }
 
-  addOneHour(time: string): string {
-    const [hours, minutes, seconds] = time.split(':').map(Number);
-    const date = new Date();
-    date.setHours(hours + 1, minutes, seconds);
-    console.log(date.toTimeString());
-    return date.toTimeString().split(' ')[0].substring(0, 5); // Devuelve HH:mm
-  }
-
+  getMembresias() {
+    this.membresiaService.getMembresias().subscribe({
+        next: (data) => {
+            console.log("memebresias ", data);
+            data.forEach((plan) => {
+                let desc = plan.descripcion.split("\n");
+                plan.informacion = desc;
+                plan.precios.forEach((precio) => {
+                    console.log("precio ", precio);
+                    if (!this.mapMembresias.has(precio.tipo)) {
+                        this.mapMembresias.set(precio.tipo, []);
+                    }
+                    const membresias = this.mapMembresias.get(precio.tipo);
+                    if (membresias) {
+                        membresias.push(plan);
+                    }
+                });
+            });
+            console.log("mapMembresias ", this.mapMembresias);
+            this.membresiasArray = Array.from(this.mapMembresias, ([key, value]) => ({ key, value }));
+            console.log("membresiasArray ", this.membresiasArray);
+            
+        },
+        error: (error) => {
+            console.error(error);
+        }
+    });
+    console.log(this.membresiasArray);
+}
 }

@@ -39,6 +39,7 @@ import { PagoComponent } from "./cart/pago/pago.component";
 import { ResumenPagoComponent } from "./cart/resumen-pago/resumen-pago.component";
 import { ModificarDatosComponent } from "./cart/modificar-datos/modificar-datos.component";
 import { SedesService } from "../services/sedes.service";
+import { MembresiasService } from "../services/membresias.service";
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { SedesService } from "../services/sedes.service";
   ],
   providers: [
     AuspiciantesService,
-    SedesService
+    SedesService,
+    MembresiasService
     ]
 })
 export class PagesModule {}

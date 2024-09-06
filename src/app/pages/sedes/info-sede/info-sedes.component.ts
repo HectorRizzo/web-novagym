@@ -4,6 +4,7 @@ import { TabsetComponent } from "ngx-bootstrap/tabs";
 import Swiper from "swiper";
 import { SedesService } from "../../../services/sedes.service";
 import { SedesDTO } from "../../../dto/sedes.dto";
+import { clasesDTO } from "../../../dto/clases.dto";
 @Component({
     selector: "app-info-sedes",
     templateUrl: "info-sedes.component.html",
@@ -23,6 +24,8 @@ import { SedesDTO } from "../../../dto/sedes.dto";
   infowindow: any;
   selectedSede: number = 0;
   sedes: SedesDTO[] = [];
+  clases: clasesDTO[] = [];
+  mapClasesXSede: Map<number, clasesDTO[]> = new Map<number, clasesDTO[]>();
   @ViewChild('tabset', { static: false }) tabset: TabsetComponent | undefined;
   tabsInitialized = false;
 
@@ -31,6 +34,7 @@ import { SedesDTO } from "../../../dto/sedes.dto";
   ) {}
 
     ngOnInit() {
+      this.obtenerClases();
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -121,6 +125,10 @@ import { SedesDTO } from "../../../dto/sedes.dto";
     this.sedesService.getSedes().subscribe({
       next: (sedes) => {
         this.sedes = sedes;
+        console.log('sedes', sedes);
+        this.sedes.forEach(sede => {
+          this.obtenerClasesXSede(sede.nombre, sede.id);
+        });
       },
       error: (error) => {
         console.error('Error fetching sedes', error);
@@ -137,5 +145,29 @@ import { SedesDTO } from "../../../dto/sedes.dto";
     }
   }
 
+  obtenerClases(){
+    this.sedesService.getClases().subscribe({
+      next: (clases) => {
+        console.log('clases', clases);
+        this.clases = clases;
+      },
+      error: (error) => {
+        console.error('Error fetching clases', error);
+      }
+    });
+  }
+
+  obtenerClasesXSede(clase: string, idSede: number){
+    this.sedesService.getClasesSede(clase, idSede).subscribe({
+      next: (clases) => {
+        console.log('clases', clases);
+        this.mapClasesXSede.set(idSede, clases);
+      },
+      error: (error) => {
+        console.error('Error fetching clases', error);
+      }
+    });
+  }
+    
     
 }

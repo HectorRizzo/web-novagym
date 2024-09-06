@@ -1,10 +1,10 @@
 home = 0%
 sede = 100%                 X
-    info-sedes = 0%
+    info-sedes = 90%        X
 clases = 100%               X
     info-clases = 100%      X
-membresias = 0%
-noticias = 0%
+membresias = 100%           X
+noticias = 100%             X
 auspiciantes = 100%         X
 tienda = 0%
 
@@ -24,7 +24,7 @@ calendario/ verClases/ [name='verClases']
 
 NOTAS
 Diseno movil
-clases: agregar tipos de clases y recomendaciones.
+clases: agregar tipos de clases, recomendaciones y duracion.
 
 
 texto en contactanos

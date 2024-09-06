@@ -152,9 +152,16 @@ h1{
           }
     }
 
+    .container-td-planes{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 .td-planes{
         position: relative;
         height: 730px;
+        vertical-align: super !important;
+        
 /* Estilos para el contenedor del botón */
     .costo-plan{
         display: flex;
@@ -185,7 +192,11 @@ h1{
             background:#E3DF00 !important;
             color: black !important;
         }
-  }
+    }
+    .card-footer{
+        height: 150px;
+        background: white !important;
+    }
 }
 
   .btn-registro{
