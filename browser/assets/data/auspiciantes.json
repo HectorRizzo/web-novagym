@@ -14,13 +14,6 @@
         "categoryId": 7
     },
     {
-        "id": 3,
-        "name": "FERNANDEZ",
-        "logo": "assets/img/auspiciantes/fernandez.jpeg",
-        "description": "5% DESCUENTO EN TODAS LAS CARNES",
-        "categoryId": 3
-    },
-    {
         "id": 4,
         "name": "LA PESTAÑERIA",
         "logo": "assets/img/auspiciantes/la-pestaneria.jpg",
@@ -28,11 +21,25 @@
         "categoryId": 1
     },
     {
+        "id": 12,
+        "name": "GOLDEN PRAGUE",
+        "logo": "assets/img/auspiciantes/LOGO-GOLDEN-PRAGUE_WEB.jpg",
+        "description": "10% DE DESCUENTO DE DOMINGOS A MIERCOLES",
+        "categoryId": 3
+    },
+    {
         "id": 5,
         "name": "ANETA",
         "logo": "assets/img/auspiciantes/LOGO_ANETA.jpg",
         "description": "5% DESCUENTO EN CURSO",
         "categoryId": 2
+    },
+    {
+        "id": 3,
+        "name": "FERNANDEZ",
+        "logo": "assets/img/auspiciantes/fernandez.jpeg",
+        "description": "5% DESCUENTO EN TODAS LAS CARNES",
+        "categoryId": 3
     },
     {
         "id": 6,
@@ -75,13 +82,6 @@
         "logo": "assets/img/auspiciantes/LOGO-GO-GIRL-1.png",
         "description": "10% DESCUENTO EN FACTURA",
         "categoryId": 2
-    },
-    {
-        "id": 12,
-        "name": "GOLDEN PRAGUE",
-        "logo": "assets/img/auspiciantes/LOGO-GOLDEN-PRAGUE_WEB.jpg",
-        "description": "10% DE DESCUENTO DE DOMINGOS A MIERCOLES",
-        "categoryId": 3
     }
 
 ]
