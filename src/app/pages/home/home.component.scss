@@ -203,13 +203,11 @@
 
 .td-planes{
         position: relative;
-        height: 730px;
+        display: flex;
+        flex-direction: column;
 
         .div-foot-planes{
-            position: absolute;
-            bottom: 0;
-            right: 0; /* Ajusta según necesites para alinear el botón a la derecha */
-            left: 0; /* Ajusta si quieres que el botón se extienda a lo ancho */
+            margin-top: auto;
             text-align: center; /* Centra el botón si se extiende a lo ancho */
             justify-content: center;
             align-items: center;
@@ -218,12 +216,7 @@
             justify-self: center;
             margin-bottom: 1rem;
         }
-/* Estilos para el contenedor del botón */
 
-
-    ul{
-        margin-bottom: 9rem !important;
-    }
 }
     //select
 

@@ -20,6 +20,7 @@
             "outputPath": {
               "base": "dist/novagym"
             },
+            "baseHref": "/novagym/",
             "index": "src/index.html",
             "polyfills": [
               "src/polyfills.ts"

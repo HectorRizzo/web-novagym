@@ -106,10 +106,38 @@
 
 
     }
-
-
 }
 
+@media  (max-width: 1024px) {
+    .contactanos-footer{
+        .card-group{
+            .card{
+                .contactanos{
+                    padding: 3rem 4rem;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contactanos-footer{
+        .card-group{
+            .card{
+                .contactanos{
+                    padding: 3rem 1rem;
+                }
+            }
+            .card-form{
+                padding: 1rem 2rem;
+                .form-contactanos{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
 
 
 

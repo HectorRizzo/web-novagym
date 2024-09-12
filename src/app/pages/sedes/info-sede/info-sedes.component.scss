@@ -12,7 +12,9 @@ ul{
     justify-content: space-between !important;
 }
 
-
+.nav-tabs-primary{
+    justify-content: center !important;
+}
 .nav-tabs {
   border: 0;
   justify-content: space-between !important;
@@ -130,4 +132,31 @@ ul{
 
 #map {
   height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .btn-arrow-next{
+    max-width:max-content;
+        margin-left: 1rem;
+    width: 70px;
+    height: 60px;
+  }
+
+  .btn-arrow-prev{
+    max-width:max-content;
+        margin-right: 1rem;
+    width: 70px;
+    height: 60px;
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-arrow-next{
+    display: none;
+  }
+
+  .btn-arrow-prev{
+    display: none;
+  }
 }

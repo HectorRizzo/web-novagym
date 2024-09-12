@@ -3,8 +3,8 @@
       <div>
         <div>
           <div class="row">
-            <div class="col-3"></div>
-            <h1 class="col-9 title text-center">
+            <div class="col-sm-1 col-lg-3 col-md-3 col-1"></div>
+            <h1 class="col-lg-9 col-md-9 col-sm-11 col-11 title text-center">
               DESCUBRE TU <span class="text-resaltado">SEDE</span> FAVORITA
             </h1>
           </div>
@@ -12,7 +12,7 @@
           <div class="d-flex justify-content-center">
             
             <div class="row w-100">
-              <div class="col-3">
+              <div class="col-12 col-sm-12 col-lg-3">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                   <button *ngFor="let ciudadSede of ciudades" 
                     class="nav-link" 
@@ -29,11 +29,11 @@
                   </button>
                 </div>
               </div>
-              <div class="col-9">
+              <div class="col-12 col-sm -12 col-lg-9 col-9">
                 <div class="tab-content" id="v-pills-tabContent">
                   <div class="tab-pane fade" *ngFor="let ciudad of ciudades" [ngClass]="{'show active': activeTab === ciudad.nombre}" id="v-pills-{{ciudad.nombre}}" role="tabpanel" attr.aria-labelledby="v-pills-{{ciudad.nombre}}-tab">
                     <div class="row row-cols-1 row-cols-md-2">
-                      <div class="col-6 mb-4" *ngFor="let sede of ciudad.sedes">
+                      <div class="col-sm-12 col-12 col-md-6 col-lg-6 mb-4" *ngFor="let sede of ciudad.sedes">
                         <div class="card" (click)="goToSede(sede.id)">
                           <img src="{{sede.imagen}}" class="card-img-top" alt="...">
                           <div class="card-body body-sedes">

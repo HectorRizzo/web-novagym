@@ -187,3 +187,65 @@ li::marker{
     flex-direction: column-reverse;
 }
 
+@media (max-width: 768px) {
+    .container-recomendaciones{
+        padding-left: 0rem;
+    }
+    .title-recomendaciones{
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 4rem;
+        text-align: start;
+        color: white;
+    }
+    .clases-list {
+        display: grid;
+        width: 100%; /* Asegura que la lista ocupe todo el ancho del contenedor */
+        padding: 0px 1rem !important;  
+        font-size: 1rem;
+    }
+    .descripcion-clases{
+        padding: 0px !important;
+        p{
+            padding: 0px !important;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .title-recomendaciones{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 4rem;
+        text-align: start;
+        color: white;
+    }
+    .clases-list {
+        display: block;
+        width: 100%; /* Asegura que la lista ocupe todo el ancho del contenedor */
+        padding: 0 0.5rem !important;  
+        font-size: 1rem;
+    }
+    .descripcion-clases{
+        padding: 0px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .container-title{
+        margin-right: 0rem !important;
+    }
+    .title-recomendaciones{
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 4rem;
+        text-align: start;
+        color: white;
+    }
+    .descripcion-clases{
+        padding: 0px !important;
+    }
+
+
+}
+

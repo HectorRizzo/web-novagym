@@ -158,22 +158,16 @@ h1{
     }
 
 .td-planes{
+    display: flex;
+    flex-direction: column;
         position: relative;
-        height: 730px;
         vertical-align: super !important;
         
 /* Estilos para el contenedor del botón */
     .costo-plan{
         display: flex;
         flex-direction: column;
-        position: absolute;
-        bottom: 0;
-        right: 0; /* Ajusta según necesites para alinear el botón a la derecha */
-        left: 0; /* Ajusta si quieres que el botón se extienda a lo ancho */
-        text-align: center; /* Centra el botón si se extiende a lo ancho */
-        justify-content: center;
-        align-items: center;
-        display: flex;
+        margin-top: auto;
         justify-self: center;
         width: 100%;
 
@@ -181,6 +175,11 @@ h1{
             background: white !important;
             border-top: 2px solid black !important;
             width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
         }
 
         .btn-planes:hover{
@@ -206,4 +205,28 @@ h1{
 
 .custom-select{
     color: black;
+}
+
+@media (max-width: 1024px) {
+
+    .membresias{
+        padding: 0 2rem;
+    }
+
+    td{
+        vertical-align: super !important;
+        color: black !important;
+        background: white !important;
+        padding: 2rem;
+        border: 1rem solid black !important;
+
+        h5,h6,li{
+            font-weight: 700 !important;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .td-planes{
+        border: 0.5rem solid black !important;
+    }
 }

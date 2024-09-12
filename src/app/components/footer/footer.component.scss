@@ -58,3 +58,17 @@
         }
     }
 }
+
+@media(max-width: 768px) {
+    .footer .title{
+        text-align: center !important;
+    }
+}
+
+@media(max-width: 424px) {
+    .btn-top{
+        display: none !important;
+    }
+    
+}
+
