@@ -13,7 +13,12 @@ import { SedesDTO } from "../../dto/sedes.dto";
 export class MembresiasComponent implements OnInit {
     mapMembresias: Map<string, PlanesDto[]> = new Map<string, PlanesDto[]>();
     membresiasArray: { key: string, value: any }[] = [];
+    showMembresias: boolean = true;
+    showResumen: boolean = false;
     sedes: SedesDTO[] = [];
+
+    membresiaSeleccionada: PlanesDto | null = null;
+    sedeSeleccionada: SedesDTO | null = null;
     constructor(private membresiasService: MembresiasService,
         private sedesService: SedesService
     ) { }
@@ -24,17 +29,12 @@ export class MembresiasComponent implements OnInit {
         
     }
 
-    toggleActive(event: Event) {
-        const cardFooter = event.currentTarget as HTMLElement;
-        cardFooter.classList.toggle('card-footer-active');
+    toggleActive(event: Event, sede: SedesDTO) {
+        this.sedeSeleccionada = sede;
       }
 
-    selectPlan(event: Event) {
-        const btn = event.target as HTMLElement;
-
-        console.log(btn);
-
-        btn.classList.toggle('btn-planes-active');
+    selectPlan(event: Event, plan: PlanesDto) {
+        this.membresiaSeleccionada = plan;
     }
 
     getMembresias() {
@@ -78,4 +78,11 @@ export class MembresiasComponent implements OnInit {
           }
         });
       }
+
+    continuar() {
+        if(this.membresiaSeleccionada && this.sedeSeleccionada){
+            this.showResumen = true;
+            this.showMembresias = false;
+        }
+    }
 }

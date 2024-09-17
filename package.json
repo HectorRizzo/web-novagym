@@ -22,6 +22,7 @@
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.1",
+    "@ng-bootstrap/ng-bootstrap": "^17.0.1",
     "@types/googlemaps": "^3.43.3",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",

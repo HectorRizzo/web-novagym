@@ -49,7 +49,7 @@ import { Router } from '@angular/router';
             // Continuar con el pago
             console.log('Continuar con el pago');
             this.muestraToast();
-            this.cartService.clearCart();
+            // this.cartService.clearCart();
             window.location.reload();
         }
 

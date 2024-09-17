@@ -203,6 +203,18 @@ h1{
     font-size: 1.5rem;
 }
 
+.btn-continuar{
+    margin: 3rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    .btn-primary{
+    font-size: 1.5rem;
+    font-weight: 600;
+    }
+
+}
 .custom-select{
     color: black;
 }

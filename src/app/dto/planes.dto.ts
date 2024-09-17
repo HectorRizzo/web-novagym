@@ -1,7 +1,8 @@
 import { BeneficiosDTO } from "./beneficios.dto";
 import { PreciosDto } from "./precios.dto";
 
-export interface PlanesDto {    
+export interface PlanesDto {
+    selected: boolean;    
     id: number;
     beneficios: BeneficiosDTO[];
     nombre: string;

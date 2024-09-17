@@ -1,5 +1,5 @@
 <div class="membresias">
-    <div class="container-sedes text-center">
+    <div class="container-sedes text-center" *ngIf="showMembresias">
         <h1>
             SELECCIONA TU <span class="text-resaltado">SEDE</span> FAVORITA
         </h1>
@@ -19,7 +19,9 @@
                         <img src="assets/icons/correo.png" class="img-fluid">
                         {{sede.celular}}</p>
                     </div>
-                    <div class="card-footer" (click)="toggleActive($event)">
+                    <div class="card-footer" 
+                    [ngClass]="{'card-footer-active': sedeSeleccionada == sede}"
+                    (click)="toggleActive($event, sede)">
                         <div class="text-center">
                             <h1>Seleccionar</h1> 
                         </div>
@@ -71,7 +73,10 @@
                             <h5 class="debito"> 
                               {{ plan.precios[0].esRecurrente ? 'Débito Automático mensual' : 'Débito Único' }}
                               </h5>
-                            <button class="btn btn-primary font-weight-bold  btn-planes"  (click)="selectPlan($event)">SELECCIONAR 
+                            <button class="btn btn-primary font-weight-bold  btn-planes"  
+                            [ngClass]="{'btn-planes-active': membresiaSeleccionada == plan}"
+                            (click)="selectPlan($event, plan)">
+                              SELECCIONAR 
                               <img src="assets/icons/siguiente.png" class="img-fluid">
                             </button>
                           </div>
@@ -84,13 +89,14 @@
 
 
     <div class="mb-4">
-        <a
-        class="btn btn-primary t-4 font-weight-bold btn-registro"
-        href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/alerts"
-      >
-      <span>
-        CONTINUAR
-      </span>
-      </a>
+      <div class="btn-continuar">
+        <button class="btn btn-primary" (click)="continuar()">Pagar</button>
+      </div>
     </div>
+  </div>
+
+  <app-resumen-membresia *ngIf="showResumen"
+  [membresia]="membresiaSeleccionada"
+  [sede]="sedeSeleccionada"
+  ></app-resumen-membresia>
 </div>

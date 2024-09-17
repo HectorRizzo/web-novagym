@@ -40,6 +40,10 @@ import { ResumenPagoComponent } from "./cart/resumen-pago/resumen-pago.component
 import { ModificarDatosComponent } from "./cart/modificar-datos/modificar-datos.component";
 import { SedesService } from "../services/sedes.service";
 import { MembresiasService } from "../services/membresias.service";
+import { ResumenMembresiaComponent } from "./membresias/resumen-membresia/resumen-membresia.component";
+import { TerminosCondicionesComponent } from "../shared/terminos-condiciones/terminos-condiciones.component";
+import { UsuariosService } from "../services/usuarios.services";
+import { CartService } from "../services/cart.services";
 
 @NgModule({
   declarations: [
@@ -61,7 +65,12 @@ import { MembresiasService } from "../services/membresias.service";
     OpcionesEntregaComponent,
     PagoComponent,
     ResumenPagoComponent,
-    ModificarDatosComponent
+    ModificarDatosComponent,
+    ResumenMembresiaComponent,
+    TerminosCondicionesComponent,
+    PagoComponent,
+    ModificarDatosComponent,
+    ResumenPagoComponent,
     ],
   exports: [
     HomeComponent
@@ -88,7 +97,9 @@ import { MembresiasService } from "../services/membresias.service";
   providers: [
     AuspiciantesService,
     SedesService,
-    MembresiasService
+    MembresiasService,
+    UsuariosService,
+    CartService
     ]
 })
 export class PagesModule {}

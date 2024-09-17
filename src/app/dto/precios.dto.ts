@@ -3,4 +3,5 @@ export interface PreciosDto {
     precio: string;
     tipo: string;
     meses: number;
+    esRecurrente: boolean;
 }

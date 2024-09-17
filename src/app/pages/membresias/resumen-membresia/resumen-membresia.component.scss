@@ -1,0 +1,120 @@
+
+.container-pago{
+    padding: 0 3rem;
+    margin-bottom: 5rem;
+    .title{
+        img{
+            width: 100px;
+            height: auto;
+        }
+        hr{
+            width: 100%;
+            border: 1px solid white;
+            opacity: 1;
+        }
+    }
+    .tarj-title{
+        h3{
+            color: white;
+        }
+    }
+
+    .resumen{
+        h5{
+            font-size: 2rem;
+            color: white !important;
+        }
+        font-size: 2rem;
+        color: white !important;
+    }
+    .terminos{
+        margin-top: 2rem;
+        input[type="checkbox"] {
+            visibility: hidden;
+            position: absolute;
+        }
+    
+        /* Personalizamos el nuevo estilo del checkbox */
+        label.custom-checkbox {
+            position: relative;
+            padding-left: 2.5rem;
+            cursor: pointer;
+            font-size: 1.75rem;
+            color: white !important;
+        }
+    
+        /* El cuadro del checkbox */
+        label.custom-checkbox::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid #E3F000;
+            border-radius: 3px;
+            background-color: #fff;
+            margin-right: 4px;
+        }
+    
+        /* Si el checkbox está seleccionado, cambiamos el fondo */
+        input[type="checkbox"]:checked + label.custom-checkbox::before {
+            background-color: white; /* Color de fondo al estar checkeado */
+            border-color: #E3F000; /* Color del borde al estar checkeado */
+        }
+    
+        /* La palomita dentro del checkbox */
+        input[type="checkbox"]:checked + label.custom-checkbox::after {
+            content: "✔";
+            position: absolute;
+            top: 0;
+            left: 4px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #000000;
+        }
+        
+
+    }
+
+
+    .btn-continuar{
+        margin: 3rem 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        .btn-primary{
+        font-size: 1.5rem;
+        font-weight: 600;
+        }
+
+    }
+}
+
+
+@media(max-width: 768px){
+    .container-pago{
+        padding: 0 1rem !important;
+    }
+    .terminos{
+        .checkbox{
+            margin-right: 1rem;
+        }
+        font-size: 1.5rem !important;
+    }
+}
+
+
+@media(max-width: 425px){
+    .container-pago{
+        padding: 0px !important;
+    }
+
+    .terminos{
+        .checkbox{
+            margin-right: 1rem;
+        }
+        font-size: 1rem !important;
+    }
+}
