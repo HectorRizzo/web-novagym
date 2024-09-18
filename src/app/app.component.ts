@@ -7,6 +7,7 @@ import { PagesModule } from './pages/pages.module';
 import { GoogleMapsModule } from "@angular/google-maps";
 import { ToastComponent } from './shared/toast/toast.component';
 import { filter } from 'rxjs/operators';
+import { ShopModule } from './pages/shop/shop.module';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,8 @@ import { filter } from 'rxjs/operators';
     RouterOutlet, 
     NavbarComponent, 
     FooterComponent, 
+    PagesModule,
+    ShopModule,
     RouterModule,
     RouterLink, 
     RouterLinkActive,

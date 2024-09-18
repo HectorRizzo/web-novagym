@@ -5,6 +5,7 @@ export const routes: Routes = [
   { path: "", loadChildren: () => import("./pages/pages.module").then((m) => m.PagesModule) },
   //tienda
   { path: "shop", loadChildren: () => import("./pages/shop/shop.module").then((m) => m.ShopModule) },
+  {path: "**", redirectTo: "/home", pathMatch: "full"}
 
 ];
 
