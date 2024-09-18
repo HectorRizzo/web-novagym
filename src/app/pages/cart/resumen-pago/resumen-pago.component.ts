@@ -48,8 +48,10 @@ import { Router } from '@angular/router';
         continuarPago() {
             // Continuar con el pago
             console.log('Continuar con el pago');
+            //enviar al top de la pagina
+            window.scrollTo(0, 0);
             this.muestraToast();
-            // this.cartService.clearCart();
+            this.cartService.clearCart();
             window.location.reload();
         }
 

@@ -46,6 +46,7 @@ export class MembresiasComponent implements OnInit {
                     plan.informacion = desc;
                     plan.precios.forEach((precio) => {
                         console.log("precio ", precio);
+                        precio.tipo = precio.tipo.toUpperCase();
                         if (!this.mapMembresias.has(precio.tipo)) {
                             this.mapMembresias.set(precio.tipo, []);
                         }

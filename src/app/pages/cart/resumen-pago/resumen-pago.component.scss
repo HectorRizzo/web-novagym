@@ -110,3 +110,54 @@ span{
     font-size: 1.2rem !important;
 }
 
+@media (max-width: 1024px){
+    .container-resumen{
+        padding: 0 1rem;
+        .resumen{
+            .resumen-producto{
+                margin: 1.5rem 0;
+                width: 80% !important;
+            }
+            .resumen-total{
+                width: 80% !important;
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .container-resumen{
+        padding: 0 1rem;
+        .resumen{
+            .resumen-producto{
+                margin: 1.5rem 0;
+                width: 80% !important;
+            }
+            .resumen-total{
+                width: 80% !important;
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 426px){
+    .container-resumen{
+        padding: 0 1rem;
+        .resumen{
+            .resumen-tarjeta{
+                flex-direction: column !important;
+                
+            }
+            .resumen-producto{
+                margin: 1.5rem 0;
+                width: 100% !important;
+            }
+            .resumen-total{
+                width: 100% !important;
+            }
+            
+        }
+    }
+}

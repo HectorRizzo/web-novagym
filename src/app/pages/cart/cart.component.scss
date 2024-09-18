@@ -3,7 +3,7 @@
     margin-bottom: 2rem;
     .title{
         h1{
-            font-size: 3.5rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: white;
         }
@@ -11,6 +11,7 @@
             width: 50%;
             border: 1px solid white;
             opacity: 1;
+            background: white;
         }
     }
     .table-responsive{
@@ -92,4 +93,36 @@
 
 h5{
     font-size: 1.2rem !important;
+}
+
+@media(max-width: 769px){
+    hr{
+        width: 80% !important;
+    }
+    .container-cart{
+        padding: 0 2rem;
+        .table-responsive{
+            .img-fluid{
+                height: 150px !important;
+            }
+        }
+    }
+}
+
+@media(max-width: 426px){
+    .container-cart{
+        padding: 0 1rem;
+    }
+    .table-responsive{
+        color: white;
+        background: transparent;
+        overflow: scroll !important;
+        .img-fluid{
+            height: 100px !important;
+        }
+    }
+
+    th{
+        font-size: 16px !important;
+    }
 }

@@ -77,3 +77,49 @@ h5{
     color: #E3DF00;
     font-size: 1.5rem;
 }
+
+@media(max-width: 1024px){
+    .botones{
+        width: 60% !important;
+    }
+}
+
+@media(max-width: 768px){
+    .botones{
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 426px) {
+    .resumen-info{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .botones{
+        width: 100% !important;
+        flex-direction: column !important;
+    }
+
+    input{
+        color: white;
+        font-size: 1.5rem;
+        margin-left: 0px !important;
+    }
+}
+
+@media (max-width: 376px) {
+    .title{
+        h1{
+            margin-left: 1rem !important;
+        }
+    }
+
+    .title-datos{
+        h3{
+            margin-left: 0px !important;
+        }
+    }
+    .container-modificar-datos{
+        padding: 0px !important;
+    }
+}

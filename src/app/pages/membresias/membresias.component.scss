@@ -55,7 +55,7 @@ h1{
         h1{
             color: black !important;
             font-size: 1.5rem;
-            margin-top: o;
+            margin-top: 0;
             margin-bottom: 0;
             font-weight: 700;
             margin-left: 3rem;
@@ -234,6 +234,12 @@ h1{
 
         h5,h6,li{
             font-weight: 700 !important;
+        }
+    }
+
+    .card-footer{
+        h1{
+            margin-left: 0px !important;
         }
     }
 }

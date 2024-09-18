@@ -3,6 +3,8 @@ import { PlanesDto } from "../../../dto/planes.dto";
 import { SedesDTO } from "../../../dto/sedes.dto";
 import { TerminosCondicionesComponent } from "../../../shared/terminos-condiciones/terminos-condiciones.component";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { ProductDto } from "../../../dto/product.dto";
+import { CartService } from "../../../services/cart.services";
 
 @Component({
     selector: "app-resumen-membresia",
@@ -20,7 +22,8 @@ export class ResumenMembresiaComponent implements OnInit {
     isPago: boolean = false;
     showMembresia: boolean = true;
     constructor(
-        private modalService: NgbModal
+        private modalService: NgbModal,
+        private cartService: CartService
     ) {}
 
     ngOnInit() {
@@ -33,6 +36,7 @@ export class ResumenMembresiaComponent implements OnInit {
         if (this.aceptaTerminos) {
             console.log("acepta terminos");
             this.isPago = true;
+            this.guardarMemebresiaCarrito();
             this.showMembresia = false;
         } else {
         }
@@ -54,5 +58,27 @@ export class ResumenMembresiaComponent implements OnInit {
                 console.log("reason ", reason);
             }
         );
+    }
+
+
+    guardarMemebresiaCarrito() {
+        console.log("guardarMemebresiaCarrito");
+        let nombre = this.membresia?.precios[0]?.tipo + " " + this.membresia?.nombre;
+
+        let producto:ProductDto = {
+            id: this.membresia?.id?.toString() || "",
+            name: nombre,
+            description: this.membresia?.descripcion || "",
+            price: Number(this.membresia?.precios[0]?.precio) || 0,
+            cantidad: 1,
+            image: this.membresia?.imagen || "",
+            category: "membresia",
+            stock: 1,
+            created_at: new Date(),
+            updated_at: new Date(),
+            aditionalInfo: {}
+        }
+        console.log("producto ", producto);
+        this.cartService.addToCart(producto);
     }
 }

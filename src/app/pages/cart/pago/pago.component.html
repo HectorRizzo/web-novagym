@@ -1,4 +1,6 @@
-<div class="container-pago" *ngIf="isPago">
+<div class="container-pago" 
+[ngClass]="{'container-pago-membresia': flujo == 'membresia'}"
+*ngIf="isPago">
     <div class="title">
         <h1><span class="text-resaltado">OPCIÓN DE PAGO</span></h1>
         <hr>

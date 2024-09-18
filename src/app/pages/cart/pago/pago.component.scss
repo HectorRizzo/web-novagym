@@ -1,4 +1,7 @@
 
+.container-pago-membresia{
+    padding: 0px !important;
+}
 .container-pago{
     padding: 0 6rem;
     margin-bottom: 5rem;
@@ -16,11 +19,11 @@
     }
     .tarj-content{
         display: flex;
-        justify-content: space-between;
         align-items: center;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         margin: 0.5rem 0;
+        justify-content: center;
     
         .tarj{
             display: flex;
@@ -36,7 +39,7 @@
             border-radius: 15px;
     
             .tarj-img{
-                width: 150px;
+                width: 200px;
             }
     
             .tarj-info{
@@ -90,5 +93,11 @@
         font-weight: 600;
         }
 
+    }
+}
+
+@media(max-width: 375px){
+    .tarj{
+        width: 300px !important;
     }
 }
