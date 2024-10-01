@@ -1,7 +1,8 @@
 <app-toast></app-toast>
 <app-navbar></app-navbar>
 <router-outlet>
-    <a class="btn-float" *ngIf="router.url !== '/registro' && router.url !== '/inicio-sesion'" (click)="clickRegistro()">
+    <a class="btn-float" *ngIf="router.url !== '/registro' && router.url !== '/inicio-sesion' && mostrarRegistro"
+    (click)="clickRegistro()">
         REGISTRATE
     </a>
 </router-outlet>

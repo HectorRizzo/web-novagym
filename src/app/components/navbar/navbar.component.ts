@@ -1,6 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component, HostListener, OnInit } from "@angular/core";
 import { Router, RouterLink, RouterLinkActive } from "@angular/router";
+import { UsuariosService } from "../../services/usuarios.services";
+import { ToastService } from "../../services/toast.services";
 
 @Component({
     selector: "app-navbar",
@@ -18,10 +20,17 @@ import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 
 export class NavbarComponent implements OnInit {
   showMenu = false;
+  isLoggedIn: boolean = false;
 
-    constructor(private router: Router) {}
+    constructor(private router: Router,
+      private usuarioService: UsuariosService,
+      private toastService: ToastService
+    ) {}
 
     ngOnInit() {
+      this.usuarioService.getIsLoggedIn().subscribe(isLoggedIn => {
+        this.isLoggedIn = isLoggedIn;
+      });
       }
     
 
@@ -43,6 +52,13 @@ export class NavbarComponent implements OnInit {
     closeMenu() {
       console.log('closeMenu');
       this.showMenu = false;
+    }
+
+    clickLogout() {
+      this.usuarioService.logout();
+      this.toastService.showToast('Sesión cerrada', 'success');
+      //recargar la página
+      window.location.reload();
     }
 
 }

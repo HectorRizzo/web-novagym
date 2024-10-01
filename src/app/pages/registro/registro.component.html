@@ -5,31 +5,51 @@
         </div>
         <div class="form">
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">NOMBRE:</label>
-                <input type="text" class="form-control" id="nombre" placeholder="name@example.com">
+              <label for="exampleFormControlInput1" class="form-label">NOMBRE:</label>
+              <input type="text" class="form-control" id="nombre" placeholder="name@example.com" [(ngModel)]="nombre">
+              <div *ngIf="detallesErrores?.nombres" class="text-danger">{{ detallesErrores.nombres[0] }}</div>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">APELLIDO:</label>
-                <input type="text" class="form-control" id="apellido" placeholder="name@example.com">
-            </div>
-            
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">IDENTIFICACION:</label>
-                <input type="text" class="form-control" id="identificacion" placeholder="name@example.com">
+              <label for="exampleFormControlInput1" class="form-label">APELLIDO:</label>
+              <input type="text" class="form-control" id="apellido" placeholder="name@example.com" [(ngModel)]="apellido">
+              <div *ngIf="detallesErrores?.apellidos" class="text-danger">{{ detallesErrores.apellidos[0] }}</div>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">EMAIL:</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              <label for="exampleFormControlInput1" class="form-label">IDENTIFICACION:</label>
+              <input type="text" class="form-control" id="identificacion" placeholder="name@example.com" [(ngModel)]="identificacion">
+              <div *ngIf="detallesErrores?.cedula" class="text-danger">{{ detallesErrores.cedula[0] }}</div>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">CONTRASEÑA:</label>
-                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+              <label for="exampleFormControlInput1" class="form-label">EMAIL:</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" [(ngModel)]="email">
+              <div *ngIf="errores?.email" class="text-danger">{{ errores.email[0] }}</div>
             </div>
             <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">FECHA DE NACIMIENTO:</label>
-            <input type="date" id="fechaNacimiento" class="form-control">
+              <label for="exampleFormControlInput1" class="form-label">CONTRASEÑA:</label>
+              <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" [(ngModel)]="contrasena">
+              <div *ngIf="errores?.password" class="text-danger">{{ errores.password[0] }}</div>
             </div>
-        </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">FECHA DE NACIMIENTO:</label>
+              <input type="date" id="fechaNacimiento" class="form-control" [(ngModel)]="fechaNacimiento">
+              <div *ngIf="detallesErrores?.fecha_nacimiento" class="text-danger">{{ detallesErrores.fecha_nacimiento[0] }}</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">TELEFONO:</label>
+              <input type="text" class="form-control" id="telefono" placeholder="name@example.com" [(ngModel)]="telefono">
+              <div *ngIf="detallesErrores?.telefono" class="text-danger">{{ detallesErrores.telefono[0] }}</div>
+              
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">SEXO:</label>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="sexo">
+                    <option selected>Seleccione una opción</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+                <div *ngIf="detallesErrores?.sexo" class="text-danger">{{ detallesErrores.sexo[0] }}</div>
+            </div>
+          </div>
         <div class="btn-registro">
             <button type="button" class="btn btn-primary" (click)="clickRegistro()" >REGISTRAR</button>
         </div>

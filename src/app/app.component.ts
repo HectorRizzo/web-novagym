@@ -8,6 +8,7 @@ import { GoogleMapsModule } from "@angular/google-maps";
 import { ToastComponent } from './shared/toast/toast.component';
 import { filter } from 'rxjs/operators';
 import { ShopModule } from './pages/shop/shop.module';
+import { UsuariosService } from './services/usuarios.services';
 
 @Component({
   selector: 'app-root',
@@ -32,12 +33,14 @@ import { ShopModule } from './pages/shop/shop.module';
 })
 export class AppComponent {
   title = 'my-app';
-
+  mostrarRegistro = true;
   constructor(public router: Router,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private usuarioService: UsuariosService
   ) {}
 
   ngOnInit() {
+    this.mostrarRegistro = !this.usuarioService.estaLogueado();
     this.router.events.pipe(
       filter((e): e is NavigationEnd => e instanceof NavigationEnd)
     ).subscribe((e: NavigationEnd) => {

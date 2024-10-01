@@ -19,7 +19,8 @@
             .input-container{
                 
             }
-            input{
+            input,
+            select{
                 border-bottom: 1px solid white;
     
                 &::placeholder {

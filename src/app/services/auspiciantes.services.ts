@@ -16,7 +16,7 @@ export class AuspiciantesService {
 
 
     getAuspiciantes(): Observable<AuspiciantesDTO[]> {
-        return this.http.get<AuspiciantesDTO[]>(`${this.baseUrl}sponsor/getSponsors/`);
+        return this.http.get<AuspiciantesDTO[]>(`${this.baseUrl}/sponsor/getSponsors/`);
     }
 
     getAuspiciantesLocal(): Observable<AuspiciantesDTO[]> {

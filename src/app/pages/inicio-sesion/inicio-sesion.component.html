@@ -15,14 +15,14 @@
          <div *ngIf="iniciarSesion" class="btn-inicio">
             <button type="button" class="btn btn-primary" (click)="clickRegistro()">INICIAR</button>
         </div>
-        <div *ngIf="!iniciarSesion" class="form-inicio">
+        <div *ngIf="!iniciarSesion" class="form-inicio form">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">EMAIL:</label>
-                <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+                <input type="email" class="form-control" id="email" placeholder="example@gmail.com" [(ngModel)]="email">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">CONTRASEÑA:</label>
-                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" [(ngModel)]="contrasena">
             </div>
             <div class="btn-continuar">
                 <button type="button" class="btn btn-primary" (click)="clickIniciarSesion()">CONTINUAR</button>

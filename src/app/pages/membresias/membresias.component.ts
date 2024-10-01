@@ -3,6 +3,8 @@ import { MembresiasService } from "../../services/membresias.service";
 import { PlanesDto } from "../../dto/planes.dto";
 import { SedesService } from "../../services/sedes.service";
 import { SedesDTO } from "../../dto/sedes.dto";
+import { UsuariosService } from "../../services/usuarios.services";
+import { ToastService } from "../../services/toast.services";
 
 @Component({
     selector: "app-membresias",
@@ -20,7 +22,9 @@ export class MembresiasComponent implements OnInit {
     membresiaSeleccionada: PlanesDto | null = null;
     sedeSeleccionada: SedesDTO | null = null;
     constructor(private membresiasService: MembresiasService,
-        private sedesService: SedesService
+        private sedesService: SedesService,
+        private usuariosService: UsuariosService,
+        private toastService: ToastService
     ) { }
 
     ngOnInit(): void {
@@ -81,6 +85,11 @@ export class MembresiasComponent implements OnInit {
       }
 
     continuar() {
+        const isLoggedIn = this.usuariosService.estaLogueado();
+        if (!isLoggedIn) {
+            this.toastService.showToast('Debe iniciar sesión para continuar', 'error');
+            return;
+        }
         if(this.membresiaSeleccionada && this.sedeSeleccionada){
             this.showResumen = true;
             this.showMembresias = false;
