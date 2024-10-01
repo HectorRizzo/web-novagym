@@ -7,7 +7,7 @@ export const routes: Routes = [
   {path:"noticias2", component: NoticiasComponent},
   //tienda
   { path: "shop", loadChildren: () => import("./pages/shop/shop.module").then((m) => m.ShopModule) },
-  {path: "**", redirectTo: "/home", pathMatch: "full"}
+  {path: "**", redirectTo: "/noticias2", pathMatch: "full"}
 
 ];
 
