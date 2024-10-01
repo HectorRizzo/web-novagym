@@ -1,9 +1,9 @@
-<div class="container-registro">
-    <div class="form-registro col-5">
+<div class="container-registro row">
+    <div class="form-registro col-xl-5 col-12">
         <div class="title">
             <span class="text-resaltado">Regístrate</span> Aquí
         </div>
-        <div class="form">
+        <div class="form row">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">NOMBRE:</label>
               <input type="text" class="form-control" id="nombre" placeholder="name@example.com" [(ngModel)]="nombre">
@@ -15,11 +15,6 @@
               <div *ngIf="detallesErrores?.apellidos" class="text-danger">{{ detallesErrores.apellidos[0] }}</div>
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">IDENTIFICACION:</label>
-              <input type="text" class="form-control" id="identificacion" placeholder="name@example.com" [(ngModel)]="identificacion">
-              <div *ngIf="detallesErrores?.cedula" class="text-danger">{{ detallesErrores.cedula[0] }}</div>
-            </div>
-            <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">EMAIL:</label>
               <input type="email" class="form-control" id="email" placeholder="name@example.com" [(ngModel)]="email">
               <div *ngIf="errores?.email" class="text-danger">{{ errores.email[0] }}</div>
@@ -29,18 +24,29 @@
               <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" [(ngModel)]="contrasena">
               <div *ngIf="errores?.password" class="text-danger">{{ errores.password[0] }}</div>
             </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">FECHA DE NACIMIENTO:</label>
-              <input type="date" id="fechaNacimiento" class="form-control" [(ngModel)]="fechaNacimiento">
-              <div *ngIf="detallesErrores?.fecha_nacimiento" class="text-danger">{{ detallesErrores.fecha_nacimiento[0] }}</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">TELEFONO:</label>
-              <input type="text" class="form-control" id="telefono" placeholder="name@example.com" [(ngModel)]="telefono">
-              <div *ngIf="detallesErrores?.telefono" class="text-danger">{{ detallesErrores.telefono[0] }}</div>
+            <div class="row">
+              <div class="mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                <label for="exampleFormControlInput1" class="form-label">IDENTIFICACION:</label>
+                <input type="text" class="form-control" id="identificacion" placeholder="name@example.com" [(ngModel)]="identificacion">
+                <div *ngIf="detallesErrores?.cedula" class="text-danger">{{ detallesErrores.cedula[0] }}</div>
+              </div>
               
+              <div class="mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                <label for="exampleFormControlTextarea1" class="form-label">FECHA DE NACIMIENTO:</label>
+                <input type="date" id="fechaNacimiento" class="form-control" [(ngModel)]="fechaNacimiento">
+                <div *ngIf="detallesErrores?.fecha_nacimiento" class="text-danger">{{ detallesErrores.fecha_nacimiento[0] }}</div>
+              </div>
+
             </div>
-            <div class="mb-3">
+            <div class="row">
+
+              <div class="mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                <label for="exampleFormControlInput1" class="form-label">TELEFONO:</label>
+                <input type="text" class="form-control" id="telefono" placeholder="name@example.com" [(ngModel)]="telefono">
+                <div *ngIf="detallesErrores?.telefono" class="text-danger">{{ detallesErrores.telefono[0] }}</div>
+              </div>
+
+              <div class="mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
                 <label for="exampleFormControlInput1" class="form-label">SEXO:</label>
                 <select class="form-select" aria-label="Default select example" [(ngModel)]="sexo">
                     <option selected>Seleccione una opción</option>
@@ -48,14 +54,17 @@
                     <option value="F">Femenino</option>
                 </select>
                 <div *ngIf="detallesErrores?.sexo" class="text-danger">{{ detallesErrores.sexo[0] }}</div>
+              </div>
+
             </div>
+
           </div>
         <div class="btn-registro">
             <button type="button" class="btn btn-primary" (click)="clickRegistro()" >REGISTRAR</button>
         </div>
     </div>
 
-    <div class="img-registro col-7">
+    <div class="img-registro col-xl-7 col-12">
         <img src="assets/img/registro-3.webp" alt="">
     </div>
 </div>
