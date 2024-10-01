@@ -1,6 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
-import { CommonModule, ViewportScroller } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy, ViewportScroller } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PagesModule } from './pages/pages.module';
@@ -26,8 +26,10 @@ import { UsuariosService } from './services/usuarios.services';
     RouterLink, 
     RouterLinkActive,
   GoogleMapsModule,
-  ToastComponent],
-  providers: [],
+  ToastComponent,
+],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }],
   schemas: [],
   encapsulation: ViewEncapsulation.None // Agrega esta línea si necesitas que los estilos sean globales
 })

@@ -8,8 +8,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
   declarations: [
   ],
   imports: [
-    PagesModule,
-    ShopModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
