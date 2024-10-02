@@ -110,7 +110,7 @@ private membresiaService: MembresiasService) {}
       },
       breakpoints: {
         // when window width is >= 320px
-        340: {
+        380: {
           slidesPerView: 2,
           spaceBetween: 20
         },
@@ -133,7 +133,7 @@ private membresiaService: MembresiasService) {}
       },
       breakpoints: {
         // when window width is >= 320px
-        340: {
+        380: {
           slidesPerView: 2,
           spaceBetween: 20
         },
@@ -267,5 +267,8 @@ private membresiaService: MembresiasService) {}
         }
     });
     console.log(this.membresiasArray);
-}
+  }
+
+  
+
 }

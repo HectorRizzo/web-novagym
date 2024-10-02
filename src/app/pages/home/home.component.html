@@ -23,7 +23,7 @@
             </h2>
             <a
               class="btn btn-primary t-4 font-weight-bold"
-              href="/sedes/info-sedes"
+              routerLink="/sedes/info-sedes"
               >
             <span class="btn-inner-sedes">
             <img src="assets/icons/ubicacion2.png" class="icon-btn-sedes" alt="Icono de ubicación">
@@ -34,9 +34,9 @@
           <div class="col-lg-6 col-md-7">
             <div class="swiper-sedes mySwiperSedes">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide" *ngFor="let sede of sedes">
                   <div class="card card-sedes">
-                    <img src="assets/img/home-sedes-centro.webp" class="card-img-top" alt="...">
+                    <img src="{{sede.imagen}}" class="card-img-top" alt="...">
                     <div class="card-img-overlay d-flex flex-column">
                       <h5 class="card-title text-end">
                         <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
@@ -47,7 +47,7 @@
                       <h5 class="card-body text-end card-body-overlay">
                         <a
                         class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                        href="/sedes/info-sedes"
+                        routerLink="/sedes/info-sedes"
                       >
                       <span class="font-weight-bold">
                         VER MÁS
@@ -59,108 +59,10 @@
       
                     </div>
                     <div class="card-body">
-                      <h4 class="card-title justify-content-center">Sede Centro</h4>
+                      <h4 class="card-title justify-content-center">Sede {{sede.nombre}}</h4>
                       <h5 class="card-text">
                         <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                        Primero de Mayo y los Rios.</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card card-sedes">
-                    <img src="assets/img/home-sedes-norte.webp" class="card-img-top" alt="...">
-                    <div class="card-img-overlay d-flex flex-column">
-                      <h5 class="card-title text-end">
-                        <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
-                      </h5>
-                    
-                      <div class="card-body">
-                      </div>
-                      <h5 class="card-body text-end card-body-overlay">
-                        <a
-                        class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                        href="/sedes/info-sedes"
-                      >
-                      <span class="font-weight-bold">
-                        VER MÁS
-                      </span>
-                      </a>
-                      </h5>
-                      <div class="card-body">
-                      </div>
-                      
-                    </div>
-                    <div class="card-body">
-                      <h4 class="card-title justify-content-center">Sede Norte</h4>
-                      <h5 class="card-text">
-                        <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                        Plaza Mayor, Av. Rodolfo
-                        Baquerizo Nazur.</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card card-sedes">
-                    <img src="assets/img/home-sedes-sur.webp" class="card-img-top">
-                    <div class="card-img-overlay d-flex flex-column">
-                      <h5 class="card-title text-end">
-                        <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
-                      </h5>
-                    
-                      <div class="card-body">
-                      </div>
-                      <h5 class="card-body text-end card-body-overlay">
-                        <a
-                        class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                        href="/sedes/info-sedes"
-                      >
-                      <span class="font-weight-bold">
-                        VER MÁS
-                      </span>
-                      </a>
-                      </h5>
-                      <div class="card-body">
-                      </div>
-                      
-                    </div>
-                    <div class="card-body">
-                      <h4 class="card-title justify-content-center">Sede Sur</h4>
-                      <h5 class="card-text">
-                        <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                        Av. 25 de Julio(Frente
-                        al Mall del Sur).</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card card-sedes">
-                    <img src="assets/img/home-sedes-machala.webp" class="card-img-top" alt="...">
-                    <div class="card-img-overlay d-flex flex-column">
-                      <h5 class="card-title text-end">
-                        <img src="assets/icons/ubicacion3.png" class="badge-icon" alt="Icono de ubicación">
-                      </h5>
-                    
-                      <div class="card-body">
-                      </div>
-                      <h5 class="card-body text-end card-body-overlay">
-                        <a
-                        class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                        href="/sedes/info-sedes"
-                      >
-                      <span class="font-weight-bold">
-                        VER MÁS
-                      </span>
-                      </a>
-                      </h5>
-                      <div class="card-body">
-                      </div>
-                      
-                    </div>
-                    <div class="card-body">
-                      <h4 class="card-title justify-content-center">Sede Machala</h4>
-                      <h5 class="card-text">
-                        <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                        Primero de Mayo y Los Rios, Machala, Ecuador
+                        {{sede.ubicacion}}  
                       </h5>
                     </div>
                   </div>
@@ -223,7 +125,10 @@
                       ${{ plan.precios[0].precio }}
                     </span>
                     <h5 class="debito"> {{ plan.precios[0].esRecurrente ? 'Débito Automático mensual' : 'Débito Único' }} </h5>
-                    <button class="btn btn-primary font-weight-bold btn-planes">INSCRÍBETE</button>
+                    <button class="btn btn-primary font-weight-bold btn-planes" 
+                    routerLink="/membresias"
+                    >
+                      INSCRÍBETE</button>
                   </div>
                 </td>
               </tr>
@@ -244,7 +149,8 @@
           </h1>
           <div class="col-lg-12 d-flex justify-content-center">
             <a class="btn btn-primary t-4 font-weight-bold"
-            href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/alerts">
+            routerLink="/registro"
+            >
               <span class="btn-inner-sedes">
                 REGÍSTRATE YA
               </span>
@@ -289,7 +195,7 @@
         </div>
         <div class="swiper-sedes mySwiperClases">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" *ngFor="let clase of clases">
+            <div class="swiper-slide" *ngFor="let clase of clases" routerLink="/clases">
               <div class="card card-clases">
                 <img src="assets/img/clases-2.webp" class="card-img-top" alt="...">
                 <div class="card-img-overlay  d-flex flex-column">
@@ -377,7 +283,9 @@
               </div>
             </div>
             <div class="col-2 align-content-center">
-              <img src="assets/icons/siguiente2.png" class="" alt="..." href="https://www.facebook.com/"> 
+              <a routerLink="/noticias">
+              <img src="assets/icons/siguiente2.png" class="" alt="..."> 
+              </a>
             </div>
         </div>
         </div>
@@ -405,7 +313,9 @@
               </div>
             </div>
             <div class="col-2 align-content-center">
+              <a routerLink="/noticias">
               <img src="assets/icons/siguiente2.png" class="" alt="...">
+              </a>
             </div>
         </div>
         </div>
@@ -431,7 +341,9 @@
               </div>
             </div>
             <div class="col-2 align-content-center">
+              <a routerLink="/noticias">
               <img src="assets/icons/siguiente2.png" class="" alt="...">
+              </a>
             </div>
         </div>
         </div>
@@ -564,8 +476,8 @@
           <hr>
           <a
           class="btn btn-primary t-4 font-weight-bold btn-registro"
-          href=""
-        >
+          routerLink="/registro"        
+          >
         <span>
           REGISTRATE
         </span>
