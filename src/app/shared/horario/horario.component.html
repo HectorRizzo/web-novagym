@@ -29,7 +29,9 @@
                       <ng-container *ngIf="horarioMap.get(diasSemana.indexOf(dia) + '-' + hora) as horario">
                         {{ horario.horario.nombre }}
                         <h5>{{ horario.usuario.nombres }} {{ horario.usuario.apellidos }}</h5>
-                        <div class="description">{{ horario.horario.descripcion }}</div>
+                        <div class="description">
+                          
+                        </div>
                       </ng-container>
                     </td>
                   </tr>

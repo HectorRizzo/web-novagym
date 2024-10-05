@@ -14,6 +14,11 @@ ul{
 
 .nav-tabs-primary{
     justify-content: center !important;
+
+    .sede{
+      font-size: 2rem;
+      font-weight: bold;
+    }
 }
 .nav-tabs {
   border: 0;
@@ -63,7 +68,6 @@ ul{
       }
 
       .swiper-slide-galeria img {
-        display: block;
         width: 100%;
         height: 350px;
       }

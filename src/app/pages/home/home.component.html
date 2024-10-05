@@ -84,8 +84,7 @@
             ELIGE TU <span class="text-resaltado">PLAN</span> IDEAL
           </h1>
           <h2 class="text-white mt-4 text-center font-weight-bold">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore
+            Encuentra el plan perfecto para ti y alcanza tus objetivos con nosotros
           </h2>
         </div>
       </div>
@@ -123,6 +122,7 @@
                   <div class="div-foot-planes">
                     <span class="title-plan">
                       ${{ plan.precios[0].precio }}
+                      <p>+ IVA</p>
                     </span>
                     <h5 class="debito"> {{ plan.precios[0].esRecurrente ? 'Débito Automático mensual' : 'Débito Único' }} </h5>
                     <button class="btn btn-primary font-weight-bold btn-planes" 
@@ -205,7 +205,7 @@
                     </h2>
                   </div>
                 
-                  <div class="body-card-clases align-items-start row">
+                  <!-- <div class="body-card-clases align-items-start row">
                     <div class="col-6 d-flex flex-column align-items-center">
                       <img src="assets/icons/reloj.png" class="badge-icon mr-3" alt="Icono de ubicación">
                       <h5>60 min</h5>
@@ -214,7 +214,7 @@
                       <img src="assets/icons/bateria.png" class="badge-icon" alt="Icono de ubicación">
                       <h5 class="">Intensidad Alta</h5>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="card-body body-card-clases">
                     <hr>
                     <h5>
@@ -255,7 +255,7 @@
       <!--Noticias-->
   <div class="section noticias">
     <div class="container">
-      <div class="row justify-content-between align-items-center">
+      <div class="row justify-content-between align-items-center noticia">
         <div class="col-lg-12 mb-5 mb-lg-0">
           <h1 class="text-white
           font-weight-light text-center font-weight-bold">
@@ -359,7 +359,7 @@
           <div class="swiper-slide">
             <div class="d-flex justify-content-center flex-column align-items-center div-comment">
               <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
-              <h1 class="align-self-start ml-4 mt-3">Este gimnasio ha cambiado mi vida. <br> Los resultados son increíbles y la comunidad <br> es muy motivadora</h1>
+              <h1 class="align-self-start ml-4 mt-3 comentario-titulo">Este gimnasio ha cambiado mi vida. Los resultados son increíbles y la comunidad es muy motivadora</h1>
               <h4 class="align-self-start mt-8">
                 <span class="text-resaltado">Karla Vera</span>
               </h4>
@@ -369,7 +369,7 @@
             <div class="d-flex justify-content-center flex-column align-items-center div-comment">
               <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
               <h1 class="align-self-start ml-4 mt-3">
-                Los entrenadores son muy profesionales y siempre <br> están dispuestos a ayudarte a alcanzar tus metas.
+                Los entrenadores son muy profesionales y siempre están dispuestos a ayudarte a alcanzar tus metas.
               </h1>
               <h4 class="align-self-start mt-8">
                 <span class="text-resaltado">Héctor Rizzo</span>
@@ -380,7 +380,7 @@
             <div class="d-flex justify-content-center flex-column align-items-center div-comment">
               <img src="assets/img/comillas.png" alt="Nature 1" class="align-self-start" />
               <h1 class="align-self-start ml-4 mt-3">
-                Las instalaciones son increíbles y siempre están <br> muy limpias. Me encanta venir a entrenar aquí.
+                Las instalaciones son increíbles y siempre están muy limpias. Me encanta venir a entrenar aquí.
               </h1>
               <h4 class="align-self-start mt-8">
                 <span class="text-resaltado">Juan Ruiz</span>
@@ -445,7 +445,8 @@
         </div>
         <div class="col-lg-12 mt-3">
           <div class="card-deck">
-            <div class="card card-beneficios align-items-center" *ngFor="let ausp of auspiciantes">
+            <div class="card card-beneficios align-items-center" *ngFor="let ausp of auspiciantes"
+              [routerLink]="'/auspiciantes'">
               <img src={{ausp.imagen}} class="" alt="...">
               <div class="card-body body-beneficios">
                 <h5 class="card-title justify-content-center font-weight-bold">{{ausp.nombre}}</h5>
@@ -463,8 +464,32 @@
     <div class="card card-img-app">
       <img src="assets/img/nuestro-team-0.webp" class="card-img-top" alt="...">
     </div>
-    <div class="card card-img-app">
-      <img src="assets/img/image-app.png" class="card-img-top" alt="...">
+    <div class="card card-app d-flex flex-row">
+      <div class="col-6">
+        <div class="title-app">
+          <h1 class="text-white font-weight-bold"><span class="text-resaltado">NOVA</span>GYM APP</h1>
+        </div>
+        <div class="subtitle-app">
+          <h2 class="text-white mt-4 font-weight-bold">
+            Lleva tu entrenamiento a donde vayas con nuestra aplicación móvil
+          </h2>
+          <h2 class="text-white mt-4 font-weight-bold">
+            ¡Descargarla ahora!
+          </h2>
+        </div>
+        <div class="tiendas">
+          <a href="https://play.google.com/store/apps/details?id=com.novagym" target="_blank">
+            <img src="assets/img/googleplay.png" class="icon-tienda" alt="Icono de Google Play">
+          </a>
+          <a href="https://apps.apple.com/us/app/nova-gym/id1560000000" target="_blank">
+            <img src="assets/img/apple.png" class="icon-tienda" alt="Icono de App Store">
+          </a>
+        </div>
+      </div>
+      <div class="col-6 img-app">
+        <img src="assets/img/captura-app.jpg" class="card-img-top" alt="...">
+
+      </div>
 
     </div>
   </div>
@@ -479,7 +504,7 @@
           routerLink="/registro"        
           >
         <span>
-          REGISTRATE
+          REGÍSTRATE
         </span>
         </a>
       </div>

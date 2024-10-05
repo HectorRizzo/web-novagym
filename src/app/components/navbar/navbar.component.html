@@ -39,8 +39,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/shop" routerLinkActive="active">
+              <a class="nav-link" routerLink="/shop"
+              routerLinkActive="active">
                 TIENDA
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contactanos"
+              routerLinkActive="active">
+                CONTÁCTANOS
               </a>
             </li>
             <li class="nav-item">
@@ -49,7 +56,7 @@
                 (click)="clickRegistro()"
                 *ngIf="!isLoggedIn">
                 <span class="registrate" style="color: black;">
-                ¡REGISTRATE YA!
+                ¡REGÍSTRATE YA!
                 </span>
               </a>
             </li>
@@ -57,7 +64,7 @@
               <a class="nav-link" (click)="clickInicioSesion()">
                 <img src="assets/icons/AVATAR.png" class="btn-icon" alt="Icono de ubicación">
               </a>
-              <a class="nav-link" href="/cart">
+              <a class="nav-link" routerLink="/cart">
                 <img src="assets/icons/CARRITO-DE-COMPRAS.png" class="btn-icon" alt="Icono de ubicación">
                 <span class="badge badge-primary">4</span>
               </a>

@@ -151,7 +151,7 @@
                 vertical-align: super !important;
                 color: white !important;
                 background: transparent !important;
-                border: 0.2rem solid white !important;
+                border: 1px solid white !important;
         
                 h5,h6,li{
                     font-weight: 700 !important;
@@ -166,10 +166,17 @@
         font-weight: bold;
         font-size: 2rem;
         color: #E3DF00;
+        p{
+            display: contents;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #E3DF00;
+        }
     }
     .subtitle-plan{
         text-align: end;
         color: white;
+        margin-right: 1rem;
     }
 
     .li{
@@ -252,6 +259,7 @@
     }    
     .body-nec{
         background: #E3DF00;
+        padding: 7px !important;
         h5{
             font-weight: 100 !important;
             color: black !important;
@@ -425,15 +433,15 @@
         height: 100%;
         z-index: 0;
       }
-    .container-noticia{
-        
+      .noticia{
         border-bottom: white 2px solid;
-        border-top: white 2px solid;
+
+      }
+    .container-noticia{
 
         padding-bottom: 1rem;
         padding-top: 1rem;
-        margin-bottom: 1rem;
-
+        border-top: white 2px solid !important;
         .card-img-top{
             width: 225px !important;
             height: 250px !important;
@@ -477,7 +485,7 @@
                 padding: 1rem;
             }
             .card-title{
-                font-weight: bold !important;
+                font-weight: bolder !important;
             }
             .card-text{
                 font-weight: bold !important;
@@ -499,6 +507,12 @@
                 font-weight: 900 !important;
                 color: black !important;
                 font-size: 0.6rem !important;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     
@@ -514,7 +528,7 @@
     // Variables para personalizar los bullets
         --swiper-pagination-color: #E3DF00; // Color de los bullets
        --swiper-pagination-bullet-inactive-color: rgba(0, 0, 0, 0.642) !important; // Color de los bullets inactivos
-       --swiper-pagination-bullet-size: 64px; // Tamaño de los bullets
+       --swiper-pagination-bullet-size: 32px; // Tamaño de los bullets
   //  --swiper-pagination-bullet-horizontal-gap: 6px; // Espacio horizontal entre bullets
         }
 
@@ -530,6 +544,9 @@
                 font-size: 2.5rem;
                 line-height: 1.2;
                 font-weight: 900;
+                width: 80%; // Ajusta el ancho según sea necesario
+                word-wrap: break-word; // Permite que las palabras largas se rompan y hagan un salto de línea
+              
             }
             h4{
                 font-size: 1.5rem;
@@ -613,6 +630,31 @@
      img{
         height: 500px;
      }
+  }
+
+  .card-app{
+    background:#000000;
+
+    .title-app{
+        margin-top: 1rem;
+    }
+    .tiendas{
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 300px;
+        }
+    }
+
+    .img-app{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 450px;
+            width: 207px;
+        }
+    }
   }
 
   .card-unete{

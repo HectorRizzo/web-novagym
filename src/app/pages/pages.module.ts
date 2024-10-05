@@ -44,6 +44,7 @@ import { ResumenMembresiaComponent } from "./membresias/resumen-membresia/resume
 import { TerminosCondicionesComponent } from "../shared/terminos-condiciones/terminos-condiciones.component";
 import { UsuariosService } from "../services/usuarios.services";
 import { CartService } from "../services/cart.services";
+import { ContactanosComponent } from "./contactanos/contactanos.component";
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { CartService } from "../services/cart.services";
     PagoComponent,
     ModificarDatosComponent,
     ResumenPagoComponent,
+    ContactanosComponent
     ],
   exports: [
     HomeComponent

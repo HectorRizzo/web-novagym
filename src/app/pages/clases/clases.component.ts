@@ -31,6 +31,15 @@ export class ClasesComponent implements OnInit {
         this.sedesService.getClases().subscribe((data: any) => {
             console.log(data);
             this.clases = data;
+            let tamanio = this.clases.length;
+            if(tamanio > 0 && tamanio < 6){
+                //llenar con la primera clase repetida
+                for(let i = 0; i < 6 - tamanio; i++){
+                    this.clases.push(this.clases[0]);
+                }
+            }
+            console.log(this.clases);
         });
+
     }
 }

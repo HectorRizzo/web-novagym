@@ -11,6 +11,7 @@ import { AuspiciantesComponent } from './auspiciantes/auspiciantes.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactanosComponent } from './contactanos/contactanos.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
     {path: "registro", component: RegistroComponent},
     {path: "inicio-sesion", component: InicioSesionComponent},
     { path: "auspiciantes", component: AuspiciantesComponent},
-    {path: "cart", component: CartComponent}
+    {path: "cart", component: CartComponent},
+    {path: "contactanos", component: ContactanosComponent}
 ];
 
 @NgModule({

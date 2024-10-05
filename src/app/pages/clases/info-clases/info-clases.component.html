@@ -2,16 +2,18 @@
   <div class="clases-header">
           <div class="container-title">
               <h1 class="title text-center">
-                  {{clase?.nombre?.toString()}}
+                  {{clase?.nombre?.toUpperCase()}}
               </h1>
           </div>
   </div>
   <div class="col-md-12 container-info-clases">
       <div class="mt-4">
-          <h1 class="title-horario">{{clase?.nombre?.toString()}}</h1>
+          <h1 class="title-horario">{{clase?.nombre?.toUpperCase()}}</h1>
       </div>
       <div>
-          <img src="./assets/img/clases-2.webp" alt="crosstraining" class="img-fluid">
+          <img src="{{clase?.nombre?.toUpperCase() == 'NUTRICION' ? 'assets/img/clases-info-nutricion.jpg' : 
+                    clase?.nombre?.toUpperCase() == 'CICLISMO' ? 'assets/img/clases-info-ciclismo.jpg' : 'assets/img/clases-info-default.jpg'}}"
+          alt="crosstraining" class="img-fluid img-clase">
       </div>
       <div class="mt-4 descripcion-clases">
           <p>{{clase?.descripcion}}</p>
@@ -29,7 +31,6 @@
               <li class="clase-item">Gimnasio abierto</li>
               <li class="clase-item">Acceso a videos</li>
               <li class="clase-item">Programa de nutrición</li>
-              <li class="clase-item">Acceso a videos</li>
           </ul>
           
       </div>

@@ -7,7 +7,6 @@ import Swiper from 'swiper';
 import { register } from 'swiper/element/bundle';
 import { AuspiciantesService } from "../../services/auspiciantes.services";
 import { AuspiciantesDTO } from "../../dto/auspiciantes.dto";
-import { HorarioDTO } from "../../dto/horario.dto";
 import { SedesService } from "../../services/sedes.service";
 import { clasesDTO } from "../../dto/clases.dto";
 import { SedesDTO } from "../../dto/sedes.dto";
@@ -62,7 +61,7 @@ private membresiaService: MembresiasService) {}
         bulletClass: 'swiper-pagination-bullet',
         bulletActiveClass: 'swiper-pagination-bullet-active',
         renderBullet: function (index:any, className:any) {
-          return '<span class="' + className +' bullets" style="font-size: 32px; background: transparent; margin-top: 1rem; border: 10px solid #E3DF00; border-radius: 50%;">'
+          return '<span class="' + className +' bullets" style="font-size: 20px; background: transparent; margin-top: 4rem; border: 2px solid #E3DF00; border-radius: 50%;">'
           + (index + 1) + '</span>';
         },
       },
@@ -230,6 +229,25 @@ private membresiaService: MembresiasService) {}
   getSedes(){
     this.sedesService.getSedes().subscribe({
       next: (sedes) => {
+        sedes.forEach((sede) => {
+          switch (sede.nombre.toUpperCase()) {
+            case 'CENTRO':
+              sede.imagen = 'assets/img/centro.jpg';
+              break;
+            case 'SUR':
+              sede.imagen = 'assets/img/sur.jpg';
+              break;
+            case 'ALBORADA':
+              sede.imagen = 'assets/img/alborada.jpg';
+              break;
+            case 'MACHALA':
+              sede.imagen = 'assets/img/machala.jpg';
+              break;
+            default:
+              sede.imagen = 'assets/img/centro.jpg';
+              break;
+          }
+        });
         this.sedes = sedes;
         console.log('sedes', sedes);
       },

@@ -1,10 +1,10 @@
 import { AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { TabsetComponent } from "ngx-bootstrap/tabs";
-import Swiper from "swiper";
 import { SedesService } from "../../../services/sedes.service";
 import { SedesDTO } from "../../../dto/sedes.dto";
 import { clasesDTO } from "../../../dto/clases.dto";
+import Swiper from 'swiper';
 @Component({
     selector: "app-info-sedes",
     templateUrl: "info-sedes.component.html",
@@ -13,7 +13,6 @@ import { clasesDTO } from "../../../dto/clases.dto";
   
   
   export class InfoSedesComponent implements OnInit, OnDestroy, AfterViewInit, AfterViewChecked {
-    swiper: Swiper | undefined;
     options: google.maps.MapOptions = {
       mapId: "DEMO_MAP_ID",
       center: { lat: -31, lng: 147 },
@@ -28,33 +27,13 @@ import { clasesDTO } from "../../../dto/clases.dto";
   mapClasesXSede: Map<number, clasesDTO[]> = new Map<number, clasesDTO[]>();
   @ViewChild('tabset', { static: false }) tabset: TabsetComponent | undefined;
   tabsInitialized = false;
-
+    private swiperInit = false;
   constructor(private route: ActivatedRoute,
               private sedesService: SedesService
   ) {}
 
     ngOnInit() {
       this.obtenerClases();
-        const swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop : true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                clickable: true,
-                type: 'bullets',
-                el: '.swiper-pagination',
-                bulletClass: 'swiper-pagination-bullet',
-                bulletActiveClass: 'swiper-pagination-bullet-active',
-                renderBullet: function (index, className) {
-                  return '<span class="' + className +' bullets" style="font-size: 32px; background: transparent; margin-top: 1rem; border: 10px solid #E3DF00; border-radius: 50%;">'
-                  +'</span>';
-                },
-              },
-          });
     }
 
     ngAfterViewInit() {
@@ -62,42 +41,49 @@ import { clasesDTO } from "../../../dto/clases.dto";
         this.selectedSede = params['sede'];
         this.getSedes();
       });
-      this.initializeSwiper();
+
+
     }
 
     ngAfterViewChecked() {
-      if (!this.swiper) {
-        this.initializeSwiper();
-      }
+
       if (!this.tabsInitialized && this.tabset && this.tabset.tabs.length > 0) {
         this.tabsInitialized = true;
         this.selectTabById(this.selectedSede);
       }
+      //Verificar si el swiper ya esta en el DOM
+      const swiperContainer = document.querySelector('.mySwiperInfoSedes');
+      if(!this.swiperInit && swiperContainer){
+        const swiper = new Swiper('.mySwiperInfoSedes', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          freeMode: true,
+          loop: true,
+          autoplay: {
+            delay: 1500,
+          },
+          breakpoints: {
+            340: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            1023: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+        this.swiperInit = true;
+      }
+
     }
+    
 
     ngOnDestroy(): void {   
-    }
-
-    initializeSwiper() {
-      this.swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          clickable: true,
-          type: 'bullets',
-          el: '.swiper-pagination',
-          bulletClass: 'swiper-pagination-bullet',
-          bulletActiveClass: 'swiper-pagination-bullet-active',
-          renderBullet: function (index, className) {
-            return '<span class="' + className + ' bullets" style="font-size: 32px; background: transparent; margin-top: 1rem; border: 10px solid #E3DF00; border-radius: 50%;"></span>';
-          },
-        },
-      });
     }
 
     onSedeSelected(sede: number) {

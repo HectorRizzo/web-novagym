@@ -6,21 +6,20 @@
             <tab *ngFor="let sede of sedes" (selectTab)="onSedeSelected(sede.id)">
               <ng-template tabHeading>
                 <div class="d-flex p-2">
-                    <h1 class="text-white tab-title d-flex">
-                        {{sede.nombre}}</h1>
+                    <h1 class="text-white tab-title d-flex sede">
+                        {{sede.nombre | uppercase}}</h1>
                         <img src="assets/icons/ubicacion3.png" alt="ubicacion" class="icon-title" />
                 </div>
               </ng-template>
               <div>
                 <div>
-                    <h2 class="text-white
-                    ">Dirección</h2>
-                    <p class="direccion-text">{{sede.ubicacion}}</p>
+                    <h2 class="text-white font-weight-bold">Dirección</h2>
+                    <h6 class="direccion-text text-white">{{sede.ubicacion}}</h6>
                 </div>
                 
                 <div class="section galeria">
 
-                  <div class="swiper-galeria mySwiper">
+                  <div class="swiper-galeria mySwiperInfoSedes">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <img src="assets/img/home-galeria-1.webp" />
@@ -49,6 +48,7 @@
                     </div>
                 </div>
               </div>
+              
 
                 <div class="col-md-12 container-horarios">
                     <h1 class="text-resaltado title-horario">Horarios</h1>
@@ -85,10 +85,9 @@
       
     </div>
   </div>
-  <app-horario></app-horario>
 
   <div  *ngIf="selectedSede !== 0">
-    <app-mapa [selectedUbicacion]="selectedSede"></app-mapa>
+    <app-mapa [selectedUbicacion]="selectedSede" [mostrarSidebar]="false"></app-mapa>
   </div>
   <div>
     <app-contactanos-footer></app-contactanos-footer>

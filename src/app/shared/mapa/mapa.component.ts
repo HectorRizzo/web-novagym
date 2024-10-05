@@ -20,6 +20,7 @@ interface Marker {
 export class MapaComponent implements OnInit , AfterViewInit, OnChanges {
   
   @Input() selectedUbicacion: number = 0;
+  @Input() mostrarSidebar: boolean = true;
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
 
   selectedMarker?: Marker;

@@ -1,5 +1,5 @@
 <div class="membresias">
-    <div class="container-sedes text-center" *ngIf="showMembresias">
+    <div class="container-membresias text-center" *ngIf="showMembresias">
         <h1>
             SELECCIONA TU <span class="text-resaltado">SEDE</span> FAVORITA
         </h1>
@@ -13,11 +13,11 @@
                       <h5 class="card-title justify-content-center font-weight-bold">{{sede.nombre}}</h5>
                       <h6>{{sede.ubicacion}}</h6>
                       <p>
-                        <img src="assets/icons/telef.png" class="img-fluid">
+                        <img src="assets/icons/telef.png" class="img-fluid mr-1">
                         {{sede.telefono}}</p>
-                      <p>
+                      <!-- <p>
                         <img src="assets/icons/correo.png" class="img-fluid">
-                        {{sede.celular}}</p>
+                        {{sede.celular}}</p> -->
                     </div>
                     <div class="card-footer" 
                     [ngClass]="{'card-footer-active': sedeSeleccionada == sede}"
@@ -43,7 +43,7 @@
                 <tbody>
                     <tr class="container-td-planes">
                         <td class="text-center td-planes  col col-sm-5 col-md-4 col-lg-3" *ngFor="let plan of membresia.value">
-                          <span class="title-plan">
+                          <span class="title-plan nombre-plan">
                             {{ plan.nombre }}
                           </span>
                           <h5 class="subtitle-plan">{{ plan.precios[0].esRecurrente ? 'Débito Recurrente' : 'Débito Único' }}
@@ -69,6 +69,7 @@
                           <div class="costo-plan">
                             <span class="title-plan">
                               ${{ plan.precios[0].precio }}
+                              <p>+ IVA</p>
                             </span>
                             <h5 class="debito"> 
                               {{ plan.precios[0].esRecurrente ? 'Débito Automático mensual' : 'Débito Único' }}

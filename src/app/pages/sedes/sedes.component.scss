@@ -54,6 +54,9 @@
 .body-sedes{
   background: #E3DF00;
   height: 50px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   h5{
       font-weight: 700 !important;
       color: black !important;
