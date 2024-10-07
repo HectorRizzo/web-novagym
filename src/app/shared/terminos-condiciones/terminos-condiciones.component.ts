@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild, AfterViewInit, AfterViewChecked, OnInit } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Output, ViewChild, AfterViewInit, AfterViewChecked, OnInit, input, Input } from "@angular/core";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 declare var bootstrap: any; // Declaramos `bootstrap` para usar la API de Bootstrap
 
@@ -8,6 +8,7 @@ declare var bootstrap: any; // Declaramos `bootstrap` para usar la API de Bootst
     styleUrls: ["terminos-condiciones.component.scss"]
 })
 export class TerminosCondicionesComponent  implements OnInit {
+    @Input() titulo: string = "Términos y condiciones";
     constructor(
         private activeModal: NgbActiveModal
     ) {}

@@ -40,9 +40,14 @@ import { Router } from '@angular/router';
 
         getTotal() {
             // Calcular el total del carrito
-            this.subtotal = this.productos.reduce((acc, product) => acc + (product.price) *(product.cantidad?? 0), 0);
+            this.subtotal = this.productos.reduce((acc, product) => acc + (product.price) * (product.cantidad ?? 0), 0);
+            this.subtotal = parseFloat(this.subtotal.toFixed(2)); // Redondear a dos decimales
+
             this.impuestos = this.subtotal * 0.16;
+            this.impuestos = parseFloat(this.impuestos.toFixed(2)); // Redondear a dos decimales
+
             this.total = this.subtotal + this.impuestos + this.delivery;
+            this.total = parseFloat(this.total.toFixed(2)); // Redondear a dos decimales
         }
 
         continuarPago() {

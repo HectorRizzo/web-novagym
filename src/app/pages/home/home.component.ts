@@ -49,6 +49,32 @@ private membresiaService: MembresiasService) {}
   
 
   ngAfterViewInit() {
+    const swiperSedes:Swiper = new Swiper(".mySwiperSedes", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      freeMode: true,
+      loop : true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        340: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1023: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+    
     const swiperEl:Swiper =  new Swiper('.swiper-container', {
       slidesPerView: 1,
       spaceBetween: 30,
@@ -98,28 +124,7 @@ private membresiaService: MembresiasService) {}
  
     });
 
-    const swiperSedes:Swiper = new Swiper(".mySwiperSedes", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      freeMode: true,
-      loop : true,
-      autoplay: {
-        delay: 2000,
-        pauseOnMouseEnter: true,
-      },
-      breakpoints: {
-        // when window width is >= 320px
-        380: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        1023: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        },
-      }
- 
-    });
+
 
     const swiperClases:Swiper = new Swiper(".mySwiperClases", {
       slidesPerView: 1,

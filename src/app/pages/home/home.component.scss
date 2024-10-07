@@ -11,7 +11,7 @@
 }
 
 .title-custom{
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 
@@ -584,6 +584,41 @@
     background-color: #3917d0 !important;
 }
 
+.swiper-button-next{
+    //ocultar flecha derecha
+    color: transparent;
+    border-radius: 70%;
+    background: #E3DF00;
+    height: 30px;
+    overflow: hidden;
+
+  }
+
+  .swiper-button-prev{
+    //ocultar flecha izquierda
+    color: transparent;
+    border-radius: 70%;
+    background: #E3DF00;
+    height: 30px;
+  }
+
+  .btn-arrow-next{
+    max-width:max-content;
+    height: 20px;
+    overflow: visible;
+    border-radius: 50%;
+    margin-left: 1rem;
+    filter: brightness(100) invert(1); // Cambia el color de la imagen a negro
+  }
+
+  .btn-arrow-prev{
+    max-width:max-content;
+    height: 20px;
+    transform: rotate(180deg);
+    overflow: visible;
+    margin-left: 1rem;
+    filter: brightness(100) invert(1); // Cambia el color de la imagen a negro
+  }
 //Galeria
 .swiper-galeria {
     width: 100%;
@@ -619,9 +654,8 @@
 
   //Encuentra tu sede
   .swiper-sedes {
-    width: 100%;
+    width: 90%;
     overflow-x: hidden  !important;
-
   }
 
   //grid app

@@ -29,6 +29,14 @@
             [checked]="aceptaTerminos">
             <label for="terminos-label" class="custom-checkbox">Acepto los términos y condiciones</label>
         </div>
+        <div class="terminos col-12"  (click)="mostrarPoliticas()">
+            <input type="checkbox" 
+            class="checkbox"
+            id="terminos" 
+            name="terminos" 
+            [checked]="aceptaPoliticas">
+            <label for="terminos-label" class="custom-checkbox">Acepto la política de protección de datos</label>
+        </div>
         
     </div>
 

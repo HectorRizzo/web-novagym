@@ -5,6 +5,7 @@ import { TerminosCondicionesComponent } from "../../../shared/terminos-condicion
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ProductDto } from "../../../dto/product.dto";
 import { CartService } from "../../../services/cart.services";
+import { ToastService } from "../../../services/toast.services";
 
 @Component({
     selector: "app-resumen-membresia",
@@ -19,11 +20,13 @@ export class ResumenMembresiaComponent implements OnInit {
     precio: string = "";
 
     aceptaTerminos: boolean = false;
+    aceptaPoliticas: boolean = false;
     isPago: boolean = false;
     showMembresia: boolean = true;
     constructor(
         private modalService: NgbModal,
-        private cartService: CartService
+        private cartService: CartService,
+        private toastService: ToastService
     ) {}
 
     ngOnInit() {
@@ -33,12 +36,13 @@ export class ResumenMembresiaComponent implements OnInit {
 
     continuar() {
         console.log("continuar");
-        if (this.aceptaTerminos) {
+        if (this.aceptaTerminos && this.aceptaPoliticas) {
             console.log("acepta terminos");
             this.isPago = true;
             this.guardarMemebresiaCarrito();
             this.showMembresia = false;
         } else {
+            this.toastService.showToast("Debe aceptar los términos y condiciones y las políticas de privacidad", "warning");
         }
     }
 
@@ -58,6 +62,25 @@ export class ResumenMembresiaComponent implements OnInit {
                 console.log("reason ", reason);
             }
         );
+    }
+
+    mostrarPoliticas() {
+        console.log("acepta terminos ", this.aceptaPoliticas);
+    const modlaPoliticas = this.modalService.open(TerminosCondicionesComponent, { 
+        size: "lg",
+        scrollable: true,})
+
+        modlaPoliticas.componentInstance.titulo = "Políticas de privacidad";
+        modlaPoliticas.result.then(
+            (result) => {
+                console.log("result ", result);
+                if (result) {
+                    this.aceptaPoliticas = true;
+                }
+            },
+            (reason) => {
+                console.log("reason ", reason);
+            });
     }
 
 
