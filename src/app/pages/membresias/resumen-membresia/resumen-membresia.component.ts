@@ -48,10 +48,13 @@ export class ResumenMembresiaComponent implements OnInit {
 
     mostrarTerminos() {
         console.log("acepta terminos ", this.aceptaTerminos);
-    this.modalService.open(TerminosCondicionesComponent, { 
+    const modalTerminos = this.modalService.open(TerminosCondicionesComponent, { 
         size: "lg",
-        scrollable: true,})
-        .result.then(
+        scrollable: true,});
+        modalTerminos.componentInstance.titulo = "TÉRMINOS Y CONDICIONES";
+        modalTerminos.componentInstance.aceptarTerminos = true;
+        modalTerminos.componentInstance.aceptarPoliticas = false
+        modalTerminos.result.then(
             (result) => {
                 console.log("result ", result);
                 if (result) {
@@ -70,7 +73,9 @@ export class ResumenMembresiaComponent implements OnInit {
         size: "lg",
         scrollable: true,})
 
-        modlaPoliticas.componentInstance.titulo = "Políticas de privacidad";
+        modlaPoliticas.componentInstance.titulo = "POLÍTICA DE PROTECCIÓN DE DATOS";
+        modlaPoliticas.componentInstance.aceptarTerminos = false;
+        modlaPoliticas.componentInstance.aceptarPoliticas = true;
         modlaPoliticas.result.then(
             (result) => {
                 console.log("result ", result);

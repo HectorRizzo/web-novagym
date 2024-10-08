@@ -40,3 +40,13 @@
 
     }
 }
+.terminos-condiciones {
+    overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal */
+  }
+  
+  .terminos-condiciones li,
+  .terminos-condiciones p {
+    word-wrap: break-word; /* Permite que las palabras largas se rompan y hagan un salto de línea */
+    word-break: break-word; /* Rompe las palabras largas en cualquier punto si es necesario */
+    white-space: normal; /* Permite que el texto se ajuste automáticamente */
+  }

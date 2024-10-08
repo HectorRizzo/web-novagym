@@ -9,6 +9,9 @@ declare var bootstrap: any; // Declaramos `bootstrap` para usar la API de Bootst
 })
 export class TerminosCondicionesComponent  implements OnInit {
     @Input() titulo: string = "Términos y condiciones";
+    @Input() aceptarTerminos:boolean = false;
+    @Input() aceptarPoliticas:boolean = false;
+    //mensaje terminos y condiciones
     constructor(
         private activeModal: NgbActiveModal
     ) {}

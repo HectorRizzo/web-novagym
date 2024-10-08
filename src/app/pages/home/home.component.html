@@ -47,7 +47,7 @@
                       <h5 class="card-body text-end card-body-overlay">
                         <a
                         class="btn btn-primary t-4 font-weight-bold btn-card-sedes"
-                        routerLink="/sedes/info-sedes"
+                        href="/sedes/info-sedes"
                       >
                       <span class="font-weight-bold">
                         VER MÁS
@@ -59,26 +59,24 @@
       
                     </div>
                     <div class="card-body">
-                      <h4 class="card-title justify-content-center">Sede {{sede.nombre}}</h4>
+                      <h4 class="card-title justify-content-center">{{sede.nombre}}</h4>
                       <h5 class="card-text">
                         <img src="assets/icons/ubicacion2.png" class="icon" alt="Icono de ubicación">
-                        {{sede.ubicacion}}  
-                      </h5>
+                        {{sede.ubicacion}}</h5>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-pagination">
-                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next">
+              <img src="assets/icons/siguiente2.png" alt="arrow-right" class="btn-arrow-next" />
+            </div>
+            <div class="swiper-button-prev">
+              <img src="assets/icons/siguiente2.png" alt="arrow-right" class="btn-arrow-prev" />
             </div>
           </div>
-          <div class="swiper-button-next">
-            <img src="assets/icons/siguiente2.png" alt="arrow-right" class="btn-arrow-next" />
+
           </div>
-          <div class="swiper-button-prev">
-            <img src="assets/icons/siguiente2.png" alt="arrow-right" class="btn-arrow-prev" />
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -208,7 +206,7 @@
                 <div class="card-img-overlay  d-flex flex-column">
                   <div>
                     <h2 class="card-title text-center body-card-clases">
-                      {{clase?.nombre}}
+                      {{clase?.nombre | uppercase}}
                     </h2>
                   </div>
                 

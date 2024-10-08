@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Inject, PLATFORM_ID } from "@angular/core";
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Inject, PLATFORM_ID, AfterViewInit } from "@angular/core";
 import { CarouselComponent } from "ngx-bootstrap/carousel";
 import noUiSlider from "nouislider";
 // import Swiper bundle with all modules installed
@@ -22,7 +22,7 @@ register();
 })
 
 
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy , AfterViewInit {
   cont = 0;
   clases: clasesDTO[] = [];
   sedes: SedesDTO[] = [];
@@ -46,35 +46,8 @@ private membresiaService: MembresiasService) {}
     element.scrollIntoView({ behavior: "smooth" });
   }
 
-  
-
   ngAfterViewInit() {
-    const swiperSedes:Swiper = new Swiper(".mySwiperSedes", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      freeMode: true,
-      loop : true,
-      autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        // when window width is >= 320px
-        340: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        1023: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        },
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    });
-    
+    this.getSedes();
     const swiperEl:Swiper =  new Swiper('.swiper-container', {
       slidesPerView: 1,
       spaceBetween: 30,
@@ -148,11 +121,16 @@ private membresiaService: MembresiasService) {}
       }
  
     });
+    //verificar que este en Dom los botones de navegacion
+    // const next = document.querySelector('.swiper-button-next');
+    // const prev = document.querySelectorAll('.swiper-button-prev');
+    // console.log('next', next);
+    // console.log('prev', prev);
+
   }
   
 
   ngOnInit() {
-    this.getSedes();
     this.getClases();
     this.getAuspicantes();
     this.getMembresias();
@@ -180,7 +158,6 @@ private membresiaService: MembresiasService) {}
         max: 100
       }
     });
-    
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
@@ -242,7 +219,7 @@ private membresiaService: MembresiasService) {}
             case 'SUR':
               sede.imagen = 'assets/img/sur.jpg';
               break;
-            case 'ALBORADA':
+            case 'NORTE':
               sede.imagen = 'assets/img/alborada.jpg';
               break;
             case 'MACHALA':
@@ -255,6 +232,31 @@ private membresiaService: MembresiasService) {}
         });
         this.sedes = sedes;
         console.log('sedes', sedes);
+            
+        const swiperSedes:Swiper = new Swiper(".mySwiperSedes", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          // freeMode: true,
+          loop : true,
+          autoplay: {
+            delay: 1500,
+          },
+          breakpoints: {
+            // when window width is >= 320px
+            340: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            1023: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }
+        });
       },
       error: (error) => {
         console.error('Error fetching sedes', error);
