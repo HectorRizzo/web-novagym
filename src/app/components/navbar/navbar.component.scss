@@ -59,8 +59,11 @@ h1{
     color: #E3DF00 !important;
     font-size: 28px;
 }
+.nav-item{
+    padding: 0 8px !important;
+}
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
 
     .navbar-translate{
         padding: 0;
@@ -69,8 +72,8 @@ h1{
         padding: 0;
     }
     .logo{
-        width: 235px !important;
-        height: 45px !important;
+        width: 255px !important;
+        height: 50px !important;
     }
 
     .container-navbar{
@@ -79,7 +82,7 @@ h1{
     }
 
     .nav-item{
-        padding: 0 1px;
+        padding: 0 8px !important;
         .nav-link{
             font-size: 0.7rem;
         }
@@ -100,6 +103,53 @@ h1{
         padding-bottom: 0;
         margin-bottom: 0;
     }
+
+  }
+@media (max-width: 1200px) {
+
+    .navbar-translate{
+        padding: 0;
+    }
+    #example-navbar-primary{
+        padding: 0;
+    }
+
+    .container-navbar{
+        margin-left: 0;
+        display: flex;
+    }
+    .logo{
+        width: 150px !important;
+        height: 29px !important;
+    }
+    .nav-item{
+        padding: 0px !important;
+        .nav-link{
+            font-size: 0.7rem;
+        }
+    }
+
+    .btn-registro{
+        padding: 10px 20px;
+        .registrate{
+            color: black !important;
+            font-size: 0.6rem;
+        }
+    
+    }
+
+    h1{
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+  }
+  @media (max-width: 1024px) {
+
+
+
 
   }
 

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit, Renderer2 } from "@angular/core";
 import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 import { UsuariosService } from "../../services/usuarios.services";
 import { ToastService } from "../../services/toast.services";
@@ -24,7 +24,8 @@ export class NavbarComponent implements OnInit {
 
     constructor(private router: Router,
       private usuarioService: UsuariosService,
-      private toastService: ToastService
+      private toastService: ToastService,
+      private renderer: Renderer2
     ) {}
 
     ngOnInit() {
@@ -36,27 +37,41 @@ export class NavbarComponent implements OnInit {
 
     clickRegistro() {
         this.router.navigate(['/registro']);
+        this.collapseMenu();
     }
 
     clickInicioSesion() {
         this.router.navigate(['/inicio-sesion']);
+        this.collapseMenu();
+    }
+
+    collapseMenu() {
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+  
+      if (navbarToggler && navbarCollapse) {
+        this.renderer.removeClass(navbarCollapse, 'show');
+        this.renderer.setAttribute(navbarToggler, 'aria-expanded', 'false');
+      }
     }
 
 
-    toggleNavbar(event: MouseEvent) {
-        event.stopPropagation();
-        this.showMenu = !this.showMenu;
-    }
+
+    // toggleNavbar(event: MouseEvent) {
+    //     event.stopPropagation();
+    //     this.showMenu = !this.showMenu;
+    // }
 
 
-    closeMenu() {
-      console.log('closeMenu');
-      this.showMenu = false;
-    }
+    // closeMenu() {
+    //   console.log('closeMenu');
+    //   this.showMenu = false;
+    // }
 
     clickLogout() {
       this.usuarioService.logout();
       this.toastService.showToast('Sesión cerrada', 'success');
+      this.collapseMenu();
       //recargar la página
       window.location.reload();
     }

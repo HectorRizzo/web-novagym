@@ -57,6 +57,7 @@
                 -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
                 -webkit-box-orient: vertical; /* Establece la orientación de la caja flexible en vertical */
                 height: 5.5rem; /* Ajusta la altura del contenedor para 3 líneas de texto */
+                text-align: justify;
             }
     
             .card-text.auto-resize-text {
