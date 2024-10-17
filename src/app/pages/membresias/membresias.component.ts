@@ -5,6 +5,8 @@ import { SedesService } from "../../services/sedes.service";
 import { SedesDTO } from "../../dto/sedes.dto";
 import { UsuariosService } from "../../services/usuarios.services";
 import { ToastService } from "../../services/toast.services";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { BeneficiosPlanComponent } from "../../shared/beneficios-plan/beneficios-plan.component";
 
 @Component({
     selector: "app-membresias",
@@ -24,7 +26,8 @@ export class MembresiasComponent implements OnInit {
     constructor(private membresiasService: MembresiasService,
         private sedesService: SedesService,
         private usuariosService: UsuariosService,
-        private toastService: ToastService
+        private toastService: ToastService,
+        private modalService: NgbModal
     ) { }
 
     ngOnInit(): void {
@@ -91,8 +94,23 @@ export class MembresiasComponent implements OnInit {
             return;
         }
         if(this.membresiaSeleccionada && this.sedeSeleccionada){
-            this.showResumen = true;
-            this.showMembresias = false;
+            if(this.membresiaSeleccionada.nombre === 'BLACK'){
+                this.abrirModal();
+            }else{
+                this.showMembresias = false;
+                this.showResumen = true;
+            }
         }
+    }
+
+    abrirModal(){
+        const modal = this.modalService.open(BeneficiosPlanComponent, { size: 'xl' });
+        modal.componentInstance.plan = this.membresiaSeleccionada;
+        modal.componentInstance.acepta.subscribe((acepta: boolean) => {
+            console.log('acepta ', acepta);
+            this.showMembresias = false;
+            this.showResumen = true;
+        });
+        
     }
 }

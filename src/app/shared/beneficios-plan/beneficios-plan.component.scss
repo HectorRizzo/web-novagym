@@ -1,0 +1,188 @@
+.container-resumen{
+    padding: 2rem 3rem;
+    background: black;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title{
+        align-self: flex-start;
+        h1{
+            font-size: 1.5rem;
+        }
+        hr{
+            width: 100%;
+            border: 1px solid white;
+            opacity: 1;
+        }
+    }
+    .resumen{
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        
+        .plan{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+
+            .plan-title{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img{
+                    width: 80px;
+                }
+
+                h3{
+                    font-weight: 900;
+                    border: 2px solid #E3DF00;
+                    border-radius: 30px;
+                    padding: 0rem 3rem;
+                }
+            }
+
+            .plan-content{
+                display: flex;
+                flex-direction: column;
+                .nombre-plan{
+                    color: white;
+                }
+                h3{
+                    margin-bottom: 0px !important;
+                }
+
+                hr{
+                    width: 100%;
+                    border: 1px solid white;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .descripcion-beneficios{
+            border: 2px solid white;
+            border-radius: 20px;
+            padding: 1rem;
+        }
+
+        .terminos{
+            margin: 2rem;
+            text-align: center;
+            .check-acepto{
+                color: white;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                input{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            h6{
+                margin: 0px !important;
+            }
+            .subtitle{
+                color: white;
+                p{
+                    
+                }
+            }
+        }
+
+        .button-aceptar{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+
+            .rechazar{
+                background: red;
+                color: white;
+            }
+
+            .aceptar{
+                background: #E3DF00;
+                color: white;
+            }
+        }
+
+    }
+
+    .btn-continuar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        .btn-primary{
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+}
+
+h5,
+h6,
+span{
+    font-size: 1.2rem !important;
+}
+
+@media (max-width: 1024px){
+    .container-resumen{
+        padding: 0 1rem;
+        .resumen{
+            .resumen-producto{
+                margin: 1.5rem 0;
+                width: 80% !important;
+            }
+            .resumen-total{
+                width: 80% !important;
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .container-resumen{
+        padding: 0 1rem;
+        .resumen{
+            .resumen-producto{
+                margin: 1.5rem 0;
+                width: 80% !important;
+            }
+            .resumen-total{
+                width: 80% !important;
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 426px){
+    .container-resumen{
+        padding: 0 1rem;
+        .resumen{
+            .resumen-tarjeta{
+                flex-direction: column !important;
+                
+            }
+            .resumen-producto{
+                margin: 1.5rem 0;
+                width: 100% !important;
+            }
+            .resumen-total{
+                width: 100% !important;
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<div class="container-resumen">
+    <div class="title">
+        <h1 class="text-resaltado">¡HOLA SOCIO!</h1>
+        <hr>
+    </div>
+    <div class="resumen">
+        <div class="plan">
+            <div class="plan-title">
+                <img src="{{plan?.imagen}}" alt="Plan">
+                <h3 class="text-resaltado">Plan {{plan?.nombre}}</h3>
+            </div>
+            <div class="plan-content">
+                <h3 class="nombre-plan">Entrenar 12 meses sin parar</h3>
+                <hr>
+                <h3 class="text-resaltado">TE DA BENEFICIOS EXTRAS A TU PLAN</h3>
+            </div>
+        </div>
+
+        <div class="descripcion-beneficios">
+            <div class="beneficio">
+                <p><span class="text-resaltado">1.</span> Ingresa al sorteo anual de 1 viaje a Panamá, Cartagena o Punta Cana ¡TODO PAGADO PARA 
+                    2 PERSONAS! </p>
+            </div>
+            <div class="beneficio">
+                <p><span class="text-resaltado">2.</span> Ingreso al sorteo de 1 proteína o 1 parrillada para 2 personas 
+                + 1 shaker + 1 toalla Nova que se realizará 11 veces al año de Enero a Noviembre. </p>
+            </div>
+            <div class="beneficio">
+                <p><span class="text-resaltado">3.</span> Descuento de 5% en compras online de Suplementos y Accesorios 
+                (Web y App NOVA)</p>
+            </div>
+            <div class="beneficio">
+                <p><span class="text-resaltado">4.</span>
+                PLAN BLACK invita 1 amigo a la piscina GRATIS (1 vez al mes) 
+                </p>
+            </div>
+            <div class="beneficio">
+                <p><span class="text-resaltado">5.</span>
+                PLAN BLACK ingresa GRATIS a fiestas o eventos(en piscina) que se realicen en el Club Nova.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="terminos">
+            <div class="check-acepto">
+                <input type="checkbox" id="acepto-terminos" [(ngModel)]="aceptoTerminos">
+                <label for="acepto-terminos">
+                    <h6>
+                        Acepto mi compromiso de entrenar 12 meses
+                    </h6>
+                </label>
+            </div>
+            <div class="subtitle">
+                <p>
+                    *Aplican terminos y condiciones. *Punto 4 y 5 aplica solo Plan Black con compromiso de entrenaiento de 12 meses.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="button-aceptar">
+            <button class="btn rechazar" (click)="rechazar()">
+                RECHAZAR COMPROMISO Y CONTINUAR</button>
+            <button class="btn aceptar" (click)="aceptar()">
+                ACEPTAR COMPROMISO Y CONTINUAR</button>
+        </div>
+
+    </div>
+
+</div>

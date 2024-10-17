@@ -45,6 +45,7 @@ import { TerminosCondicionesComponent } from "../shared/terminos-condiciones/ter
 import { UsuariosService } from "../services/usuarios.services";
 import { CartService } from "../services/cart.services";
 import { ContactanosComponent } from "./contactanos/contactanos.component";
+import { BeneficiosPlanComponent } from "../shared/beneficios-plan/beneficios-plan.component";
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { ContactanosComponent } from "./contactanos/contactanos.component";
     PagoComponent,
     ModificarDatosComponent,
     ResumenPagoComponent,
-    ContactanosComponent
+    ContactanosComponent,
+    BeneficiosPlanComponent
     ],
   exports: [
     HomeComponent
