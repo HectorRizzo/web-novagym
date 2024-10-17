@@ -94,7 +94,7 @@ export class MembresiasComponent implements OnInit {
             return;
         }
         if(this.membresiaSeleccionada && this.sedeSeleccionada){
-            if(this.membresiaSeleccionada.nombre === 'BLACK'){
+            if(this.membresiaSeleccionada?.nombre?.toUpperCase() === 'BLACK'){
                 this.abrirModal();
             }else{
                 this.showMembresias = false;
